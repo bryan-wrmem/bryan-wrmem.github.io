@@ -16,6 +16,48 @@
       <description>&lt;p&gt;Hello World!&lt;/p&gt;&#xA;&lt;p&gt;Testing a new way to publish my blog through obsidian, hugo, and github.&lt;/p&gt;&#xA;&lt;p&gt;More good things to come, sooner or later.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2025-04-14-hello-world-again/91adf0f79fd3db90854765eb92d16fd2_MD5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Fix for The Change Password Operation Failed Error on XenApp 6.5</title>
+      <link>/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</link>
+      <pubDate>Wed, 09 Mar 2016 08:57:20 -0400</pubDate>
+      <guid>/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</guid>
+      <description>&lt;p&gt;After running February 2016’s batch of Microsoft security updates, we started receiving calls from end users about errors when attempting to update their passwords through the Citrix web interface.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/37d328a97455f2e74dc3fb7016ae8c32_MD5.png&#34; alt=&#34;xenapppass01&#34;&gt;&#xA;While the error indicates the password change failed, it does in fact work, and users can log out and log back in with the new password.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully it didn’t take long for some savvy Citrix support forums users to pinpoint the issue to a recent patch Microsoft released which changes the api behavior for NetUserChangePassword.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Windows 10 WMI Filter for Group Policy</title>
+      <link>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</link>
+      <pubDate>Tue, 08 Mar 2016 08:55:15 -0400</pubDate>
+      <guid>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</guid>
+      <description>&lt;p&gt;Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.&lt;/p&gt;&#xA;&lt;p&gt;By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.&lt;/p&gt;&#xA;&lt;p&gt;First we use the command line utility ‘&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/bb742610.aspx&#34;&gt;wmic&lt;/a&gt;‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</title>
+      <link>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</link>
+      <pubDate>Mon, 07 Mar 2016 08:53:30 -0400</pubDate>
+      <guid>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</guid>
+      <description>&lt;p&gt;After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png&#34; alt=&#34;sf-usernames01&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;After opening a support case, TAC pointed me to the following bug: &lt;a href=&#34;https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125&#34;&gt;cscux39125&lt;/a&gt; (cisco login required).&lt;/p&gt;&#xA;&lt;p&gt;To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.&lt;/p&gt;&#xA;&lt;p&gt;To change your realm configuration go to &lt;strong&gt;System&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Integration&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Realms&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading IOS-XE on a Cisco ISR 4400</title>
+      <link>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</link>
+      <pubDate>Thu, 03 Mar 2016 08:52:04 -0400</pubDate>
+      <guid>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</guid>
+      <description>&lt;p&gt;Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found &lt;a href=&#34;http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;To help differentiate the different designations of code, i.e., MD, ED, GD, take a look &lt;a href=&#34;https://www.cisco.com/public/library/iosplanner/reldesignation.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png&#34; alt=&#34;ios-xe01&#34;&gt;the downloaded image to your USB drive and insert it into the ISR&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</title>
+      <link>/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</link>
+      <pubDate>Wed, 02 Mar 2016 08:44:37 -0400</pubDate>
+      <guid>/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</guid>
+      <description>&lt;p&gt;I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In Defense Center, go to System -&amp;gt; Configuration -&amp;gt; HTTPS Certificate&lt;/li&gt;&#xA;&lt;li&gt;Click “Generate New CSR”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png&#34; alt=&#34;sfcsr01&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using the Built in TFTP Server on OS-X El Capitan</title>
+      <link>/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/</link>
+      <pubDate>Sun, 28 Feb 2016 08:40:54 -0400</pubDate>
+      <guid>/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/</guid>
+      <description>&lt;p&gt;On Windows I love the lightweight and open source &lt;a href=&#34;http://tftpd32.jounin.net&#34;&gt;TFTPD32&lt;/a&gt;, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.&lt;/p&gt;&#xA;&lt;p&gt;Luckily there’s a built in tftp daemon that you can use in a pinch.&lt;/p&gt;&#xA;&lt;p&gt;By default tftpd uses the following folder:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/private/tftpboot&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which is hidden in finder, but can be accessed by using “go to folder” or hitting Command+Shift+G and entering /private/tftpboot&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>USB Serial Console Cable on OS X</title>
       <link>/posts/2016-02-25-usb-serial-console-cable-on-os-x/</link>
       <pubDate>Thu, 25 Feb 2016 23:48:28 -0400</pubDate>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-    <title>Tags :: WRMEM</title>
+    <title>Firepower :: WRMEM</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="/tags/" />
+<link rel="canonical" href="/tags/firepower/" />
 
 
 
@@ -77,9 +77,9 @@
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Tags">
+<meta property="og:title" content="Firepower">
 <meta property="og:description" content="" />
-<meta property="og:url" content="/tags/" />
+<meta property="og:url" content="/tags/firepower/" />
 <meta property="og:site_name" content="WRMEM" />
 
   <meta property="og:image" content="/og-image.png">
@@ -91,7 +91,7 @@
 
 
 
-  <link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="WRMEM" />
+  <link href="/tags/firepower/index.xml" rel="alternate" type="application/rss+xml" title="WRMEM" />
 
 
 
@@ -155,45 +155,88 @@
 
   <div class="content">
     
-  <div class="terms">
-    <h1>Tags</h1>
+  <h1>Posts for: #Firepower</h1>
+  
+  <div class="posts">
     
-    <ul>
-      
-      
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2016-03-07</time><span class="post-author">bryan</span></div>
+
         
+          <span class="post-tags">
+            
+            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            
+          </span>
         
+
         
-          <li>
-            <a class="terms-title" href="/tags/citrix/">citrix [1]</a>
-          </li>
+
+
+        <div class="post-content">
+          
+            <p>After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”</p>
+<p><img src="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png" alt="sf-usernames01"></p>
+<p>After opening a support case, TAC pointed me to the following bug: <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125">cscux39125</a> (cisco login required).</p>
+<p>To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.</p>
+<p>To change your realm configuration go to <strong>System</strong> -&gt; <strong>Integration</strong> -&gt; <strong>Realms</strong></p>
+          
+        </div>
+
         
-      
+          <div>
+            <a class="read-more button inline" href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">[Read more]</a>
+          </div>
         
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2016-03-02</time><span class="post-author">bryan</span></div>
+
         
+          <span class="post-tags">
+            
+            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            
+          </span>
         
-          <li>
-            <a class="terms-title" href="/tags/firepower/">firepower [2]</a>
-          </li>
+
         
-      
+
+
+        <div class="post-content">
+          
+            <p>I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.</p>
+<ul>
+<li>In Defense Center, go to System -&gt; Configuration -&gt; HTTPS Certificate</li>
+<li>Click “Generate New CSR”</li>
+</ul>
+<p><img src="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png" alt="sfcsr01"></p>
+          
+        </div>
+
         
+          <div>
+            <a class="read-more button inline" href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">[Read more]</a>
+          </div>
         
-        
-          <li>
-            <a class="terms-title" href="/tags/ios-xe/">IOS-XE [1]</a>
-          </li>
-        
-      
-        
-        
-        
-          <li>
-            <a class="terms-title" href="/tags/windows/">windows [1]</a>
-          </li>
-        
-      
-    </ul>
+      </article>
+    
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+    
+  </div>
+</div>
+
   </div>
 
   </div>

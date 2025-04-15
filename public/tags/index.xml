@@ -6,6 +6,35 @@
     <description>Recent content in Tags on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 09 Mar 2016 08:57:20 -0400</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Citrix</title>
+      <link>/tags/citrix/</link>
+      <pubDate>Wed, 09 Mar 2016 08:57:20 -0400</pubDate>
+      <guid>/tags/citrix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Tue, 08 Mar 2016 08:55:15 -0400</pubDate>
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Firepower</title>
+      <link>/tags/firepower/</link>
+      <pubDate>Mon, 07 Mar 2016 08:53:30 -0400</pubDate>
+      <guid>/tags/firepower/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IOS-XE</title>
+      <link>/tags/ios-xe/</link>
+      <pubDate>Thu, 03 Mar 2016 08:52:04 -0400</pubDate>
+      <guid>/tags/ios-xe/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

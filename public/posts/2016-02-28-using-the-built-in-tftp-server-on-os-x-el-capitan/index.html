@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   
-    <title>Hello World, Again :: WRMEM</title>
+    <title>Using the Built in TFTP Server on OS-X El Capitan :: WRMEM</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hello World!
-Testing a new way to publish my blog through obsidian, hugo, and github.
-More good things to come, sooner or later.
+<meta name="description" content="On Windows I love the lightweight and open source TFTPD32, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.
+Luckily there’s a built in tftp daemon that you can use in a pinch.
+By default tftpd uses the following folder:
+/private/tftpboot which is hidden in finder, but can be accessed by using “go to folder” or hitting Command&#43;Shift&#43;G and entering /private/tftpboot
 " />
 <meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="/posts/2025-04-14-hello-world-again/" />
+<link rel="canonical" href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/" />
 
 
 
@@ -80,12 +81,13 @@ More good things to come, sooner or later.
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Hello World, Again">
-<meta property="og:description" content="Hello World!
-Testing a new way to publish my blog through obsidian, hugo, and github.
-More good things to come, sooner or later.
+<meta property="og:title" content="Using the Built in TFTP Server on OS-X El Capitan">
+<meta property="og:description" content="On Windows I love the lightweight and open source TFTPD32, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.
+Luckily there’s a built in tftp daemon that you can use in a pinch.
+By default tftpd uses the following folder:
+/private/tftpboot which is hidden in finder, but can be accessed by using “go to folder” or hitting Command&#43;Shift&#43;G and entering /private/tftpboot
 " />
-<meta property="og:url" content="/posts/2025-04-14-hello-world-again/" />
+<meta property="og:url" content="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/" />
 <meta property="og:site_name" content="WRMEM" />
 
   <meta property="og:image" content="/og-image.png">
@@ -94,7 +96,7 @@ More good things to come, sooner or later.
 <meta property="og:image:height" content="627">
 
 
-  <meta property="article:published_time" content="2025-04-14 22:33:11 -0400 EDT" />
+  <meta property="article:published_time" content="2016-02-28 08:40:54 -0400 -0400" />
 
 
 
@@ -163,9 +165,9 @@ More good things to come, sooner or later.
     
 <article class="post">
   <h1 class="post-title">
-    <a href="/posts/2025-04-14-hello-world-again/">Hello World, Again</a>
+    <a href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/">Using the Built in TFTP Server on OS-X El Capitan</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-04-14</time><span class="post-author">bryan</span></div>
+  <div class="post-meta"><time class="post-date">2016-02-28</time><span class="post-author">bryan</span></div>
 
   
   
@@ -174,10 +176,22 @@ More good things to come, sooner or later.
   
 
   <div class="post-content"><div>
-        <p>Hello World!</p>
-<p>Testing a new way to publish my blog through obsidian, hugo, and github.</p>
-<p>More good things to come, sooner or later.</p>
-<p><img src="/posts/2025-04-14-hello-world-again/91adf0f79fd3db90854765eb92d16fd2_MD5.jpg" alt=""></p>
+        <p>On Windows I love the lightweight and open source <a href="http://tftpd32.jounin.net">TFTPD32</a>, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.</p>
+<p>Luckily there’s a built in tftp daemon that you can use in a pinch.</p>
+<p>By default tftpd uses the following folder:</p>
+<pre tabindex="0"><code>/private/tftpboot
+</code></pre><p>which is hidden in finder, but can be accessed by using “go to folder” or hitting Command+Shift+G and entering /private/tftpboot</p>
+<p><img src="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/78446584269c8d7539302f1b08b3680c_MD5.gif" alt="osxtftp01"></p>
+<p>To launch the daemon run the following commands:</p>
+<pre tabindex="0"><code>sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist
+</code></pre><p>Be sure Read/Write/eXecute permissions are set on the tftpboot folder and any files you wish to transfer:</p>
+<pre tabindex="0"><code>sudo chmod 777 /private/tftpboot
+</code></pre><p>If you’ll be transferring a file <strong>TO</strong> your TFTP server, the file will technically need to exist on the server beforehand so create it with touch. For example:</p>
+<pre tabindex="0"><code>sudo touch /private/tftpboot/running-config
+</code></pre><p>If you’d like a graphical front end for launching tftp then check out the great <a href="http://ww2.unime.it/flr/tftpserver/">TftpServer</a>.</p>
+<p><img src="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/04bd07d046e0e8a084b4575271a45590_MD5.png" alt="osxftp03"></p>
+<p>Now go ahead and get transferring.</p>
+<p><img src="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/04dcd88d66846e27c6c82c6b41cb59ba_MD5.gif" alt="osxtftp02"></p>
 
       </div></div>
 
@@ -190,10 +204,16 @@ More good things to come, sooner or later.
   </div>
   <div class="pagination__buttons">
     
+      <a href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/" class="button inline prev">
+        &lt; [<span class="button__text">Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</span>]
+      </a>
     
     
-      <a href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/" class="button inline next">
-         [<span class="button__text">Fix for The Change Password Operation Failed Error on XenApp 6.5</span>] &gt;
+      ::
+    
+    
+      <a href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/" class="button inline next">
+         [<span class="button__text">USB Serial Console Cable on OS X</span>] &gt;
       </a>
     
   </div>

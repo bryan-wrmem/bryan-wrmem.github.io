@@ -187,10 +187,16 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">USB Serial Console Cable on OS X</a>
+          <a href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">Fix for The Change Password Operation Failed Error on XenApp 6.5</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-02-25</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-03-09</time><span class="post-author">bryan</span></div>
 
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/citrix/">citrix</a>&nbsp;
+            
+          </span>
         
 
         
@@ -198,16 +204,122 @@
 
         <div class="post-content">
           
-            <p>Recently picked up a new usb cable for connecting to my network devices and needed a refresher on connecting to the console.</p>
-<p>After installing device drivers (if necessary) and connecting the cable to your mac, open up a terminal and list the contents of your dev directory, filtering for devices with usb in their name.</p>
-<p><code>ls /dev/*usb*</code></p>
-<p>Find the proper tty device and use screen to open a connection on the port. You can specify the speed of 9600 but screen will use that value by default.</p>
+            <p>After running February 2016’s batch of Microsoft security updates, we started receiving calls from end users about errors when attempting to update their passwords through the Citrix web interface.</p>
+<p><img src="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/37d328a97455f2e74dc3fb7016ae8c32_MD5.png" alt="xenapppass01">
+While the error indicates the password change failed, it does in fact work, and users can log out and log back in with the new password.</p>
+<p>Thankfully it didn’t take long for some savvy Citrix support forums users to pinpoint the issue to a recent patch Microsoft released which changes the api behavior for NetUserChangePassword.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">Windows 10 WMI Filter for Group Policy</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-03-08</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/windows/">windows</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.</p>
+<p>By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.</p>
+<p>First we use the command line utility ‘<a href="https://msdn.microsoft.com/en-us/library/bb742610.aspx">wmic</a>‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-03-07</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”</p>
+<p><img src="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png" alt="sf-usernames01"></p>
+<p>After opening a support case, TAC pointed me to the following bug: <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125">cscux39125</a> (cisco login required).</p>
+<p>To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.</p>
+<p>To change your realm configuration go to <strong>System</strong> -&gt; <strong>Integration</strong> -&gt; <strong>Realms</strong></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">Upgrading IOS-XE on a Cisco ISR 4400</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-03-03</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.</p>
+<ul>
+<li>Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.
+<ul>
+<li>To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found <a href="http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp">here</a>.</li>
+<li>To help differentiate the different designations of code, i.e., MD, ED, GD, take a look <a href="https://www.cisco.com/public/library/iosplanner/reldesignation.html">here</a>.</li>
+<li>Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”</li>
+</ul>
+</li>
+</ul>
+<p><img src="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png" alt="ios-xe01">the downloaded image to your USB drive and insert it into the ISR</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">[Read more]</a>
           </div>
         
       </article>
@@ -217,6 +329,10 @@
   <div class="pagination__buttons">
     
     
+    
+      <a href="/posts/page/2/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
     
   </div>
 </div>

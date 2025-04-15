@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Windows 10 WMI Filter for Group Policy :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.
+By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.
+First we use the command line utility ‘wmic‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Windows 10 WMI Filter for Group Policy">
+<meta property="og:description" content="Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.
+By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.
+First we use the command line utility ‘wmic‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)
+" />
+<meta property="og:url" content="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2016-03-08 08:55:15 -0400 -0400" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/contact" >Contact</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">Windows 10 WMI Filter for Group Policy</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2016-03-08</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/windows/">windows</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.</p>
+<p>By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.</p>
+<p>First we use the command line utility ‘<a href="https://msdn.microsoft.com/en-us/library/bb742610.aspx">wmic</a>‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)</p>
+<ul>
+<li><code>wmic os get buildnumber,caption,version</code></li>
+</ul>
+<p><img src="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/68a1c580784148ef7ed05fe94cd520fc_MD5.png" alt="win10gpo03"></p>
+<ul>
+<li>Open <strong>Group Policy Management</strong> and expand <strong>Domains</strong> -&gt; <strong>your Domain</strong> -&gt; <strong>WMI Filters</strong></li>
+<li>Right click <strong>WMI Filters</strong> and select <strong>New</strong></li>
+<li>Enter a name for the filter, I went with the descriptive “Windows 10,” and then click <strong>Add</strong></li>
+<li>Namespace should say <code>root\CIMv2</code> and under query we’ll enter the following <code>select * from Win32_OperatingSystem where Version like &quot;10.%&quot; and ProductType=&quot;1&quot;</code></li>
+</ul>
+<p><img src="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/dcd7f04034a5d424f3efd1a840a55b58_MD5.png" alt="win10gpo01"></p>
+<ul>
+<li>Click <strong>OK</strong> and then <strong>Save</strong></li>
+<li>Now find the policy that you want to apply the filter to and look for the section at the bottom that says <strong>WMI Filtering</strong></li>
+<li>Click the drop down box and select your new Windows 10 WMI Filter</li>
+</ul>
+<p><img src="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/8184bfa9faf7dcbcfa33298a74893a6a_MD5.png" alt="win10gpo02"></p>
+<hr>
+<p>You can validate that the WMI filter worked correctly by running a group policy results report on a Windows 10 PC that would receive the policy.</p>
+<p>Look at the <strong>details</strong> tab of the report and then under WMI Filters</p>
+<p><img src="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/be702799b0498081714cb9482be6737d_MD5.png" alt="win10gpo04"></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/" class="button inline prev">
+        &lt; [<span class="button__text">Fix for The Change Password Operation Failed Error on XenApp 6.5</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/" class="button inline next">
+         [<span class="button__text">Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

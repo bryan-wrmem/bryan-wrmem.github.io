@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Citrix on WRMEM</title>
+    <link>/tags/citrix/</link>
+    <description>Recent content in Citrix on WRMEM</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Mar 2016 08:57:20 -0400</lastBuildDate>
+    <atom:link href="/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix for The Change Password Operation Failed Error on XenApp 6.5</title>
+      <link>/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</link>
+      <pubDate>Wed, 09 Mar 2016 08:57:20 -0400</pubDate>
+      <guid>/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</guid>
+      <description>&lt;p&gt;After running February 2016’s batch of Microsoft security updates, we started receiving calls from end users about errors when attempting to update their passwords through the Citrix web interface.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/37d328a97455f2e74dc3fb7016ae8c32_MD5.png&#34; alt=&#34;xenapppass01&#34;&gt;&#xA;While the error indicates the password change failed, it does in fact work, and users can log out and log back in with the new password.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully it didn’t take long for some savvy Citrix support forums users to pinpoint the issue to a recent patch Microsoft released which changes the api behavior for NetUserChangePassword.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
