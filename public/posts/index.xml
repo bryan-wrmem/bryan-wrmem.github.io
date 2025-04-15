@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on WRMEM</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on WRMEM</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Apr 2025 22:33:11 -0400</lastBuildDate>
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World, Again</title>
+      <link>/posts/2025-04-14-hello-world-again/</link>
+      <pubDate>Mon, 14 Apr 2025 22:33:11 -0400</pubDate>
+      <guid>/posts/2025-04-14-hello-world-again/</guid>
+      <description>&lt;p&gt;Hello World!&lt;/p&gt;&#xA;&lt;p&gt;Testing a new way to publish my blog through obsidian, hugo, and github pages.&lt;/p&gt;&#xA;&lt;p&gt;More good things to come, sooner or later.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2025-04-14-hello-world-again/91adf0f79fd3db90854765eb92d16fd2_MD5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
