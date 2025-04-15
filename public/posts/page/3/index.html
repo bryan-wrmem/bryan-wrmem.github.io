@@ -171,14 +171,14 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">Fix for The Change Password Operation Failed Error on XenApp 6.5</a>
+          <a href="/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/">Set a Budget in AWS to Avoid Costly Overages</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-09</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2018-08-10</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/citrix/">citrix</a>&nbsp;
+            #<a href="/tags/aws/">aws</a>&nbsp;
             
           </span>
         
@@ -188,30 +188,61 @@
 
         <div class="post-content">
           
-            <p>After running February 2016’s batch of Microsoft security updates, we started receiving calls from end users about errors when attempting to update their passwords through the Citrix web interface.</p>
-<p><img src="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/37d328a97455f2e74dc3fb7016ae8c32_MD5.png" alt="xenapppass01">
-While the error indicates the password change failed, it does in fact work, and users can log out and log back in with the new password.</p>
-<p>Thankfully it didn’t take long for some savvy Citrix support forums users to pinpoint the issue to a recent patch Microsoft released which changes the api behavior for NetUserChangePassword.</p>
+            <p>If you’re like me and are experimenting with the AWS free tier it might be a good idea to configure a budget notification to avoid getting caught off guard by any overages.</p>
+<p>Amazon has a great document on how to enable alerts located <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html">here</a>, but here’s a quick guide on how to enable alerts and budget reminders.</p>
+<ul>
+<li>
+<p>First, log in to your AWS account.</p>
+</li>
+<li>
+<p>Click the drop down menu next to your name on the top right hand of the console page and select “<strong>My Billing Dashboard</strong>.”</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">Windows 10 WMI Filter for Group Policy</a>
+          <a href="/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/">Installing Telnet on MAC OS High Sierra with Homebrew</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-08</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2018-07-23</time><span class="post-author">bryan</span></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>I was both sad and excited to see that Apple removed telnet from Mac OS High Sierra, excited because <a href="https://www.ssh.com/ssh/telnet">telnet is a nearly 40 year old protocol that is highly insecure for network management</a> and saddened because I often have to use telnet when at client sites.</p>
+<p>There are a few different methods you can use to bring back telnet, including copying over the binaries from a Sierra install to /usr/local/bin (as seen <a href="https://www.petenetlive.com/KB/Article/0001364">here</a>)  or using a session manager like <a href="https://www.vandyke.com/products/securecrt/">SecureCRT</a>, but since I’ve been using <a href="https://brew.sh/">Homebrew</a> to manage a few other packages for a while now I figured I’d just go ahead and use that.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/">Configuring CIMC on a Cisco UCS C Server</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2018-05-23</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/windows/">windows</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ucs/">ucs</a>&nbsp;
             
           </span>
         
@@ -221,61 +252,32 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.</p>
-<p>By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.</p>
-<p>First we use the command line utility ‘<a href="https://msdn.microsoft.com/en-us/library/bb742610.aspx">wmic</a>‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)</p>
+            <p>Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.</p>
+<ul>
+<li>To configure CIMC, connect your keyboard/monitor and power up the server.</li>
+<li>Press F8 when the Cisco logo appears.</li>
+</ul>
+<p><img src="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png" alt=""></p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</a>
+          <a href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-07</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2018-04-02</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/firepower/">firepower</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”</p>
-<p><img src="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png" alt="sf-usernames01"></p>
-<p>After opening a support case, TAC pointed me to the following bug: <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125">cscux39125</a> (cisco login required).</p>
-<p>To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.</p>
-<p>To change your realm configuration go to <strong>System</strong> -&gt; <strong>Integration</strong> -&gt; <strong>Realms</strong></p>
-          
-        </div>
-
-        
-           <div>
-            <a class="read-more button inline" href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">Upgrading IOS-XE on a Cisco ISR 4400</a>
-        </h2>
-        <div class="post-meta"><time class="post-date">2016-03-03</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
             
             #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
             
@@ -287,37 +289,29 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.</p>
-<ul>
-<li>Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.
-<ul>
-<li>To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found <a href="http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp">here</a>.</li>
-<li>To help differentiate the different designations of code, i.e., MD, ED, GD, take a look <a href="https://www.cisco.com/public/library/iosplanner/reldesignation.html">here</a>.</li>
-<li>Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”</li>
-</ul>
-</li>
-</ul>
-<p><img src="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png" alt="ios-xe01">the downloaded image to your USB drive and insert it into the ISR</p>
+            <p>IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.</p>
+<p>IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.</p>
+<p>Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a <strong>show version</strong> command and look under the <strong>Mode</strong> column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html">here</a>.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</a>
+          <a href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/">Upgrading a Cisco Wireless LAN Controller</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-02</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2018-03-23</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
             
           </span>
         
@@ -327,18 +321,23 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.</p>
+            <p>After being recently tasked to upgrade a Cisco Wireless LAN Controller I figured I’d document the process for future reference.</p>
+<p>You’ll need either a tftp, ftp, or sftp server as well as the code you’re upgrading the WLC to and the FUS upgrade if necessary.</p>
+<p>Some notes on the different requirements:</p>
 <ul>
-<li>In Defense Center, go to System -&gt; Configuration -&gt; HTTPS Certificate</li>
-<li>Click “Generate New CSR”</li>
+<li>Code can be downloaded to the WLC by either TFTP, FTP, or SFTP.</li>
+<li>Configuration can be uploaded from the WLC by either TFTP, FTP, or SFTP.</li>
+<li>Please be aware of the types of access points the version of WLC code supports. Older APs are often unsupported in newer versions of code. For example the WLC i’m upgrading needs to support AIR-LAP1142N-A-K9 access points which are not compatible with release 8.4.X and up, meaning the newest code I could upgrade to is 8.3.140.0. Check the <a href="https://www.cisco.com/c/en/us/td/docs/wireless/compatibility/matrix/compatibility-matrix.html">Cisco Wireless Solutions Software Compatibility Matrix</a> to find out what version of code is supported for your APs.</li>
+<li>It’s also recommended you check the <a href="https://www.cisco.com/c/en/us/support/docs/wireless/wireless-lan-controller-software/200046-tac-recommended-aireos.html">TAC Recommended AireOS Builds</a> to see if the version of code you selected is recommended by TAC or if there may be any bugs you might run into. When in doubt grab the gold star release from Cisco.</li>
+<li>When downloading your WLC software update check to see if there is a Field Upgrade Software (FUS) package available. The FUS contains various system-related component upgrades (bootloaders, field recovery images, etc.). More info about FUS can be found <a href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/release/notes/fus-rn-20.html">here</a>.</li>
 </ul>
-<p><img src="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png" alt="sfcsr01"></p>
+<p>Before upgrading any software be sure to create a back up of your WLC config.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/">[Read more]</a>
           </div>
         
       </article>

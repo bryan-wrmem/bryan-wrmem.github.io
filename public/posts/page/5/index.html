@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Posts :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Posts">
+<meta property="og:description" content="" />
+<meta property="og:url" content="/posts/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="WRMEM" />
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+  
+  <div class="posts">
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/">Zero Downtime ASA Upgrade - CLI</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-04-30</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>So you have <a href="https://wrmem.net/index.php/2016/04/27/configuring-stateful-failover-on-a-cisco-asa-ha-pair/">stateful failover</a> configured on your pair of Cisco ASAs and need to upgrade ASDM or the os? Maybe a <a href="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160210-asa-ike">critical security vulnerability</a> was discovered with the software and you need to upgrade them ASAP. With stateful failover, we can perform a zero downtime upgrade on our ASAs to minimize end user disruption. Below are the steps I used to upgrade a pair of ASA 5525-X’s using the command line interface. You can find Cisco’s documentation for upgrading an Active/Standby Failover Configuration <a href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/admin_swconfig.html#wp1380398">here</a>.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/">Zero Downtime ASA Upgrade - ASDM</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-04-29</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Take a look <a href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa95/asdm75/general/asdm-75-general-config/admin-swconfig.html#ID-2152-0000019f">here</a> for Cisco’s official documentation, which will be the blueprint for our guide.</p>
+<ul>
+<li>First, back up your configuration by going to <strong>Tools</strong> -&gt; <strong>Backup Configurations</strong></li>
+</ul>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/dc5d536676baebfc84ad5c244dd19b7a_MD5.png" alt="asdm-update-01"></p>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/d75de8165a3ecff43a695446227e3ed9_MD5.png" alt="asdm-update-02"></p>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/68ff4955faa7fd4c5f83d30cf91ce8bd_MD5.png" alt="asdm-update-03"></p>
+<ul>
+<li>Download your updated ASDM and ASA software from <a href="https://software.cisco.com/download/navigator.html?i=%21mmd">Cisco.com</a></li>
+<li>Click <strong>Tools</strong> -&gt; <strong>Upgrade Software from Local Computer</strong></li>
+</ul>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/19335c3a94ec2b56f16e09ab62bcacbf_MD5.png" alt="asdm-update-04"></p>
+<ul>
+<li>We’ll update ASDM first, select <strong>ASDM</strong> from the drop down box and click <strong>Browse Local Files</strong>. Navigate to where you downloaded your images and select the new ASDM image then click <strong>Upload Image</strong>.</li>
+</ul>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/46848f366fb696a545bbd3c0d5a880fb_MD5.png" alt="asdm-update-05"></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">Configuring Stateful Failover on a Cisco ASA HA Pair</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-04-27</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>The ASA, Cisco’s Adaptive Security Appliance, has been around for over 15 years and has since become an ubiquitous network security solution, securing networks the world over.</p>
+<p>Because it is such a critical device in our networks, it has become best practice to deploy these security appliances in a resilient and highly available configuration.</p>
+<p>Currently, Cisco supports <strong>Active/Active</strong> as well as <strong>Active/Standby</strong> failover. This article contains a simple example of how to configure <strong>Active/Standby</strong> stateful high availability on a pair of Cisco ASAs, where one unit acts as the primary ASA and a standby unit becomes active once a failover has occurred. When stateful failover is enabled, connection states are continuously passed between the active and standby units keeping session information available to the new active unit. <em>Please note that both ASAs must be running identical hardware and software versions.</em></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">Creating a Subject Line Disclaimer in Exchange 2010</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-04-12</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/exchange/">exchange</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>With ever increasing amounts of spam and spear phishing attacks, many companies today are going out of their way to warn users when an email is received from an external, and potentially unsafe, source. Thankfully the Exchange Management Console makes it fairly straight forward to create transport rules to add disclaimers, re-write subject lines, and even insert html into emails for all types of situations.</p>
+<p>Recently I was asked to add an [EXTERNAL] tag to the subject line of all incoming emails from outside the organization. Below are the steps to create a Hub Transport rule to accomplish such a task.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">GNS3 VM and VMware Workstation 12 Player Could not find the default VM directory</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-03-22</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/lab/">lab</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>While setting up the new GNS3 1.4 Virtual Machine with VMware Workstation 12 Player, I ran into an interesting error that was preventing me from completing the installation.</p>
+<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/6f589d9b912a08598bfcae4022a694e7_MD5.png" alt="gns3-vm01">
+Thankfully the fix is fairly straight forward and requires that we edit the VMware Workstation preferences file.</p>
+<ul>
+<li>Open <strong>preferences.ini</strong> in your text editor of choice
+<ul>
+<li><code>%Appdata%\VMware\preferences.ini</code></li>
+</ul>
+</li>
+<li>Add or edit the following line, changing the path to where your virtual machines are stored
+<ul>
+<li><code>prefvmx.defaultVMPath = &quot;C:\Path\To\My\VMs&quot;</code></li>
+</ul>
+</li>
+<li>And that’s it. Save the ini and restart the GNS3 Setup Wizard.</li>
+</ul>
+<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/ed8802476bd774ae98acca296034565e_MD5.png" alt="gns3-vm02"></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <a href="/posts/page/4/" class="button inline prev">
+        &lt; [<span class="button__text">Newer posts</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/page/6/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

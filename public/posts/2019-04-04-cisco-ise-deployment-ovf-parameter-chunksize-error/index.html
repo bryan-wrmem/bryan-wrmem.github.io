@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Cisco ISE Deployment OVF Parameter chunkSize Error :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.
+Thankfully a VMware kb article walks us through how to fix the issue.
+https://kb.vmware.com/s/article/2148588?lang=en_US
+The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Cisco ISE Deployment OVF Parameter chunkSize Error">
+<meta property="og:description" content="Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.
+Thankfully a VMware kb article walks us through how to fix the issue.
+https://kb.vmware.com/s/article/2148588?lang=en_US
+The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.
+" />
+<meta property="og:url" content="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2019-04-04 10:24:01 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/">Cisco ISE Deployment OVF Parameter chunkSize Error</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2019-04-04</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+      #<a href="/tags/ise/">ise</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.</p>
+<p>Thankfully a VMware kb article walks us through how to fix the issue.</p>
+<p><a href="https://kb.vmware.com/s/article/2148588?lang=en_US">https://kb.vmware.com/s/article/2148588?lang=en_US</a></p>
+<p>The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.</p>
+<p>Windows:</p>
+<p><img src="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/6e94c7ceb7563e9687442edf6845eeab_MD5.png" alt=""></p>
+<p>Linux/Mac:</p>
+<p>tar xvf ISE-2.4.0.357-virtual-Eval.ova</p>
+<p>Depending on the version of ISE you’re deploying there should be a number of vdmk files. On Linux/Mac we can use the cat command to combine these into one disk file. On windows the copy command will accomplish the same thing.</p>
+<p>Windows:</p>
+<p>copy /b ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000000 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000001 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000002 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000003 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000004 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000005 + ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz.000000006 ISE-2.4.0.357-virtual-Eval-disk1.vmdk</p>
+<p>Linux/Mac:</p>
+<p>cat ISE-2.4.0.357-virtual-Eval-disk1.vmdk.* &gt; ISE-2.4.0.357-virtual-Eval-disk1.vmdk</p>
+<p>Next we just have to edit the .ovf file to point to the new disk1 we created. Open the ovf in a text editor and find the chunk size attribute.</p>
+<p>Original value:</p>
+<p>&lt; File ovf:href=&ldquo;ISE-2.4.0.357-virtual-Eval-disk1.vmdk&rdquo; id=&ldquo;file1&rdquo; size=&ldquo;13819990977&rdquo; / &gt;</p>
+<p>chunkSize removed:</p>
+<p>&lt; File chunkSize=&ldquo;2147483648&rdquo; compression=&ldquo;gzip&rdquo; href=&ldquo;ISE-2.4.0.357-virtual-Eval-disk1.vmdk.gz&rdquo; id=&ldquo;file1&rdquo; size=&ldquo;13819990977&rdquo; / &gt;</p>
+<p>Deploy your edited ovf and you should now be able to proceed with the ISE installation error free.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2019-05-07-cisco-ise-admin-password-expired/" class="button inline prev">
+        &lt; [<span class="button__text">Cisco ISE Admin Password Expired</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/" class="button inline next">
+         [<span class="button__text">Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -6,13 +6,48 @@
     <description>Recent content in Tags on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Jul 2016 09:33:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2025 10:03:24 -0400</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cisco</title>
       <link>/tags/cisco/</link>
-      <pubDate>Wed, 13 Jul 2016 09:33:00 -0400</pubDate>
+      <pubDate>Tue, 15 Apr 2025 10:03:24 -0400</pubDate>
       <guid>/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Firepower</title>
+      <link>/tags/firepower/</link>
+      <pubDate>Thu, 16 Mar 2023 10:40:51 -0400</pubDate>
+      <guid>/tags/firepower/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ise</title>
+      <link>/tags/ise/</link>
+      <pubDate>Tue, 15 Oct 2019 10:35:06 -0400</pubDate>
+      <guid>/tags/ise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Fri, 10 Aug 2018 10:05:49 -0400</pubDate>
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ucs</title>
+      <link>/tags/ucs/</link>
+      <pubDate>Wed, 23 May 2018 10:03:52 -0400</pubDate>
+      <guid>/tags/ucs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IOS-XE</title>
+      <link>/tags/ios-xe/</link>
+      <pubDate>Mon, 02 Apr 2018 10:02:29 -0400</pubDate>
+      <guid>/tags/ios-xe/</guid>
       <description></description>
     </item>
     <item>
@@ -48,20 +83,6 @@
       <link>/tags/windows/</link>
       <pubDate>Tue, 08 Mar 2016 08:55:15 -0400</pubDate>
       <guid>/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Firepower</title>
-      <link>/tags/firepower/</link>
-      <pubDate>Mon, 07 Mar 2016 08:53:30 -0400</pubDate>
-      <guid>/tags/firepower/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IOS-XE</title>
-      <link>/tags/ios-xe/</link>
-      <pubDate>Thu, 03 Mar 2016 08:52:04 -0400</pubDate>
-      <guid>/tags/ios-xe/</guid>
       <description></description>
     </item>
   </channel>

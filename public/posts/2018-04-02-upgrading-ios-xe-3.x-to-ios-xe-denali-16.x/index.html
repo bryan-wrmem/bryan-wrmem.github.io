@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Upgrading IOS-XE 3.X to IOS-XE Denali 16.X :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.
+IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.
+Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a show version command and look under the Mode column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found here.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Upgrading IOS-XE 3.X to IOS-XE Denali 16.X">
+<meta property="og:description" content="IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.
+IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.
+Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a show version command and look under the Mode column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found here.
+" />
+<meta property="og:url" content="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2018-04-02 10:02:29 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2018-04-02</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+      #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.</p>
+<p>IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.</p>
+<p>Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a <strong>show version</strong> command and look under the <strong>Mode</strong> column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html">here</a>.</p>
+<p><code>Switch Ports Model              SW Version        SW Image              Mode</code><br>
+<code>------ ----- -----              ----------        ----------            ----</code><br>
+<code>1 56    WS-C3850-48P       03.06.03E         cat3k_caa-universalk9 INSTALL</code></p>
+<p>If you’re looking to free up some space to copy over your new version you can run a <strong>software clean</strong> command to clean up any unused packages.</p>
+<p><code>[1]: % flash: requires 526972 KB of free space, but only 124364 KB is available. Operation aborted.</code>
+<code>[1]: % An internal error was encountered. Operation aborted.</code></p>
+<p><code>3850#software clean</code>
+<code>Preparing clean operation ...</code>
+<code>[1]: Cleaning up unnecessary package files</code>
+<code>[1]: No path specified, will use booted path flash:packages.conf</code>
+<code>[1]: Cleaning flash:</code>
+<code>[1]: Preparing packages list to delete ...</code>
+<code>In use files, will not delete:</code>
+<code>cat3k_caa-base.SPA.03.06.03E.pkg</code>
+<code>cat3k_caa-drivers.SPA.03.06.03E.pkg</code>
+<code>cat3k_caa-infra.SPA.03.06.03E.pkg</code>
+<code>cat3k_caa-iosd-universalk9.SPA.152-2.E3.pkg</code>
+<code>cat3k_caa-platform.SPA.03.06.03E.pkg</code>
+<code>cat3k_caa-wcm.SPA.10.2.131.0.pkg</code>
+<code>packages.conf</code>
+<code>[1]: Files that will be deleted:</code>
+<code>cat3k_caa-base.SPA.03.03.04SE.pkg</code>
+<code>cat3k_caa-base.SPA.03.03.05SE.pkg</code>
+<code>cat3k_caa-drivers.SPA.03.03.04SE.pkg</code>
+<code>cat3k_caa-drivers.SPA.03.03.05SE.pkg</code>
+<code>cat3k_caa-infra.SPA.03.03.04SE.pkg</code>
+<code>cat3k_caa-infra.SPA.03.03.05SE.pkg</code>
+<code>cat3k_caa-iosd-universalk9.SPA.150-1.EZ4.pkg</code>
+<code>cat3k_caa-iosd-universalk9.SPA.150-1.EZ5.pkg</code>
+<code>cat3k_caa-platform.SPA.03.03.04SE.pkg</code>
+<code>cat3k_caa-platform.SPA.03.03.05SE.pkg</code>
+<code>cat3k_caa-universalk9.SPA.03.03.05.SE.150-1.EZ5.bin</code>
+<code>cat3k_caa-universalk9.SPA.03.06.03.E.152-2.E3.bin</code>
+<code>cat3k_caa-wcm.SPA.10.1.140.0.pkg</code>
+<code>cat3k_caa-wcm.SPA.10.1.150.0.pkg</code>
+<code>packages.conf.00-</code>
+<code>packages.conf.01-</code>
+<code>packages.conf.02-</code></p>
+<p><code>[1]: Do you want to proceed with the deletion? [yes/no]: yes</code>
+<code>[1]: Clean up completed</code></p>
+<p>Copy over your new ios version via any support method (usb, tftp, scp, etc.). We’ll use the <strong>software install</strong> set of commands with the <strong>force</strong> and <strong>new</strong> flags since we’re going from 3.X up to 16.X. Once completed type <strong>yes</strong> to initiate your reload. There is some micro code upgrades that may take some time so you’re looking at about 10+ minutes of down time.</p>
+<p><code>3850#software install file flash:cat3k_caa-universalk9.16.03.06.SPA.bin force new</code>
+<code>Preparing install operation ...</code>
+<code>[1]: Starting install operation</code>
+<code>[1]: Expanding bundle usbflash0:cat3k_caa-universalk9.16.03.05b.SPA.bin</code>
+<code>[1]: Copying package files</code>
+<code>[1]: Package files copied</code>
+<code>[1]: Finished expanding bundle usbflash0:cat3k_caa-universalk9.16.03.05b.SPA.bin</code>
+<code>[1]: Verifying and copying expanded package files to flash:</code>
+<code>[1]: Verified and copied expanded package files to flash:</code>
+<code>[1]: Starting compatibility checks</code>
+<code>[1]: Bypassing peer package compatibility checks due to force command option</code>
+<code>[1]: Finished compatibility checks</code>
+<code>[1]: Starting application pre-installation processing</code>
+<code>[1]: Finished application pre-installation processing</code>
+<code>[1]: Old files list:</code>
+<code>Removed cat3k_caa-base.SPA.03.06.03E.pkg</code>
+<code>Removed cat3k_caa-drivers.SPA.03.06.03E.pkg</code>
+<code>Removed cat3k_caa-infra.SPA.03.06.03E.pkg</code>
+<code>Removed cat3k_caa-iosd-universalk9.SPA.152-2.E3.pkg</code>
+<code>Removed cat3k_caa-platform.SPA.03.06.03E.pkg</code>
+<code>Removed cat3k_caa-wcm.SPA.10.2.131.0.pkg</code>
+<code>[1]: New files list:</code>
+<code>Added cat3k_caa-guestshell.16.03.05b.SPA.pkg</code>
+<code>Added cat3k_caa-rpbase.16.03.05b.SPA.pkg</code>
+<code>Added cat3k_caa-rpcore.16.03.05b.SPA.pkg</code>
+<code>Added cat3k_caa-srdriver.16.03.05b.SPA.pkg</code>
+<code>Added cat3k_caa-wcm.16.03.05b.SPA.pkg</code>
+<code>Added cat3k_caa-webui.16.03.05b.SPA.pkg</code>
+<code>[1]: Creating pending provisioning file</code>
+<code>[1]: Finished installing software.  New software will load on reboot.</code>
+<code>[1]: Committing provisioning file</code></p>
+<p><code>[1]: Do you want to proceed with reload? [yes/no]: yes</code>
+<code>[1]: Reloading</code></p>
+<p><code>&lt;Thu Mar 29 18:09:24 2018&gt; Message from sysmgr: Reason Code:[3] Reset Reason:Reset/Reload requested by [stack-manager]. [User requested reload]</code>
+<code>umount: /proc/fs/nfsd: not mounted</code>
+<code>Unmounting ng3k filesystems...</code>
+<code>Unmounted /dev/sda3...</code>
+<code>Warning! - some ng3k filesystems may not have unmounted cleanly...</code>
+<code>Please stand by while rebooting the system...</code>
+<code>Restarting system.</code></p>
+<p><code>Booting...Initializing and Testing RAM ++++@@@@####...################################++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@++@@done.</code>
+<code>Memory Test Pass!</code></p>
+<p><code>Base ethernet MAC Address: bc:67:1c:7e:e4:00</code></p>
+<p><code>Interface GE 0 link down***ERROR: PHY link is down</code>
+<code>Initializing Flash...</code></p>
+<p><code>flashfs[7]: 0 files, 1 directories</code>
+<code>flashfs[7]: 0 orphaned files, 0 orphaned directories</code>
+<code>flashfs[7]: Total bytes: 6784000</code>
+<code>flashfs[7]: Bytes used: 1024</code>
+<code>flashfs[7]: Bytes available: 6782976</code>
+<code>flashfs[7]: flashfs fsck took 1 seconds....done Initializing Flash.</code></p>
+<p><code>Interrupt within 5 seconds to abort boot process.</code></p>
+<h2 id="nova-bundle-image"><code>Interrupt within 5 seconds to abort boot process.</code>
+<code>Getting rest of image</code>
+<code>Reading full image into memory....done</code>
+<code>Reading full base package into memory...: done = 22301472</code>
+<code>Nova Bundle Image</code></h2>
+<p><code>Kernel Address    : 0x6042e384</code>
+<code>Kernel Size       : 0x34e9e1/3467745</code>
+<code>Initramfs Address : 0x6077cd65</code>
+<code>Initramfs Size    : 0x119d5bb/18470331</code>
+<code>Compression Format: mzip</code></p>
+<p><code>Bootable image at @ ram:0x6042e384</code>
+<code>Bootable image segment 0 address range [0x81100000, 0x81b8adc0] is in range [0x80180000, 0x90000000].</code>
+<code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@boot_system: 380</code>
+<code>Loading Linux kernel with entry point 0x816902d0 ...</code>
+<code>Bootloader: Done loading app on core_mask: 0xf</code></p>
+<p><code>Launching Linux Kernel (flags = 0x5)</code></p>
+<p><code>%IOSXEBOOT-5c8e9d6656e9d89a8dedeae457871084-new_cksum: (rp/0): 4</code>
+<code>%IOSXEBOOT-5c8e9d6656e9d89a8dedeae457871084-saved_cksum: (rp/0): 4</code>
+<code>%IOSXEBOOT-Thu-###: (rp/0): Mar 29 18:14:25 Universal 2018 PLEASE DO NOT POWER CYCLE ### BOOT LOADER UPGRADING 4</code>
+<code>%IOSXEBOOT-loader-boot: (rp/0): upgrade successful 4</code></p>
+<p><code>Front-end Microcode IMG MGR: found 4 microcode images for 1 device.</code>
+<code>Image for front-end 0: /tmp/microcode_update/front_end/fe_type_6_0</code>
+<code>Image for front-end 0: /tmp/microcode_update/front_end/fe_type_6_1</code>
+<code>Image for front-end 0: /tmp/microcode_update/front_end/fe_type_6_2</code>
+<code>Image for front-end 0: /tmp/microcode_update/front_end/fe_type_6_3</code></p>
+<p><code>Front-end Microcode IMG MGR: Preparing to program device microcode...</code>
+<code>Front-end Microcode IMG MGR: Preparing to program device[0]...594412 bytes.... Skipped[0].</code>
+<code>Front-end Microcode IMG MGR: Preparing to program device[0]...393342 bytes.</code>
+<code>Front-end Microcode IMG MGR: Programming device 0...rwRrrrrrrw..0%.........................................................................10%........................................................................20%..........................................................................30%........................................................................40%..........................................................................50%........................................................................60%.........................................................................70%..........................................................................80%........................................................................90%..........................................................................100%</code>
+<code>Front-end Microcode IMG MGR: Preparing to program device[0]...25186 bytes.</code>
+<code>Front-end Microcode IMG MGR: Programming device 0...rrrrrrw..0%....10%....20%......30%...40%......50%....60%......70%...80%......90%....100%wRr!</code>
+<code>Front-end Microcode IMG MGR: Microcode programming complete for device 0.</code>
+<code>Front-end Microcode IMG MGR: Preparing to program device[0]...86370 bytes.... Skipped[3].</code>
+<code>Front-end Microcode IMG MGR: Microcode programming complete in 246 seconds</code></p>
+<p><code>Both links down, not waiting for other switches</code>
+<code>Switch number is 1</code></p>
+<pre><code>          Restricted Rights Legend
+</code></pre>
+<p><code>Use, duplication, or disclosure by the Government is</code>
+<code>subject to restrictions as set forth in subparagraph</code>
+<code>(c) of the Commercial Computer Software - Restricted</code>
+<code>Rights clause at FAR sec. 52.227-19 and subparagraph</code>
+<code>(c) (1) (ii) of the Rights in Technical Data and Computer</code>
+<code>Software clause at DFARS sec. 252.227-7013.</code></p>
+<pre><code>       cisco Systems, Inc.
+       170 West Tasman Drive
+       San Jose, California 95134-1706
+</code></pre>
+<p><code>Cisco IOS Software [Denali], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.3.5b, RELEASE SOFTWARE (fc1)</code>
+<code>Technical Support: http://www.cisco.com/techsupport</code>
+<code>Copyright (c) 1986-2017 by Cisco Systems, Inc.</code>
+<code>Compiled Thu 02-Nov-17 11:07 by mcpre</code></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/" class="button inline prev">
+        &lt; [<span class="button__text">Configuring CIMC on a Cisco UCS C Server</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/" class="button inline next">
+         [<span class="button__text">Upgrading a Cisco Wireless LAN Controller</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

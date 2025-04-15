@@ -2,22 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/cisco/</loc>
+    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</loc>
+    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
+  </url><url>
     <loc>/posts/2025-04-14-hello-world-again/</loc>
     <lastmod>2025-04-14T22:33:11-04:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2025-04-14T22:33:11-04:00</lastmod>
+    <loc>/tags/firepower/</loc>
+    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2025-04-14T22:33:11-04:00</lastmod>
+    <loc>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</loc>
+    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
-    <loc>/tags/cisco/</loc>
-    <lastmod>2016-07-13T09:33:00-04:00</lastmod>
+    <loc>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</loc>
+    <lastmod>2020-05-08T10:38:00-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</loc>
+    <lastmod>2019-10-15T10:35:06-04:00</lastmod>
+  </url><url>
+    <loc>/tags/ise/</loc>
+    <lastmod>2019-10-15T10:35:06-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</loc>
+    <lastmod>2019-06-11T10:26:11-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2019-05-07-cisco-ise-admin-password-expired/</loc>
+    <lastmod>2019-05-07T10:24:55-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</loc>
+    <lastmod>2019-04-04T10:24:01-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</loc>
+    <lastmod>2019-02-13T10:22:51-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</loc>
+    <lastmod>2018-09-10T10:07:26-04:00</lastmod>
+  </url><url>
+    <loc>/tags/aws/</loc>
+    <lastmod>2018-08-10T10:05:49-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</loc>
+    <lastmod>2018-08-10T10:05:49-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/</loc>
+    <lastmod>2018-07-23T10:05:01-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</loc>
+    <lastmod>2018-05-23T10:03:52-04:00</lastmod>
+  </url><url>
+    <loc>/tags/ucs/</loc>
+    <lastmod>2018-05-23T10:03:52-04:00</lastmod>
+  </url><url>
+    <loc>/tags/ios-xe/</loc>
+    <lastmod>2018-04-02T10:02:29-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</loc>
+    <lastmod>2018-04-02T10:02:29-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/</loc>
+    <lastmod>2018-03-23T10:01:51-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/</loc>
+    <lastmod>2017-12-07T10:00:38-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/</loc>
+    <lastmod>2017-05-09T09:53:48-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/</loc>
+    <lastmod>2017-04-28T09:46:32-04:00</lastmod>
   </url><url>
     <loc>/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/</loc>
-    <lastmod>2016-07-13T09:33:00-04:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2016-07-13T09:33:00-04:00</lastmod>
   </url><url>
     <loc>/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/</loc>
@@ -65,14 +131,8 @@
     <loc>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</loc>
     <lastmod>2016-03-08T08:55:15-04:00</lastmod>
   </url><url>
-    <loc>/tags/firepower/</loc>
-    <lastmod>2016-03-07T08:53:30-04:00</lastmod>
-  </url><url>
     <loc>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</loc>
     <lastmod>2016-03-07T08:53:30-04:00</lastmod>
-  </url><url>
-    <loc>/tags/ios-xe/</loc>
-    <lastmod>2016-03-03T08:52:04-04:00</lastmod>
   </url><url>
     <loc>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</loc>
     <lastmod>2016-03-03T08:52:04-04:00</lastmod>

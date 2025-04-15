@@ -181,11 +181,17 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/">Using the Built in TFTP Server on OS-X El Capitan</a>
+          <a href="/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/">COBRAS Unable to import voicemail into CUC 11.5 SU3</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-02-28</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2017-12-07</time><span class="post-author">bryan</span></div>
 
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
         
 
         
@@ -193,28 +199,32 @@
 
         <div class="post-content">
           
-            <p>On Windows I love the lightweight and open source <a href="http://tftpd32.jounin.net">TFTPD32</a>, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.</p>
-<p>Luckily there’s a built in tftp daemon that you can use in a pinch.</p>
-<p>By default tftpd uses the following folder:</p>
-<pre tabindex="0"><code>/private/tftpboot
-</code></pre><p>which is hidden in finder, but can be accessed by using “go to folder” or hitting Command+Shift+G and entering /private/tftpboot</p>
+            <p><a href="http://www.ciscounitytools.com/index.html">COBRAS</a> is an excellent utility from Cisco that makes upgrading/migrating Cisco Unity Connection installations a walk in the park, letting one jump from version to version without having to run incremental upgrades (see: <a href="https://www.cisco.com/c/en/us/support/docs/unified-communications/unity-connection/118350-technote-cuc-00.html">https://www.cisco.com/c/en/us/support/docs/unified-communications/unity-connection/118350-technote-cuc-00.html</a>).</p>
+<p>I recently ran into an issue with <a href="http://www.ciscounitytools.com/Applications/General/COBRAS/COBRAS.html">COBRAS</a> failing to import voice mails into a fresh install of Unity Connection 11.5(SU3).</p>
+<p>After opening a TAC case it was discovered that COBRAS cannot connect using IMAP on secure port 7883. To resolve the issue, a zero cost UC Encryption License needs to installed in PLM.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">USB Serial Console Cable on OS X</a>
+          <a href="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/">Configuring SIP Integration Between CUCM and Unity Connection</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-02-25</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2017-05-09</time><span class="post-author">bryan</span></div>
 
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
         
 
         
@@ -222,16 +232,128 @@
 
         <div class="post-content">
           
-            <p>Recently picked up a new usb cable for connecting to my network devices and needed a refresher on connecting to the console.</p>
-<p>After installing device drivers (if necessary) and connecting the cable to your mac, open up a terminal and list the contents of your dev directory, filtering for devices with usb in their name.</p>
-<p><code>ls /dev/*usb*</code></p>
-<p>Find the proper tty device and use screen to open a connection on the port. You can specify the speed of 9600 but screen will use that value by default.</p>
+            <p>Below are the steps to configure SIP integration between CUCM and Unity Connection. This is now the Cisco recommended best practice and replaces the legacy CTI Route Point configuration.</p>
+<h1 id="create-new-sip-trunk-security-profile">Create New SIP Trunk Security Profile</h1>
+<ul>
+<li>In CUCM, navigate to <strong>System</strong> &gt; <strong>Security</strong> &gt; <strong>SIP Trunk Security Profile</strong></li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/d43d97929a64472e31f0782e01c5856f_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add New</strong></li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/067768a05bc4eec644f2d1eb47d62c0b_MD5.png" alt=""></p>
+<ul>
+<li>Enter a Profile Name and Description, check <strong>Accept Out-of-Dialog REFER</strong>, <strong>Accept Unsolicited Notification</strong>, <strong>Accept Replaces Header</strong>. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/4915b5fae9d62fc6d21c1aeeaf59bbb4_MD5.png" alt="">
+Create a SIP Profile</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/">Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual</a>
+        </h2>
+
+        <div class="post-meta"><time class="post-date">2017-04-28</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>I was recently tasked with upgrading Cisco Emergency Responder 8.6 to 10.5. The 8.6 install just so happened to be on a physical IBM MCS server so I thought I’d document the steps of upgrading a physical install of CER 8.6 to a virtual CER 10.5 install, along with the software used to complete the upgrade.</p>
+<ul>
+<li>Log in to <strong>Disaster Recovery System</strong> by selecting it from the drop down box located on the top right of the CER login page and clicking <strong>Go</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/22dfaa3ace743a0f8ef0703cf6f02faf_MD5.png" alt=""></p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">Creating a Bootable ISO from Cisco Non-Bootable Updates</a>
+        </h2>
+
+        <div class="post-meta"><time class="post-date">2016-07-13</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>There’s plenty of great posts out there on how to make bootable CUCM/Collaboration media with paid GUI software such as <a href="http://htluo.blogspot.com/2010/04/how-to-make-non-bootable-iso-image.html">UltraISO</a> or free command line utilities like <a href="http://www.ipcommute.co.uk/technical-articles/17--creating-isolinux-boot-dvds-with-free-software-cucm-uccx-cups.html">cdrtools</a>. Inspired by those bloggers, I wanted to share a method to create bootable media that features the best of both worlds: open source utilities with easy to use interfaces, all for the low low price of free.</p>
+<p>Software you’ll need:</p>
+<p><a href="http://www.7-zip.org/">7-Zip</a> / <a href="http://cdrtfe.sourceforge.net/">cdrtfe</a></p>
+<p>First, find an existing bootable CUCM ISO (a Red Hat or CentOS live cd will do the trick as well) and open it in 7zip.</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/">Troubleshooting TFTP Issues with Cisco Unified Real Time Monitoring Tool - RTMT</a>
+        </h2>
+
+        <div class="post-meta"><time class="post-date">2016-06-28</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>I’ve recently began studying for my CCNA Collaboration exam and to help with my studies I’ve built a small collaboration lab. Nothing too fancy, a 2811 with PVDMs and FXO/FXS cards, 2 3750 PoE switches, and 2 Cisco 7960 VOIP phones. My lab server has a dedicated NIC which connects to the lab network and hosts a domain controller, workstation, and CUCM 11.5 virtual machines.</p>
+<p>All this was working well until I configured the switches to have a separate dedicated voice VLAN. The phones started having issues contacting CUCM and downloading new configuration files or firmware. If I moved the phones back to the same VLAN as CUCM the phones would work properly. Sounded like a TFTP issue to me, and here are the steps I followed to resolve the issue.</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/">[Read more]</a>
           </div>
         
       </article>
@@ -245,6 +367,12 @@
       </a>
     
     
+      ::
+    
+    
+      <a href="/page/5/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
     
   </div>
 </div>

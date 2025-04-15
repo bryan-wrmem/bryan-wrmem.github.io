@@ -171,16 +171,16 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">Configuring Stateful Failover on a Cisco ASA HA Pair</a>
+          <a href="/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/">Cisco ISE Configuring TACACS+ Device Management</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-04-27</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2019-06-11</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
             #<a href="/tags/cisco/">cisco</a>&nbsp;
             
-            #<a href="/tags/asa/">asa</a>&nbsp;
+            #<a href="/tags/ise/">ise</a>&nbsp;
             
           </span>
         
@@ -190,107 +190,32 @@
 
         <div class="post-content">
           
-            <p>The ASA, Cisco’s Adaptive Security Appliance, has been around for over 15 years and has since become an ubiquitous network security solution, securing networks the world over.</p>
-<p>Because it is such a critical device in our networks, it has become best practice to deploy these security appliances in a resilient and highly available configuration.</p>
-<p>Currently, Cisco supports <strong>Active/Active</strong> as well as <strong>Active/Standby</strong> failover. This article contains a simple example of how to configure <strong>Active/Standby</strong> stateful high availability on a pair of Cisco ASAs, where one unit acts as the primary ASA and a standby unit becomes active once a failover has occurred. When stateful failover is enabled, connection states are continuously passed between the active and standby units keeping session information available to the new active unit. <em>Please note that both ASAs must be running identical hardware and software versions.</em></p>
+            <p>As of version 2.0, Cisco ISE now supports TACACS+ for user authentication, command authorization, and accounting (the three A’s in AAA) for network device management.</p>
+<p>I won’t get into the age old debate of TACAS+ vs RADIUS but for many industries, especially those that may be under stricter compliance, governance and regulation; TACACS+ presents certain advantages thanks to per-command authorization and detailed accounting/logging.</p>
+<p>This post will go over the steps to implement TACACS+ based AAA for Cisco devices based on active directory group membership.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">Creating a Subject Line Disclaimer in Exchange 2010</a>
+          <a href="/posts/2019-05-07-cisco-ise-admin-password-expired/">Cisco ISE Admin Password Expired</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-04-12</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/exchange/">exchange</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>With ever increasing amounts of spam and spear phishing attacks, many companies today are going out of their way to warn users when an email is received from an external, and potentially unsafe, source. Thankfully the Exchange Management Console makes it fairly straight forward to create transport rules to add disclaimers, re-write subject lines, and even insert html into emails for all types of situations.</p>
-<p>Recently I was asked to add an [EXTERNAL] tag to the subject line of all incoming emails from outside the organization. Below are the steps to create a Hub Transport rule to accomplish such a task.</p>
-          
-        </div>
-
-        
-           <div>
-            <a class="read-more button inline" href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">GNS3 VM and VMware Workstation 12 Player Could not find the default VM directory</a>
-        </h2>
-        <div class="post-meta"><time class="post-date">2016-03-22</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/lab/">lab</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>While setting up the new GNS3 1.4 Virtual Machine with VMware Workstation 12 Player, I ran into an interesting error that was preventing me from completing the installation.</p>
-<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/6f589d9b912a08598bfcae4022a694e7_MD5.png" alt="gns3-vm01">
-Thankfully the fix is fairly straight forward and requires that we edit the VMware Workstation preferences file.</p>
-<ul>
-<li>Open <strong>preferences.ini</strong> in your text editor of choice
-<ul>
-<li><code>%Appdata%\VMware\preferences.ini</code></li>
-</ul>
-</li>
-<li>Add or edit the following line, changing the path to where your virtual machines are stored
-<ul>
-<li><code>prefvmx.defaultVMPath = &quot;C:\Path\To\My\VMs&quot;</code></li>
-</ul>
-</li>
-<li>And that’s it. Save the ini and restart the GNS3 Setup Wizard.</li>
-</ul>
-<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/ed8802476bd774ae98acca296034565e_MD5.png" alt="gns3-vm02"></p>
-          
-        </div>
-
-        
-           <div>
-            <a class="read-more button inline" href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">Installing a CA Signed Certificate in Cisco Prime Infrastructure 2.2</a>
-        </h2>
-        <div class="post-meta"><time class="post-date">2016-03-20</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2019-05-07</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
             #<a href="/tags/cisco/">cisco</a>&nbsp;
             
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
           </span>
         
 
@@ -299,44 +224,32 @@ Thankfully the fix is fairly straight forward and requires that we edit the VMwa
 
         <div class="post-content">
           
-            <p>After following the Prime Infrastructure upgrade path to 2.2 you’ll need to re-issue CA signed certificates. Unfortunately, this can’t be accomplished from the Web GUI and will need to be done via the CLI.</p>
-<p>Here’s Cisco’s <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/config_server_settings.html#pgfId-1112683">documentation</a> for installing CA-Signed Certificates and the steps I used to import a new certificate from our Active Directory Certificate Services server.</p>
-<ul>
-<li>First you’ll want to SSH to your Prime Infrastructure server as well as create a FTP server on your workstation. See my <a href="https://wrmem.net/index.php/2016/03/16/upgrading-cisco-prime-infrastructure-2-1-to-2-2/">previous blog post</a> for instructions how to do so.</li>
-<li>Generate a new CSR file and answer the information prompts
-<ul>
-<li><code>PIServer/admin# ncs key genkey -newdn -csr CSRFile .csr repository defaultRepo</code></li>
-<li><code>The NCS server is running. Changes will take affect on the next server restart   Enter the domain name of the server: (the fqdn you'll use to access prime from e.g., prime.company.org)   Enter the name of your organizational unit:   Enter the name of your organization:   Enter the name of your city or locality:   Enter the name of your state or province:   Enter the two letter code for your country:   Generating RSA key</code></li>
-</ul>
-</li>
-<li>Copy the CSR to your FTP server
-<ul>
-<li><code>PIServer/admin# copy disk: /defaultRepo/ CSRFile.csr ftp://your.ftp.server</code></li>
-</ul>
-</li>
-<li>Open your CSR in a text editor, copying the text to your clipboard</li>
-</ul>
-<p><img src="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/4bf381a3407858626868f8cc7df7c657_MD5.png" alt="pi-cert01"></p>
+            <p>So you’ve installed ISE, configured your policies, got everything up and running. Life is peachy…until you attempt to log in and receive the following error:</p>
+<p><img src="/posts/2019-05-07-cisco-ise-admin-password-expired/b101477cc9e64dd5d7828db1353f52c3_MD5.png" alt=""></p>
+<p>One little gotcha. Out of the box, the GUI admin account is set to expire after 45 days. So just when you thought everything was up and running smoothly you hit this little stumbling block.</p>
+<p>Thankfully the fix is fairly straight forward, but if you’ve just received the error above you’ll need to do a little CLI intervention.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2019-05-07-cisco-ise-admin-password-expired/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">Upgrading Cisco Prime Infrastructure 2.1 to 2.2</a>
+          <a href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/">Cisco ISE Deployment OVF Parameter chunkSize Error</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-16</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2019-04-04</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
             #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
             
           </span>
         
@@ -346,15 +259,87 @@ Thankfully the fix is fairly straight forward and requires that we edit the VMwa
 
         <div class="post-content">
           
-            <p>At the moment we’re running Cisco Prime Infrastructure 2.1 on a Gen1 physical appliance. We’re looking to take the upgrade path from 2.1 all the way up to 3.1 (currently only 3.0.2 is supported on the Gen1 appliance).</p>
-<p>First stop, 2.2.</p>
-<p>The Gen1 appliance upgrade path isn’t a fun one. It requires that we back up our current application database, wipe our appliance, do a bare-metal install of 2.2, and then restore our application database. Cisco’s documentation for application backup and restore can be found here: <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460">http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460</a></p>
+            <p>Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.</p>
+<p>Thankfully a VMware kb article walks us through how to fix the issue.</p>
+<p><a href="https://kb.vmware.com/s/article/2148588?lang=en_US">https://kb.vmware.com/s/article/2148588?lang=en_US</a></p>
+<p>The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.</p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/">Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2019-02-13</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Ran into some issues recently with Android devices and the Cisco Network Setup Assistant while attempting to provision certificates as part of the BYOD work flow.</p>
+<p>While on-boarding an Android device, the following error occurred:</p>
+<p><img src="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/bcff2c7f9c386bfb9cc43244275e1562_MD5.png" alt=""></p>
+<p>TAC pointed me to this helpful YouTube video that contained the solution.</p>
+<p><a href="https://www.youtube.com/watch?v=z0sRiffVdpg">https://www.youtube.com/watch?v=z0sRiffVdpg</a></p>
+<p>Starting with Android 6, EST is natively used by the device for Certificate Signing Requests. To fix the issue we need to allow the EST authentication request through ISE. This can be accomplished with a new Authorization Policy that matches the EST request and then permits access.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">Configuring Hotspot Guest Access with Cisco ISE</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2018-09-10</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Been toying with the Cisco <a href="https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html">vWLC</a> and <a href="https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html">ISE</a> in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: <a href="https://cisco.app.box.com/v/ISE-Eval">https://cisco.app.box.com/v/ISE-Eval</a></p>
+<p>Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.</p>
+<p>Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: <a href="https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475">https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475</a></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">[Read more]</a>
           </div>
         
       </article>

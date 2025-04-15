@@ -6,14 +6,133 @@
     <description>Recent content on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Apr 2025 22:33:11 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2025 10:03:24 -0400</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting a Mobility Express AP into a CAPWAP AP</title>
+      <link>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</link>
+      <pubDate>Tue, 15 Apr 2025 10:03:24 -0400</pubDate>
+      <guid>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</guid>
+      <description>&lt;p&gt;I was recently installing some Cisco 2802 APs and came across an issue where one of the APs  would grab a DHCP address, be reachable for a minute, and then drop off the network.&lt;/p&gt;&#xA;&lt;p&gt;It turns out the AP having an issue actually had the Mobility Express image installed and needed to be converted to CAPWAP, even though we purchased the APs specifically with the CAPWAP SKU. Here are the troubleshooting steps I went through to convert the AP to CAPWAP.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hello World, Again</title>
       <link>/posts/2025-04-14-hello-world-again/</link>
       <pubDate>Mon, 14 Apr 2025 22:33:11 -0400</pubDate>
       <guid>/posts/2025-04-14-hello-world-again/</guid>
       <description>&lt;p&gt;Hello World!&lt;/p&gt;&#xA;&lt;p&gt;Testing a new way to publish my blog through obsidian, hugo, and github.&lt;/p&gt;&#xA;&lt;p&gt;More good things to come, sooner or later.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2025-04-14-hello-world-again/91adf0f79fd3db90854765eb92d16fd2_MD5.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monitoring a Firepower Upgrade with Tail</title>
+      <link>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</link>
+      <pubDate>Thu, 16 Mar 2023 10:40:51 -0400</pubDate>
+      <guid>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</guid>
+      <description>&lt;p&gt;While Cisco’s Secure Firewall Management Center is a great tool there’s still some missing functionality here and there. Upgrades, for one, is a great example. How do you know when an upgrade has failed? Why did it fail? Where did it fail?&lt;/p&gt;&#xA;&lt;p&gt;Sure the Task pane shows us the progress but truthfully that’s about it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/2e406abae15a03d8d4f2ff096c9cee86_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;So for today, a quick update on how I monitor the progress of a Firepower Threat Defense upgrade through the command line.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Disable SIP Inspection on Firepower through FlexConfig</title>
+      <link>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</link>
+      <pubDate>Fri, 08 May 2020 10:38:00 -0400</pubDate>
+      <guid>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</guid>
+      <description>&lt;p&gt;Occasionally you may come across issues with SIP inspection on an ASA or Firepower, leading to problems with SIP/RTP voip audio. As a troubleshooting step, it’s often helpful to disable SIP inspection for testing.&lt;/p&gt;&#xA;&lt;p&gt;Please read this note from Cisco on disabling SIP inspection to verify you everything in order before doing so:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You would typically disable SIP only if the inspection is causing problems in the network. However, if you disable SIP, you must ensure that your access control policies allow the SIP traffic (UDP/TCP 5060) and any dynamically allocated ports, and that you do not need NAT support for SIP connections. Adjust the access control and NAT policies accordingly through the standard pages, not through FlexConfig.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ISE Synchronization Failed when adding a Secondary Node</title>
+      <link>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</link>
+      <pubDate>Tue, 15 Oct 2019 10:35:06 -0400</pubDate>
+      <guid>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</guid>
+      <description>&lt;p&gt;Ran into an interesting issue the other day setting up a two node ISE deployment. I figured I’d put it up on the blog in case anyone else is pulling out their hair.&lt;/p&gt;&#xA;&lt;p&gt;After adding a secondary node, the deployment nodes status page lists an error saying “synchronization failed.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/ee2658b809a8d03037d607fcc7c3a47f_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I consoled into the ISE node I saw multiple failed logins:&lt;/p&gt;&#xA;&lt;p&gt;Failed to log in 51 time(s)&lt;br&gt;&#xA;Last failed login on Tue Oct 15 11:38:37 2019 from 10.102.10.168&lt;br&gt;&#xA;ISE3615-1/admin#&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ISE Configuring TACACS&#43; Device Management</title>
+      <link>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</link>
+      <pubDate>Tue, 11 Jun 2019 10:26:11 -0400</pubDate>
+      <guid>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</guid>
+      <description>&lt;p&gt;As of version 2.0, Cisco ISE now supports TACACS+ for user authentication, command authorization, and accounting (the three A’s in AAA) for network device management.&lt;/p&gt;&#xA;&lt;p&gt;I won’t get into the age old debate of TACAS+ vs RADIUS but for many industries, especially those that may be under stricter compliance, governance and regulation; TACACS+ presents certain advantages thanks to per-command authorization and detailed accounting/logging.&lt;/p&gt;&#xA;&lt;p&gt;This post will go over the steps to implement TACACS+ based AAA for Cisco devices based on active directory group membership.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ISE Admin Password Expired</title>
+      <link>/posts/2019-05-07-cisco-ise-admin-password-expired/</link>
+      <pubDate>Tue, 07 May 2019 10:24:55 -0400</pubDate>
+      <guid>/posts/2019-05-07-cisco-ise-admin-password-expired/</guid>
+      <description>&lt;p&gt;So you’ve installed ISE, configured your policies, got everything up and running. Life is peachy…until you attempt to log in and receive the following error:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-05-07-cisco-ise-admin-password-expired/b101477cc9e64dd5d7828db1353f52c3_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;One little gotcha. Out of the box, the GUI admin account is set to expire after 45 days. So just when you thought everything was up and running smoothly you hit this little stumbling block.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully the fix is fairly straight forward, but if you’ve just received the error above you’ll need to do a little CLI intervention.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ISE Deployment OVF Parameter chunkSize Error</title>
+      <link>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</link>
+      <pubDate>Thu, 04 Apr 2019 10:24:01 -0400</pubDate>
+      <guid>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</guid>
+      <description>&lt;p&gt;Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully a VMware kb article walks us through how to fix the issue.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://kb.vmware.com/s/article/2148588?lang=en_US&#34;&gt;https://kb.vmware.com/s/article/2148588?lang=en_US&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</title>
+      <link>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</link>
+      <pubDate>Wed, 13 Feb 2019 10:22:51 -0400</pubDate>
+      <guid>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</guid>
+      <description>&lt;p&gt;Ran into some issues recently with Android devices and the Cisco Network Setup Assistant while attempting to provision certificates as part of the BYOD work flow.&lt;/p&gt;&#xA;&lt;p&gt;While on-boarding an Android device, the following error occurred:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/bcff2c7f9c386bfb9cc43244275e1562_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;TAC pointed me to this helpful YouTube video that contained the solution.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=z0sRiffVdpg&#34;&gt;https://www.youtube.com/watch?v=z0sRiffVdpg&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Starting with Android 6, EST is natively used by the device for Certificate Signing Requests. To fix the issue we need to allow the EST authentication request through ISE. This can be accomplished with a new Authorization Policy that matches the EST request and then permits access.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuring Hotspot Guest Access with Cisco ISE</title>
+      <link>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</link>
+      <pubDate>Mon, 10 Sep 2018 10:07:26 -0400</pubDate>
+      <guid>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</guid>
+      <description>&lt;p&gt;Been toying with the Cisco &lt;a href=&#34;https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html&#34;&gt;vWLC&lt;/a&gt; and &lt;a href=&#34;https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html&#34;&gt;ISE&lt;/a&gt; in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: &lt;a href=&#34;https://cisco.app.box.com/v/ISE-Eval&#34;&gt;https://cisco.app.box.com/v/ISE-Eval&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.&lt;/p&gt;&#xA;&lt;p&gt;Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: &lt;a href=&#34;https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475&#34;&gt;https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Set a Budget in AWS to Avoid Costly Overages</title>
+      <link>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</link>
+      <pubDate>Fri, 10 Aug 2018 10:05:49 -0400</pubDate>
+      <guid>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</guid>
+      <description>&lt;p&gt;If you’re like me and are experimenting with the AWS free tier it might be a good idea to configure a budget notification to avoid getting caught off guard by any overages.&lt;/p&gt;&#xA;&lt;p&gt;Amazon has a great document on how to enable alerts located &lt;a href=&#34;https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html&#34;&gt;here&lt;/a&gt;, but here’s a quick guide on how to enable alerts and budget reminders.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First, log in to your AWS account.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Click the drop down menu next to your name on the top right hand of the console page and select “&lt;strong&gt;My Billing Dashboard&lt;/strong&gt;.”&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Telnet on MAC OS High Sierra with Homebrew</title>
+      <link>/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/</link>
+      <pubDate>Mon, 23 Jul 2018 10:05:01 -0400</pubDate>
+      <guid>/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/</guid>
+      <description>&lt;p&gt;I was both sad and excited to see that Apple removed telnet from Mac OS High Sierra, excited because &lt;a href=&#34;https://www.ssh.com/ssh/telnet&#34;&gt;telnet is a nearly 40 year old protocol that is highly insecure for network management&lt;/a&gt; and saddened because I often have to use telnet when at client sites.&lt;/p&gt;&#xA;&lt;p&gt;There are a few different methods you can use to bring back telnet, including copying over the binaries from a Sierra install to /usr/local/bin (as seen &lt;a href=&#34;https://www.petenetlive.com/KB/Article/0001364&#34;&gt;here&lt;/a&gt;)  or using a session manager like &lt;a href=&#34;https://www.vandyke.com/products/securecrt/&#34;&gt;SecureCRT&lt;/a&gt;, but since I’ve been using &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; to manage a few other packages for a while now I figured I’d just go ahead and use that.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuring CIMC on a Cisco UCS C Server</title>
+      <link>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</link>
+      <pubDate>Wed, 23 May 2018 10:03:52 -0400</pubDate>
+      <guid>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</guid>
+      <description>&lt;p&gt;Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To configure CIMC, connect your keyboard/monitor and power up the server.&lt;/li&gt;&#xA;&lt;li&gt;Press F8 when the Cisco logo appears.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</title>
+      <link>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</link>
+      <pubDate>Mon, 02 Apr 2018 10:02:29 -0400</pubDate>
+      <guid>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</guid>
+      <description>&lt;p&gt;IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.&lt;/p&gt;&#xA;&lt;p&gt;IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.&lt;/p&gt;&#xA;&lt;p&gt;Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a &lt;strong&gt;show version&lt;/strong&gt; command and look under the &lt;strong&gt;Mode&lt;/strong&gt; column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading a Cisco Wireless LAN Controller</title>
+      <link>/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/</link>
+      <pubDate>Fri, 23 Mar 2018 10:01:51 -0400</pubDate>
+      <guid>/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/</guid>
+      <description>&lt;p&gt;After being recently tasked to upgrade a Cisco Wireless LAN Controller I figured I’d document the process for future reference.&lt;/p&gt;&#xA;&lt;p&gt;You’ll need either a tftp, ftp, or sftp server as well as the code you’re upgrading the WLC to and the FUS upgrade if necessary.&lt;/p&gt;&#xA;&lt;p&gt;Some notes on the different requirements:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Code can be downloaded to the WLC by either TFTP, FTP, or SFTP.&lt;/li&gt;&#xA;&lt;li&gt;Configuration can be uploaded from the WLC by either TFTP, FTP, or SFTP.&lt;/li&gt;&#xA;&lt;li&gt;Please be aware of the types of access points the version of WLC code supports. Older APs are often unsupported in newer versions of code. For example the WLC i’m upgrading needs to support AIR-LAP1142N-A-K9 access points which are not compatible with release 8.4.X and up, meaning the newest code I could upgrade to is 8.3.140.0. Check the &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/wireless/compatibility/matrix/compatibility-matrix.html&#34;&gt;Cisco Wireless Solutions Software Compatibility Matrix&lt;/a&gt; to find out what version of code is supported for your APs.&lt;/li&gt;&#xA;&lt;li&gt;It’s also recommended you check the &lt;a href=&#34;https://www.cisco.com/c/en/us/support/docs/wireless/wireless-lan-controller-software/200046-tac-recommended-aireos.html&#34;&gt;TAC Recommended AireOS Builds&lt;/a&gt; to see if the version of code you selected is recommended by TAC or if there may be any bugs you might run into. When in doubt grab the gold star release from Cisco.&lt;/li&gt;&#xA;&lt;li&gt;When downloading your WLC software update check to see if there is a Field Upgrade Software (FUS) package available. The FUS contains various system-related component upgrades (bootloaders, field recovery images, etc.). More info about FUS can be found &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/wireless/controller/release/notes/fus-rn-20.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Before upgrading any software be sure to create a back up of your WLC config.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COBRAS Unable to import voicemail into CUC 11.5 SU3</title>
+      <link>/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/</link>
+      <pubDate>Thu, 07 Dec 2017 10:00:38 -0400</pubDate>
+      <guid>/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.ciscounitytools.com/index.html&#34;&gt;COBRAS&lt;/a&gt; is an excellent utility from Cisco that makes upgrading/migrating Cisco Unity Connection installations a walk in the park, letting one jump from version to version without having to run incremental upgrades (see: &lt;a href=&#34;https://www.cisco.com/c/en/us/support/docs/unified-communications/unity-connection/118350-technote-cuc-00.html&#34;&gt;https://www.cisco.com/c/en/us/support/docs/unified-communications/unity-connection/118350-technote-cuc-00.html&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;I recently ran into an issue with &lt;a href=&#34;http://www.ciscounitytools.com/Applications/General/COBRAS/COBRAS.html&#34;&gt;COBRAS&lt;/a&gt; failing to import voice mails into a fresh install of Unity Connection 11.5(SU3).&lt;/p&gt;&#xA;&lt;p&gt;After opening a TAC case it was discovered that COBRAS cannot connect using IMAP on secure port 7883. To resolve the issue, a zero cost UC Encryption License needs to installed in PLM.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuring SIP Integration Between CUCM and Unity Connection</title>
+      <link>/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/</link>
+      <pubDate>Tue, 09 May 2017 09:53:48 -0400</pubDate>
+      <guid>/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/</guid>
+      <description>&lt;p&gt;Below are the steps to configure SIP integration between CUCM and Unity Connection. This is now the Cisco recommended best practice and replaces the legacy CTI Route Point configuration.&lt;/p&gt;&#xA;&lt;h1 id=&#34;create-new-sip-trunk-security-profile&#34;&gt;Create New SIP Trunk Security Profile&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In CUCM, navigate to &lt;strong&gt;System&lt;/strong&gt; &amp;gt; &lt;strong&gt;Security&lt;/strong&gt; &amp;gt; &lt;strong&gt;SIP Trunk Security Profile&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/d43d97929a64472e31f0782e01c5856f_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Click &lt;strong&gt;Add New&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/067768a05bc4eec644f2d1eb47d62c0b_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Enter a Profile Name and Description, check &lt;strong&gt;Accept Out-of-Dialog REFER&lt;/strong&gt;, &lt;strong&gt;Accept Unsolicited Notification&lt;/strong&gt;, &lt;strong&gt;Accept Replaces Header&lt;/strong&gt;. Click &lt;strong&gt;Save&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/4915b5fae9d62fc6d21c1aeeaf59bbb4_MD5.png&#34; alt=&#34;&#34;&gt;&#xA;Create a SIP Profile&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual</title>
+      <link>/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/</link>
+      <pubDate>Fri, 28 Apr 2017 09:46:32 -0400</pubDate>
+      <guid>/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/</guid>
+      <description>&lt;p&gt;I was recently tasked with upgrading Cisco Emergency Responder 8.6 to 10.5. The 8.6 install just so happened to be on a physical IBM MCS server so I thought I’d document the steps of upgrading a physical install of CER 8.6 to a virtual CER 10.5 install, along with the software used to complete the upgrade.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Log in to &lt;strong&gt;Disaster Recovery System&lt;/strong&gt; by selecting it from the drop down box located on the top right of the CER login page and clicking &lt;strong&gt;Go&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/22dfaa3ace743a0f8ef0703cf6f02faf_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Creating a Bootable ISO from Cisco Non-Bootable Updates</title>

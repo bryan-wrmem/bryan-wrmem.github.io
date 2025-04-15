@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Configuring Hotspot Guest Access with Cisco ISE :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Been toying with the Cisco vWLC and ISE in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: https://cisco.app.box.com/v/ISE-Eval
+Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.
+Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Configuring Hotspot Guest Access with Cisco ISE">
+<meta property="og:description" content="Been toying with the Cisco vWLC and ISE in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: https://cisco.app.box.com/v/ISE-Eval
+Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.
+Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475
+" />
+<meta property="og:url" content="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2018-09-10 10:07:26 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">Configuring Hotspot Guest Access with Cisco ISE</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2018-09-10</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+      #<a href="/tags/ise/">ise</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Been toying with the Cisco <a href="https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html">vWLC</a> and <a href="https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html">ISE</a> in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: <a href="https://cisco.app.box.com/v/ISE-Eval">https://cisco.app.box.com/v/ISE-Eval</a></p>
+<p>Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.</p>
+<p>Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: <a href="https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475">https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475</a></p>
+<p>After installing vWLC and ISE, add ISE as a AAA server on the vWLC.</p>
+<ul>
+<li>Log into the vWLC. Click the security tab at the top.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/2478559f9f7402f46fc0147b3a30d885_MD5.png" alt=""></p>
+<ul>
+<li>On the left hand menu click <strong>Authentication</strong> under Radius/AAA.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/44b245eeb58346b202f536f443f7f08a_MD5.png" alt=""></p>
+<ul>
+<li>
+<p>Click the <strong>New</strong> button to add a new AAA server.</p>
+</li>
+<li>
+<p>Enter the IP address of the ISE server, be sure port number is 1812, and that Support for COA is checked. Create a <strong>Shared Secret</strong> and make note of it as ISE will need to be configured with the same secret. Click Apply.</p>
+</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/960777e240154dbff46c61134316b768_MD5.png" alt=""></p>
+<ul>
+<li>Next click <strong>Accounting</strong> from the Security/AAA menu on the left. Hit <strong>New</strong> and enter the required information.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/526ff86b429f1b97ccbb83cd1f764871_MD5.png" alt=""></p>
+<p>Next we will log into ISE and configure the WLC as a network device.</p>
+<ul>
+<li>Go to Work Centers, then Network Resources.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/9730a70a37dcc4572d05cf96d607feb8_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add</strong> and fill out the WLC information. Check <strong>Radius Auth. Settings</strong> and be sure to fill out the Shared Secret we filled out earlier in the WLC.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/48a318f0b33dd52f4fa90bc5b7badaad_MD5.png" alt=""></p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/656d846922f1eef8eab51f1c255482b0_MD5.png" alt=""></p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/864438241e836711f35ca2d284004606_MD5.png" alt=""></p>
+<p>The next step is to configure our Guest WLAN/SSID.</p>
+<ul>
+<li>Log into your WLC and click the <strong>WLANs</strong> tab. Choose <strong>Create New</strong> from the drop down box and click <strong>Go</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/bbd0722a56a22895b1ff5acd514db384_MD5.png" alt=""></p>
+<ul>
+<li>Enter a profile name and SSID.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/7d4cd02ad7c6614444defbe9a57c3289_MD5.png" alt=""></p>
+<ul>
+<li>Select Status <strong>Enabled</strong>, and the correct interface for your guest traffic.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/aa044ce8eb5ece2c3c8eb90f8e94bf28_MD5.png" alt=""></p>
+<ul>
+<li>Next click the <strong>Security</strong> tab.</li>
+<li>Change Layer 2 Security to None, and check <strong>MAC Filtering</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/48cdd12b813de78466685fe11728a6fc_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>AAA Servers</strong>, and change the Authentication and Authorization servers to the ISE server via the drop down boxes.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/a0699df5bb33e98a1fd69f9e2421b64a_MD5.png" alt=""></p>
+<p>Click the <strong>Advanced</strong> tab.</p>
+<p>Check <strong>Allow AAA Override</strong>.</p>
+<p>Under <strong>NAC</strong> change the drop down to I<strong>SE NAC</strong>.</p>
+<p>Uncheck <strong>Flex Connect Local Switching</strong> if enabled.</p>
+<p>Check DHCP/HTTP profiling under <strong>Radius Client Profiling</strong>.</p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/3a74cb36df935ce0bfb70d95852dec8f_MD5.png" alt=""></p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/0149e59eb5c7181543d3f68caae96950_MD5.png" alt=""></p>
+<ul>
+<li>Next we have to create a few ACLs. One for Web Auth Redirect that will allow DNS and traffic to ISE and another ACL for restricting guest access. (As this is just a lab we’re not too concerned with traffic separation but typically the best way to go about separating Guest and production traffic is through an anchor controller in the dmz, see: <a href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-1/Enterprise-Mobility-8-1-Design-Guide/Enterprise_Mobility_8-1_Deployment_Guide/WirelessNetwork_GuestAccessService.html">https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-1/Enterprise-Mobility-8-1-Design-Guide/Enterprise_Mobility_8-1_Deployment_Guide/WirelessNetwork_GuestAccessService.html</a> )</li>
+<li>Click Security, and find Access Control Lists on the left hand menu.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/e6b64590f58b6712208b776b5f8b3ba5_MD5.png" alt=""></p>
+<ul>
+<li>
+<p>Click New, and for the ACL name type <strong>ACL_WEBAUTH_REDIRECT</strong></p>
+</li>
+<li>
+<p>Click <strong>Apply</strong>, then click the ACL name to start editing.</p>
+</li>
+<li>
+<p>Click <strong>Add New Rule</strong>.</p>
+</li>
+<li>
+<p>Create a rule allowing destination DNS (udp/53) from any to any.</p>
+</li>
+<li>
+<p>Create a rule allowing source DNS from any to any.</p>
+</li>
+<li>
+<p>Create a rule allowing tcp from ISE to any.</p>
+</li>
+<li>
+<p>Create a rule allowing tcp from any to ISE.</p>
+</li>
+<li>
+<p><strong>Note</strong>: In production you would want to limit the DNS entries to just your trusted DNS server.</p>
+</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/94a9b838480d0701cfefd92213cb4332_MD5.png" alt=""></p>
+<ul>
+<li>Create a new ACL if you’d like to place any restrictions on your guest network. e.g., blocking access to any private IP space.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/915180ad1a100df73d3c833fe3e3646d_MD5.png" alt=""></p>
+<p>Next we’ll create ISE policies to redirect users who connect to the Guest network to a web portal. Once the AUP has been accepted they will get a new policy applied to them restricting their access to internet only via the ACL we created earlier. We’re going to be using the default hotspot portal but you can design your own portals with custom graphics. Cisco also has an ISE portal builder which has an excellent WYSIWYG editor to make custom portal building a snap. The portal builder requires a Cisco login and can be found here: <a href="https://isepb.cisco.com/#/">https://isepb.cisco.com/#/</a></p>
+<ul>
+<li>Log in to ISE. Go to <strong>Work Centers</strong>, <strong>Guest Access,</strong> <strong>Policy Elements</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/676d17ff36365bd40ba726f7aa2f1411_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Results</strong> and and go to <strong>Authorization Profiles</strong>.</li>
+<li>Click <strong>Add</strong> to create a new profile.</li>
+<li>Give the policy a descriptive name and description.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/a4e1d595a4d364da6ba3c521ff06d6d0_MD5.png" alt=""></p>
+<ul>
+<li>Scroll down a bit in the <strong>Common Tasks</strong> and check <strong>Web Redirection</strong>.</li>
+<li>Select <strong>Hotspot</strong> from the drop down. Enter <strong>ACL_WEBAUTH_REDIRECT</strong> as the ACL and the value will be the Hotspot guest portal (if you’ve uploaded a customer portal you can select it here).</li>
+<li>Click <strong>Submit</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/7cc57eb74d98400578ca78cfc1530032_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add</strong> again, enter a new name and description. This policy will apply the guest restriction ACL we created on the WLC.</li>
+<li>Scroll down into the <strong>Common Tasks</strong> and find <strong>Airespace ACL</strong>, enter the name of the Guest ACL you created earlier. Click <strong>Submit</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/c0f27ed297abe83764cf1508515e75f5_MD5.png" alt=""></p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/7b3d8f3d0fd54c223d595bd63c175baf_MD5.png" alt=""></p>
+<ul>
+<li>Now, go to <strong>Work Centers</strong>, <strong>Guest Access</strong>, <strong>Policy Sets</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/2f3e8abc96f4a4ab1e71892718511a36_MD5.png" alt=""></p>
+<ul>
+<li>Expand the Default policy set by clicking the arrow on the right.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/741cb17b746da4dca3057de1619d4612_MD5.png" alt=""></p>
+<ul>
+<li>Expand the Authentication Policy be clicking the arrow.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/8c86020ca8845874223b9177da8ed8f5_MD5.png" alt=""></p>
+<ul>
+<li>Find <strong>MAB</strong> (MAC Address Bypass) and expand the options menu. Be sure the option for “<strong>If User not found</strong>” is set to <strong>Continue</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/e82744ba108483d7356cdb043012975f_MD5.png" alt=""></p>
+<ul>
+<li>Next we’ll create our new Authorization Polices for the Guest network. Expand <strong>Authorization Policy</strong> and select a space to insert the polices. Locate a rule and click the gear, select insert above or below rule to place the new policies where you’d like them.</li>
+<li>Enter a name for the policy. Select <strong>Wireless_MAB</strong> as the condition, and Guest_Hotspot as the <strong>Profile</strong>.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/d7dd243f1c78b50769a7f7bacc3a8fd0_MD5.png" alt=""></p>
+<ul>
+<li>Add a new profile above the one we just created</li>
+<li>This will be for applying the Guest ACL for the user once going through the portal. Conditions will be <strong>Wireless_MAB</strong>, <strong>IdentityGroup = GuestEndpoints</strong>, and <strong>Guest_Flow</strong>. Result will be the Guest_Access policy we created which applies the ACL we created on the WLC.</li>
+</ul>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/659a1028e7591508e01eb12e6b022210_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+<p>This should be enough configuration to get the Guest Hotspot SSID up and running. Connecting to the new SSID should pop up the AUP, once accepted you should then have access to the internet.</p>
+<p><img src="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/510a245289245d17f4d2c454422226ef_MD5.png" alt=""></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/" class="button inline prev">
+        &lt; [<span class="button__text">Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/" class="button inline next">
+         [<span class="button__text">Set a Budget in AWS to Avoid Costly Overages</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

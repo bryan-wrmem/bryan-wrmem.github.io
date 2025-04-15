@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Upgrading a Cisco Wireless LAN Controller :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="After being recently tasked to upgrade a Cisco Wireless LAN Controller I figured I’d document the process for future reference.
+You’ll need either a tftp, ftp, or sftp server as well as the code you’re upgrading the WLC to and the FUS upgrade if necessary.
+Some notes on the different requirements:
+Code can be downloaded to the WLC by either TFTP, FTP, or SFTP. Configuration can be uploaded from the WLC by either TFTP, FTP, or SFTP. Please be aware of the types of access points the version of WLC code supports. Older APs are often unsupported in newer versions of code. For example the WLC i’m upgrading needs to support AIR-LAP1142N-A-K9 access points which are not compatible with release 8.4.X and up, meaning the newest code I could upgrade to is 8.3.140.0. Check the Cisco Wireless Solutions Software Compatibility Matrix to find out what version of code is supported for your APs. It’s also recommended you check the TAC Recommended AireOS Builds to see if the version of code you selected is recommended by TAC or if there may be any bugs you might run into. When in doubt grab the gold star release from Cisco. When downloading your WLC software update check to see if there is a Field Upgrade Software (FUS) package available. The FUS contains various system-related component upgrades (bootloaders, field recovery images, etc.). More info about FUS can be found here. Before upgrading any software be sure to create a back up of your WLC config.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Upgrading a Cisco Wireless LAN Controller">
+<meta property="og:description" content="After being recently tasked to upgrade a Cisco Wireless LAN Controller I figured I’d document the process for future reference.
+You’ll need either a tftp, ftp, or sftp server as well as the code you’re upgrading the WLC to and the FUS upgrade if necessary.
+Some notes on the different requirements:
+Code can be downloaded to the WLC by either TFTP, FTP, or SFTP. Configuration can be uploaded from the WLC by either TFTP, FTP, or SFTP. Please be aware of the types of access points the version of WLC code supports. Older APs are often unsupported in newer versions of code. For example the WLC i’m upgrading needs to support AIR-LAP1142N-A-K9 access points which are not compatible with release 8.4.X and up, meaning the newest code I could upgrade to is 8.3.140.0. Check the Cisco Wireless Solutions Software Compatibility Matrix to find out what version of code is supported for your APs. It’s also recommended you check the TAC Recommended AireOS Builds to see if the version of code you selected is recommended by TAC or if there may be any bugs you might run into. When in doubt grab the gold star release from Cisco. When downloading your WLC software update check to see if there is a Field Upgrade Software (FUS) package available. The FUS contains various system-related component upgrades (bootloaders, field recovery images, etc.). More info about FUS can be found here. Before upgrading any software be sure to create a back up of your WLC config.
+" />
+<meta property="og:url" content="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2018-03-23 10:01:51 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/">Upgrading a Cisco Wireless LAN Controller</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2018-03-23</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>After being recently tasked to upgrade a Cisco Wireless LAN Controller I figured I’d document the process for future reference.</p>
+<p>You’ll need either a tftp, ftp, or sftp server as well as the code you’re upgrading the WLC to and the FUS upgrade if necessary.</p>
+<p>Some notes on the different requirements:</p>
+<ul>
+<li>Code can be downloaded to the WLC by either TFTP, FTP, or SFTP.</li>
+<li>Configuration can be uploaded from the WLC by either TFTP, FTP, or SFTP.</li>
+<li>Please be aware of the types of access points the version of WLC code supports. Older APs are often unsupported in newer versions of code. For example the WLC i’m upgrading needs to support AIR-LAP1142N-A-K9 access points which are not compatible with release 8.4.X and up, meaning the newest code I could upgrade to is 8.3.140.0. Check the <a href="https://www.cisco.com/c/en/us/td/docs/wireless/compatibility/matrix/compatibility-matrix.html">Cisco Wireless Solutions Software Compatibility Matrix</a> to find out what version of code is supported for your APs.</li>
+<li>It’s also recommended you check the <a href="https://www.cisco.com/c/en/us/support/docs/wireless/wireless-lan-controller-software/200046-tac-recommended-aireos.html">TAC Recommended AireOS Builds</a> to see if the version of code you selected is recommended by TAC or if there may be any bugs you might run into. When in doubt grab the gold star release from Cisco.</li>
+<li>When downloading your WLC software update check to see if there is a Field Upgrade Software (FUS) package available. The FUS contains various system-related component upgrades (bootloaders, field recovery images, etc.). More info about FUS can be found <a href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/release/notes/fus-rn-20.html">here</a>.</li>
+</ul>
+<p>Before upgrading any software be sure to create a back up of your WLC config.</p>
+<p>The following commands configure the upload mode (tftp, ftp, or sftp), what to back up, and where to back it up to.</p>
+<p><code>(wlc1) &gt;transfer upload mode sftp</code>
+<code>(wlc1) &gt;transfer upload username sftp</code>
+<code>(wlc1) &gt;transfer upload password sftp</code>
+<code>(wlc1) &gt;transfer upload datatype config</code>
+<code>(wlc1) &gt;transfer upload filename WLC-BACKUP</code>
+<code>(wlc1) &gt;transfer upload path .</code>
+<code>(wlc1) &gt;transfer upload serverip  X.X.X.X</code>
+<code>(wlc1) &gt;transfer upload start</code></p>
+<p>After making a back up of our configuration we may also want to make note of the APs currently joined to the WLC as well as current version of code running.</p>
+<p><code>(wlc1) &gt;show AP join stats summary all</code></p>
+<p><code>Number of APs.................................... 166</code></p>
+<p><code>(wlc1) &gt;show sysinfo</code></p>
+<p><code>Manufacturer's Name.............................. Cisco Systems Inc.</code>
+<code>Product Name..................................... Cisco Controller</code>
+<code>Product Version.................................. 8.0.140.0</code>
+<code>RTOS Version..................................... 8.0.140.0</code>
+<code>Bootloader Version............................... 8.0.100.0</code>
+<code>Emergency Image Version.......................... 8.0.100.0</code></p>
+<p>Now we can configure the transfer method to download the FUS update to the WLC and then reboot the system to apply the update.</p>
+<p><code>(wlc1) &gt;transfer download mode sftp</code>
+<code>(wlc1) &gt;transfer download datatype code</code>
+<code>(wlc1) &gt;transfer download username sftp</code>
+<code>(wlc1) &gt;transfer download password sftp</code>
+<code>(wlc1) &gt;transfer download serverip X.X.X.X</code>
+<code>(wlc1) &gt;transfer download path .</code>
+<code>(wlc1) &gt;transfer download filename AIR-CT8500-K9-2-0-0-0-FUS.aes</code>
+<code>(wlc1) &gt;transfer download start</code></p>
+<p><code>Mode............................................. SFTP</code>
+<code>Data Type........................................ Code</code>       <br>
+<code>SFTP Server IP................................... X.X.X.X</code>
+<code>SFTP Server Port................................. 22</code>
+<code>SFTP Path........................................ /</code>
+<code>SFTP Filename.................................... AIR-CT8500-K9-2-0-0-0-FUS.aes</code>
+<code>SFTP Username.................................... sftp</code>
+<code>SFTP Password.................................... *********</code></p>
+<p><code>This may take some time.</code>
+<code>Are you sure you want to start? (y/N) y</code></p>
+<p><code>(wlc1) &gt; reset system</code></p>
+<p><code>The system has unsaved changes.</code>
+<code>Would you like to save them now? (y/N) y</code></p>
+<p>The system will reboot and apply the FUS update. Keep in mind that this process may take up to 30 – 60 minutes in total.</p>
+<p>After applying the FUS update we can follow the same procedure to upload the WLC code.</p>
+<p><code>(wlc1) &gt;transfer download mode sftp</code>
+<code>(wlc1) &gt;transfer download datatype code</code>
+<code>(wlc1) &gt;transfer download username sftp</code>
+<code>(wlc1) &gt;transfer download password sftp</code>
+<code>(wlc1) &gt;transfer download serverip X.X.X.X</code>
+<code>(wlc1) &gt;transfer download path .</code>
+<code>(wlc1) &gt;transfer download filename AIR-CT8500-K9-8-3-140-0.aes</code>
+<code>(wlc1) &gt;transfer download start</code></p>
+<p><code>Mode............................................. SFTP</code>
+<code>Data Type........................................ Code</code>       <br>
+<code>SFTP Server IP................................... X.X.X.X</code>
+<code>SFTP Server Port................................. 22</code>
+<code>SFTP Path........................................ /</code>
+<code>SFTP Filename.................................... AIR-CT8500-K9-8-3-140-0.aes</code>
+<code>SFTP Username.................................... sftp</code>
+<code>SFTP Password.................................... *********</code></p>
+<p><code>This may take some time.</code>
+<code>Are you sure you want to start? (y/N) y</code></p>
+<p>Reset the system to apply the update by issuing the reset system command.</p>
+<p>You can also have the APs predownload the new software before rebooting your controller. This is useful in large environments where you want to minimize downtime as there is a maximum amount of controllers that can concurrently connect to the WLC to upgrade their software after rebooting the controller.</p>
+<p><code>(wlc1) &gt; config ap image predownload primary</code></p>
+<p><code>(wlc1) &gt; show ap image all</code></p>
+<p>After rebooting your controller do a show sysinfo to verify your software version.</p>
+<p><code>(wlc1) &gt;show sysinfo</code></p>
+<p><code>Manufacturer's Name.............................. Cisco Systems Inc.</code>
+<code>Product Name..................................... Cisco Controller</code>
+<code>Product Version.................................. 8.3.140.0</code>
+<code>RTOS Version..................................... 8.3.140.0</code>
+<code>Bootloader Version............................... 8.1.133.7</code>
+<code>Emergency Image Version.......................... 8.1.133.7</code></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/" class="button inline prev">
+        &lt; [<span class="button__text">Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/" class="button inline next">
+         [<span class="button__text">COBRAS Unable to import voicemail into CUC 11.5 SU3</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

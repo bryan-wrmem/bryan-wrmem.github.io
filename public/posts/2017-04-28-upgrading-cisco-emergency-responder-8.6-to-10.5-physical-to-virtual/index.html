@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I was recently tasked with upgrading Cisco Emergency Responder 8.6 to 10.5. The 8.6 install just so happened to be on a physical IBM MCS server so I thought I’d document the steps of upgrading a physical install of CER 8.6 to a virtual CER 10.5 install, along with the software used to complete the upgrade.
+Log in to Disaster Recovery System by selecting it from the drop down box located on the top right of the CER login page and clicking Go. " />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual">
+<meta property="og:description" content="I was recently tasked with upgrading Cisco Emergency Responder 8.6 to 10.5. The 8.6 install just so happened to be on a physical IBM MCS server so I thought I’d document the steps of upgrading a physical install of CER 8.6 to a virtual CER 10.5 install, along with the software used to complete the upgrade.
+Log in to Disaster Recovery System by selecting it from the drop down box located on the top right of the CER login page and clicking Go. " />
+<meta property="og:url" content="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2017-04-28 09:46:32 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/">Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2017-04-28</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>I was recently tasked with upgrading Cisco Emergency Responder 8.6 to 10.5. The 8.6 install just so happened to be on a physical IBM MCS server so I thought I’d document the steps of upgrading a physical install of CER 8.6 to a virtual CER 10.5 install, along with the software used to complete the upgrade.</p>
+<ul>
+<li>Log in to <strong>Disaster Recovery System</strong> by selecting it from the drop down box located on the top right of the CER login page and clicking <strong>Go</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/22dfaa3ace743a0f8ef0703cf6f02faf_MD5.png" alt=""></p>
+<ul>
+<li>Select the <strong>Backup Menu</strong> and then navigate to <strong>Backup Device</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/43862e08b0d9e618fea1839da98dfc12_MD5.png" alt=""></p>
+<p>DRS uses SFTP to securely transport the backup records. If you have a SFTP server already setup in your environment you can use that to create a manual up-to-date back up. For this upgrade, a SFTP server was unavailable so I had to use my laptop as the back up device. The software I used to accomplish this task was <a href="http://www.freesshd.com/?ctt=overview">freeSSHd</a>. These next steps are an overview on how to configure freeSSHd as a backup device for DRS.</p>
+<ul>
+<li>Open freeSSHd and click the <strong>Users</strong> tab and then click <strong>Add</strong> to configure a backup user.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/28a5a90aebed457f576eac36c0e69022_MD5.png" alt=""></p>
+<ul>
+<li>Click the SFTP tab and set the SFTP home path, the directory where the backup files will be stored.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/b19f02853c2a50b1c2acfd4f295938cc_MD5.png" alt="">
+Now that freeSSHd is configured we can go back to DRS and configure the Backup Device.</p>
+<ul>
+<li>Give the Backup device a name, IP, path, and the username and password you configured in freeSSHd.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/6226675a66c3fa3980c495e3bd7ff1e7_MD5.png" alt=""></p>
+<ul>
+<li>Once the backup device is configured click the <strong>Backup</strong> menu and select <strong>Manual Backup</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/249a85ee3926c319b796d1b6eec9f1bd_MD5.png" alt=""></p>
+<ul>
+<li>Select the device you configured and click CER to back up all registered CER components.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/9d5ca7475ce1abd4fd7944a8f546b37a_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Start Backup</strong>, if everything is configured successfully you should see the progress bar advance and a number of tar archives will now be in your SFTP directory.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/6dff126a5a24cc4735172949de7b27e4_MD5.png" alt=""></p>
+<p>With a backup of the existing physical 8.6 install in place, we can now migrate to a virtual install of CER 8.6. The vmware ova and install media for CER 8.6 are unfortunately not on the Cisco downloads page. However, if you open a TAC case for assistance with a P2V migration, Cisco will make the download available to you.</p>
+<p>After you import the 8.6 ova you may also want to adjust the virtual machine properties so that CER 10.5 will be supported without issues. Increasing the memory to 4 GB, increasing the CPU resources, etc.</p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/c9a8f4d3a3eb6ce498316eefcd457d68_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/a651c6e1c6b430251d318fcdabcb7004_MD5.png" alt="">
+Follow the on screen instructions to complete the basic CER install (if you want re-IP CER, now would be the time to do that, or if you want to keep the same IP address please be sure that the virtual CER is on an isolated network). Once completed head to the web interface and select <strong>Disaster Recovery System</strong>.</p>
+<ul>
+<li>Create your backup device on the by going to <strong>Backup</strong> &gt; <strong>Backup Device</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/43862e08b0d9e618fea1839da98dfc12_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/6226675a66c3fa3980c495e3bd7ff1e7_MD5.png" alt=""></p>
+<ul>
+<li>Go to the <strong>Restore</strong> menu and select <strong>Restore Wizard</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/900ae312eefbffaf3f8a2c2bdfee72c3_MD5.png" alt=""></p>
+<ul>
+<li>Select your <strong>Backup Device</strong> and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/7e9573b7f470eb8a4047437cf937cd71_MD5.png" alt=""></p>
+<ul>
+<li>Select your <strong>Backup Archive</strong> and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/d8bd1f24f8635bbe0399edd49a657c75_MD5.png" alt=""></p>
+<ul>
+<li>Select the features you’d like to restore and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/dd6664155ca1c2cbd29a57f95d83f351_MD5.png" alt=""></p>
+<ul>
+<li>
+<p>Select <strong>File integrity check</strong> and the servers to be restored then click <strong>Restore</strong>.</p>
+</li>
+<li>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/b5ef3e1b726b8d5d539e8c45d6f70a21_MD5.png" alt=""></p>
+</li>
+<li>
+<p>Wait for the restore process to finish. Once completed you will need to reboot the virtual machine by SSH’ing into the server and issuing the <strong>utils system restart</strong> command.</p>
+</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/18888b09b34ccfd15aed6d3a2578e61f_MD5.png" alt=""></p>
+<ul>
+<li>Next we can begin the upgrade process. Select <strong>Cisco Unified OS Administration</strong> from the navigation drop down menu and click Go. Select the <strong>Software Upgrades</strong> menu and click <strong>Install/Upgrade</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/4d8136b2bf2d62599106faea8b4499f8_MD5.png" alt=""></p>
+<ul>
+<li>First we need to install ciscocm.cer_refresh_upgrade_v1.1.cop.sgn, a Cisco Options Package that is necessary to upgrade from 8.6 to 10.5. The file can be downloaded from Cisco and will need to be placed in your SFTP directory.</li>
+<li>Select <strong>Remote Filesystem</strong> as the software source.</li>
+<li>Configure the <strong>Software Location</strong> to point to your PC running freeSSHd then click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/2c8d6e2c200a50a0df92e66c0613a7b4_MD5.png" alt=""></p>
+<ul>
+<li>Under <strong>Software Location</strong> select ciscocm.cer_refresh_upgrade_v1.1.cop.sgn and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/30ec5e538e3723e8699d4eeb83186e71_MD5.png" alt=""></p>
+<ul>
+<li>You should then see the install progress.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/a71041d362f885c88bf3726170ac6703_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/216e85a2e9c8db8bf7d524621ca8246a_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/91ec38e31f48f7466c8251504d93b19a_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/657c3fa5105d3cbe78718285282dc974_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/e11a1988538e2804f1adbc19e49fa059_MD5.png" alt=""></p>
+<ul>
+<li>Reboot the system.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/83b522b58e529d046f57d28695d413e6_MD5.png" alt=""></p>
+<ul>
+<li>Next, mount the 10.5 install media on the virtual machine. Select <strong>Connected</strong> and <strong>Connected at power on</strong>.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/22f71cb5785b257f36ef0a3243d062db_MD5.png" alt=""></p>
+<ul>
+<li>Select <strong>Cisco Unified OS Administration</strong> from the navigation drop down menu and click <strong>Go</strong>. Select the <strong>Software Upgrades</strong> menu and click <strong>Install/Upgrade</strong>.</li>
+<li>Select <strong>DVD/CD</strong> as the software source and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/04e92e8c10459bfc90ef7b2a81004c47_MD5.png" alt=""></p>
+<ul>
+<li>Be sure the correct software version is displayed and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/7da72a4340adfb76342502afffe7ff9c_MD5.png" alt=""></p>
+<ul>
+<li>Select your <strong>Switch</strong> options and click next.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/7ca9d16eb23860edab46eda3ac0a460e_MD5.png" alt=""></p>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/089ebd067990fab201db5040e1bf1d5a_MD5.png" alt=""></p>
+<ul>
+<li>Follow the upgrade process on screen, when the system reboots you can view the install progress from the vmware console.</li>
+</ul>
+<p><img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/6507e301f6217a537656be21a6393d53_MD5.png" alt="">
+<img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/c3a1261e08238549ff8efc602c92f1ba_MD5.png" alt="">
+<img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/607009005ca01e15d6e189d1a2a95def_MD5.png" alt="">
+<img src="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/aff9812ac893b08a93d85a059d3831e0_MD5.png" alt=""></p>
+<p>And that’s it. Once completed you should now have a fully upgraded version of CER 10.5, complete with migrated data from the old physical installation.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/" class="button inline prev">
+        &lt; [<span class="button__text">Configuring SIP Integration Between CUCM and Unity Connection</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/" class="button inline next">
+         [<span class="button__text">Creating a Bootable ISO from Cisco Non-Bootable Updates</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

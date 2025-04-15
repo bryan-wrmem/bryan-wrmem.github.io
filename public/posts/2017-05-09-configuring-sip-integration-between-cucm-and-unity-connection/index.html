@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Configuring SIP Integration Between CUCM and Unity Connection :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Below are the steps to configure SIP integration between CUCM and Unity Connection. This is now the Cisco recommended best practice and replaces the legacy CTI Route Point configuration.
+Create New SIP Trunk Security Profile In CUCM, navigate to System &gt; Security &gt; SIP Trunk Security Profile Click Add New Enter a Profile Name and Description, check Accept Out-of-Dialog REFER, Accept Unsolicited Notification, Accept Replaces Header. Click Save. Create a SIP Profile
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Configuring SIP Integration Between CUCM and Unity Connection">
+<meta property="og:description" content="Below are the steps to configure SIP integration between CUCM and Unity Connection. This is now the Cisco recommended best practice and replaces the legacy CTI Route Point configuration.
+Create New SIP Trunk Security Profile In CUCM, navigate to System &gt; Security &gt; SIP Trunk Security Profile Click Add New Enter a Profile Name and Description, check Accept Out-of-Dialog REFER, Accept Unsolicited Notification, Accept Replaces Header. Click Save. Create a SIP Profile
+" />
+<meta property="og:url" content="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2017-05-09 09:53:48 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/">Configuring SIP Integration Between CUCM and Unity Connection</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2017-05-09</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Below are the steps to configure SIP integration between CUCM and Unity Connection. This is now the Cisco recommended best practice and replaces the legacy CTI Route Point configuration.</p>
+<h1 id="create-new-sip-trunk-security-profile">Create New SIP Trunk Security Profile<a href="#create-new-sip-trunk-security-profile" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<ul>
+<li>In CUCM, navigate to <strong>System</strong> &gt; <strong>Security</strong> &gt; <strong>SIP Trunk Security Profile</strong></li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/d43d97929a64472e31f0782e01c5856f_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add New</strong></li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/067768a05bc4eec644f2d1eb47d62c0b_MD5.png" alt=""></p>
+<ul>
+<li>Enter a Profile Name and Description, check <strong>Accept Out-of-Dialog REFER</strong>, <strong>Accept Unsolicited Notification</strong>, <strong>Accept Replaces Header</strong>. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/4915b5fae9d62fc6d21c1aeeaf59bbb4_MD5.png" alt="">
+Create a SIP Profile</p>
+<ul>
+<li>In CUCM, navigate to <strong>Device</strong> &gt; <strong>Device Settings</strong> &gt; <strong>SIP Profile</strong></li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/8fd3e74d3ed13aae4644c76627bedc4e_MD5.png" alt=""></p>
+<ul>
+<li>To right of <strong>Standard SIP Profile</strong> click <strong>Copy</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/9ec4e209a3e3fb70ea2b49f2f4acdb1d_MD5.png" alt=""></p>
+<ul>
+<li>Enter a Name and Description for the SIP Profile. I also like to enable <strong>SIP OPTIONS Ping</strong>, this will let you know if the SIP Trunk has been established, and for how long it has been up, on the <strong>Find and List Trunks</strong> page. Click <strong>Save</strong> when completed.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/f45b347f28142d2d14f0bb1996304f96_MD5.png" alt="">
+<img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/72e3a173656ce98c06b96031cebe8062_MD5.png" alt=""></p>
+<p>Create SIP Trunk</p>
+<ul>
+<li>In CUCM, navigate to <strong>Device</strong> &gt; <strong>Trunk</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/e1ab5292c5b3e78feaafde81ab9b3cb0_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add New</strong>, select <strong>SIP Trunk</strong> and <strong>SIP</strong> from the drop down menus and click <strong>Next</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/eb3d80b0596503062d88743e1c5318df_MD5.png" alt=""></p>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/adab109b5524a31f18a91c48e2b4a95e_MD5.png" alt=""></p>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/97fbcefe78531528acbcde9573c6e246_MD5.png" alt=""></p>
+<ul>
+<li>Enter a <strong>Device Name</strong> and <strong>Description</strong>. Select the proper <strong>Device Pool</strong> for the Trunk. Check R<strong>un On All Active Unified CM Nodes</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/77a2770a6af3280fc627cbbc7bf9d0a5_MD5.png" alt=""></p>
+<ul>
+<li>Under <strong>Inbound Calls</strong> select the CSS for inbound CUXN if you have one and check <strong>Redirecting Diversion Header Delivery – Inbound</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/74386a3b2f4ba39e94b69473d41750ee_MD5.png" alt=""></p>
+<ul>
+<li>Under <strong>Outbound Calls</strong>, check <strong>Redirecting Diversion Header Delivery – Outbound</strong></li>
+<li>Be sure to set a <strong>Rerouting Calling Search Space</strong> to ensure the calls can be transferred from Unity back to CUCM.</li>
+<li>Under <strong>SIP Information</strong> enter the <strong>Destination Address</strong> of the Unity Connection Publisher. This can be an IP address or DNS name. Change the <strong>SIP Trunk Security Profile</strong> to the new profile we made earlier. Change the <strong>SIP Profile</strong> to the profile we made earlier. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/c0e0a3a32f2c25b896abc1b89fe8b45b_MD5.png" alt=""></p>
+<p>Create Route Group</p>
+<ul>
+<li>In CUCM, navigate to <strong>Call Routing</strong> &gt; <strong>Route/Hunt</strong> &gt; <strong>Route Group</strong>. Click <strong>Add New</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/836655dd303505d57c2502d3d44fbc5e_MD5.png" alt=""></p>
+<ul>
+<li>Enter a name for the <strong>Route Group</strong>, change <strong>Distribution Algorithm</strong> to <strong>Top Down</strong>. Find the newly created SIP trunk under Find Devices and click <strong>Add to Route Group</strong>. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/b224e5790454be82ae1370fdae8e3a80_MD5.png" alt="">
+Create Route List</p>
+<ul>
+<li>In CUCM, navigate to <strong>Call Routing</strong> &gt; <strong>Route/Hunt</strong> &gt; <strong>Route List</strong>. Click <strong>Add New</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/749732490eb98f925fc06a33a892d783_MD5.png" alt=""></p>
+<ul>
+<li>Enter a name for the <strong>Route List</strong> and click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/7bfa3720cf9c21d30801091ebd15c44c_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Add Route Group</strong>. Select the previously configured Route Group from the drop down menu and click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/2e89ec0a91a2439742cac281225605e1_MD5.png" alt="">
+<img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/5b04992160a055aec39976a27e71c0a5_MD5.png" alt=""></p>
+<ul>
+<li>Confirm that <strong>Enable This Route List</strong> and <strong>Run On All Active Unified CM Nodes</strong> are checked and that the correct Route List is displayed under <strong>Route List Details</strong>. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/83887fd2274afdef015c229775d3de37_MD5.png" alt="">
+Create Route Pattern</p>
+<ul>
+<li>In CUCM, navigate to <strong>Call Routin</strong>g &gt; <strong>Route/Hunt</strong> &gt; <strong>Route Pattern</strong>. Click <strong>Add New</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/c6b46be3d0943e7c0a1b1906ebb9853d_MD5.png" alt=""></p>
+<ul>
+<li>Enter the voicemail pilot number you’d like to use under <strong>Route Pattern</strong>. Select the name of the Route List we configured earlier under <strong>Gateway/Route List</strong>. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/7f124d02444605a1ca5478ee876815ba_MD5.png" alt="">
+Create Voice Mail Pilot</p>
+<ul>
+<li>In CUCM, navigate to <strong>Advanced Features</strong> &gt; <strong>Voice Mail</strong> &gt; <strong>Voice Mail Pilot</strong>. Click <strong>Add New</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/b8c5a9e95be7e3d326af8804da05d5aa_MD5.png" alt=""></p>
+<ul>
+<li>Enter the <strong>Voice Mail Pilot</strong> number, this should match the Route Pattern we created earlier. Enter the <strong>Calling Search Space</strong> and <strong>Description</strong>, check <strong>Make this default…</strong> and click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/d853f5cb3a9b021d976b5f6a389ef28f_MD5.png" alt="">
+Create Voice Mail Profile</p>
+<ul>
+<li>In CUCM, navigate to <strong>Advanced Features</strong> &gt; <strong>Voice Mail</strong> &gt; <strong>Voice Mail Profile</strong>. Click <strong>Add New</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/702649d9d5a52669406a8fdc3174fb9b_MD5.png" alt=""></p>
+<ul>
+<li>Enter a <strong>Voice Mail Profile Name</strong> and <strong>Description</strong>. Select the Voice Mail Pilot configured earlier. Check <strong>Make this the default…</strong> if you want this profile to be the system default. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/3487f5c1fdcdd4578dadb3712f48f42e_MD5.png" alt=""></p>
+<p>Configure Unity Connection</p>
+<ul>
+<li>In CUC, navigate to <strong>Telephony Integration</strong> and then click <strong>Phone System</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/f752af98f7be9a53451c77321f6f6a4d_MD5.png" alt=""></p>
+<ul>
+<li>Click the default phone system and make any changes you’d like such as the <strong>Phone System</strong> <strong>Name</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/b54dbda4eb806a1153a8b3b766b0799e_MD5.png" alt=""></p>
+<ul>
+<li>At the top right of the Phone System Basics page look for <strong>Related Links</strong>. Select <strong>Add Port Group</strong> and click <strong>Go</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/a4a5ce411e82c0cc0821b0ae248a9fe3_MD5.png" alt=""></p>
+<ul>
+<li>Under <strong>Create From</strong>, change the <strong>Port Group Type</strong> to <strong>SIP</strong> from the drop down box. Give the Port Group a Display name. Under <strong>Primary Server</strong> settings enter the IP address of the CUCM server. Click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/70a3080ee5c31f6e66cf2d9a53bef76f_MD5.png" alt=""></p>
+<ul>
+<li>Under <strong>Related Links</strong> on the <strong>Port Group Basics</strong> page, select <strong>Add Ports</strong> and click <strong>Go</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/39c4956690c3b4743752b40c553eefec_MD5.png" alt=""></p>
+<ul>
+<li>Enter the number of <strong>Ports</strong> and click <strong>Save</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/f02edd33373d6f974aff72b8481b2fcb_MD5.png" alt=""></p>
+<ul>
+<li>Navigate to the <strong>Port Group Basics</strong> by going to <strong>Telephony Integrations</strong> &gt; <strong>Port Group</strong> &gt; and click the newly created port group.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/87743038d0eea79b95287f84e1617642_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Edit</strong> and select <strong>Servers</strong>.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/1b3e7c110e21763afb3c38ecd9d4c69c_MD5.png" alt=""></p>
+<ul>
+<li>If you need to add secondary CUCM servers enter them under SIP servers. Follow the same steps to add additional TFTP servers.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/0afdccf691ebd92ba111b012953371f1_MD5.png" alt=""></p>
+<ul>
+<li>Click <strong>Edit</strong> &gt; <strong>Port Group Basics</strong>. Click <strong>Reset</strong> to reset the Port Group.</li>
+</ul>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/03eff76ddb6c0a3c0c66c8672ef64a1e_MD5.png" alt=""></p>
+<h1 id="test-and-verify">Test and Verify<a href="#test-and-verify" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>This should be enough to configure basic SIP integration between CUCM and CUC. In CUCM you can navigate to Devices &gt; Trunk and verify that the SIP trunk has been established. You can then test by dialing the voice mail pilot number and seeing if you hit Unity Connection.</p>
+<p><img src="/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/a1d13810f05e05bb504d398e9c59b98f_MD5.png" alt=""></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/" class="button inline prev">
+        &lt; [<span class="button__text">COBRAS Unable to import voicemail into CUC 11.5 SU3</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/" class="button inline next">
+         [<span class="button__text">Upgrading Cisco Emergency Responder 8.6 to 10.5 - Physical to Virtual</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

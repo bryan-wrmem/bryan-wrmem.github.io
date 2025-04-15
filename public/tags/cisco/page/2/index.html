@@ -172,14 +172,16 @@
     
       <article class="post on-list">
         <h1 class="post-title">
-          <a href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">Installing a CA Signed Certificate in Cisco Prime Infrastructure 2.2</a>
+          <a href="/posts/2019-05-07-cisco-ise-admin-password-expired/">Cisco ISE Admin Password Expired</a>
         </h1>
-        <div class="post-meta"><time class="post-date">2016-03-20</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2019-05-07</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
             #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
             
           </span>
         
@@ -189,44 +191,32 @@
 
         <div class="post-content">
           
-            <p>After following the Prime Infrastructure upgrade path to 2.2 you’ll need to re-issue CA signed certificates. Unfortunately, this can’t be accomplished from the Web GUI and will need to be done via the CLI.</p>
-<p>Here’s Cisco’s <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/config_server_settings.html#pgfId-1112683">documentation</a> for installing CA-Signed Certificates and the steps I used to import a new certificate from our Active Directory Certificate Services server.</p>
-<ul>
-<li>First you’ll want to SSH to your Prime Infrastructure server as well as create a FTP server on your workstation. See my <a href="https://wrmem.net/index.php/2016/03/16/upgrading-cisco-prime-infrastructure-2-1-to-2-2/">previous blog post</a> for instructions how to do so.</li>
-<li>Generate a new CSR file and answer the information prompts
-<ul>
-<li><code>PIServer/admin# ncs key genkey -newdn -csr CSRFile .csr repository defaultRepo</code></li>
-<li><code>The NCS server is running. Changes will take affect on the next server restart   Enter the domain name of the server: (the fqdn you'll use to access prime from e.g., prime.company.org)   Enter the name of your organizational unit:   Enter the name of your organization:   Enter the name of your city or locality:   Enter the name of your state or province:   Enter the two letter code for your country:   Generating RSA key</code></li>
-</ul>
-</li>
-<li>Copy the CSR to your FTP server
-<ul>
-<li><code>PIServer/admin# copy disk: /defaultRepo/ CSRFile.csr ftp://your.ftp.server</code></li>
-</ul>
-</li>
-<li>Open your CSR in a text editor, copying the text to your clipboard</li>
-</ul>
-<p><img src="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/4bf381a3407858626868f8cc7df7c657_MD5.png" alt="pi-cert01"></p>
+            <p>So you’ve installed ISE, configured your policies, got everything up and running. Life is peachy…until you attempt to log in and receive the following error:</p>
+<p><img src="/posts/2019-05-07-cisco-ise-admin-password-expired/b101477cc9e64dd5d7828db1353f52c3_MD5.png" alt=""></p>
+<p>One little gotcha. Out of the box, the GUI admin account is set to expire after 45 days. So just when you thought everything was up and running smoothly you hit this little stumbling block.</p>
+<p>Thankfully the fix is fairly straight forward, but if you’ve just received the error above you’ll need to do a little CLI intervention.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2019-05-07-cisco-ise-admin-password-expired/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h1 class="post-title">
-          <a href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">Upgrading Cisco Prime Infrastructure 2.1 to 2.2</a>
+          <a href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/">Cisco ISE Deployment OVF Parameter chunkSize Error</a>
         </h1>
-        <div class="post-meta"><time class="post-date">2016-03-16</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2019-04-04</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
             #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
             
           </span>
         
@@ -236,15 +226,124 @@
 
         <div class="post-content">
           
-            <p>At the moment we’re running Cisco Prime Infrastructure 2.1 on a Gen1 physical appliance. We’re looking to take the upgrade path from 2.1 all the way up to 3.1 (currently only 3.0.2 is supported on the Gen1 appliance).</p>
-<p>First stop, 2.2.</p>
-<p>The Gen1 appliance upgrade path isn’t a fun one. It requires that we back up our current application database, wipe our appliance, do a bare-metal install of 2.2, and then restore our application database. Cisco’s documentation for application backup and restore can be found here: <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460">http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460</a></p>
+            <p>Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.</p>
+<p>Thankfully a VMware kb article walks us through how to fix the issue.</p>
+<p><a href="https://kb.vmware.com/s/article/2148588?lang=en_US">https://kb.vmware.com/s/article/2148588?lang=en_US</a></p>
+<p>The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/">Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2019-02-13</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Ran into some issues recently with Android devices and the Cisco Network Setup Assistant while attempting to provision certificates as part of the BYOD work flow.</p>
+<p>While on-boarding an Android device, the following error occurred:</p>
+<p><img src="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/bcff2c7f9c386bfb9cc43244275e1562_MD5.png" alt=""></p>
+<p>TAC pointed me to this helpful YouTube video that contained the solution.</p>
+<p><a href="https://www.youtube.com/watch?v=z0sRiffVdpg">https://www.youtube.com/watch?v=z0sRiffVdpg</a></p>
+<p>Starting with Android 6, EST is natively used by the device for Certificate Signing Requests. To fix the issue we need to allow the EST authentication request through ISE. This can be accomplished with a new Authorization Policy that matches the EST request and then permits access.</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">Configuring Hotspot Guest Access with Cisco ISE</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2018-09-10</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Been toying with the Cisco <a href="https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html">vWLC</a> and <a href="https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html">ISE</a> in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: <a href="https://cisco.app.box.com/v/ISE-Eval">https://cisco.app.box.com/v/ISE-Eval</a></p>
+<p>Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.</p>
+<p>Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: <a href="https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475">https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475</a></p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/">Configuring CIMC on a Cisco UCS C Server</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2018-05-23</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ucs/">ucs</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.</p>
+<ul>
+<li>To configure CIMC, connect your keyboard/monitor and power up the server.</li>
+<li>Press F8 when the Cisco logo appears.</li>
+</ul>
+<p><img src="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png" alt=""></p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/">[Read more]</a>
           </div>
         
       </article>
@@ -258,6 +357,12 @@
       </a>
     
     
+      ::
+    
+    
+      <a href="/tags/cisco/page/3/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
     
   </div>
 </div>
