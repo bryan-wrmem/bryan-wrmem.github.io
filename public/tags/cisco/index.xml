@@ -6,15 +6,8 @@
     <description>Recent content in Cisco on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Apr 2025 10:03:24 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 16 Mar 2023 10:40:51 -0400</lastBuildDate>
     <atom:link href="/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Converting a Mobility Express AP into a CAPWAP AP</title>
-      <link>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</link>
-      <pubDate>Tue, 15 Apr 2025 10:03:24 -0400</pubDate>
-      <guid>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</guid>
-      <description>&lt;p&gt;I was recently installing some Cisco 2802 APs and came across an issue where one of the APs  would grab a DHCP address, be reachable for a minute, and then drop off the network.&lt;/p&gt;&#xA;&lt;p&gt;It turns out the AP having an issue actually had the Mobility Express image installed and needed to be converted to CAPWAP, even though we purchased the APs specifically with the CAPWAP SKU. Here are the troubleshooting steps I went through to convert the AP to CAPWAP.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Monitoring a Firepower Upgrade with Tail</title>
       <link>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</link>
@@ -77,6 +70,13 @@
       <pubDate>Wed, 23 May 2018 10:03:52 -0400</pubDate>
       <guid>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</guid>
       <description>&lt;p&gt;Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To configure CIMC, connect your keyboard/monitor and power up the server.&lt;/li&gt;&#xA;&lt;li&gt;Press F8 when the Cisco logo appears.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Converting a Mobility Express AP into a CAPWAP AP</title>
+      <link>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</link>
+      <pubDate>Tue, 03 Apr 2018 10:03:24 -0400</pubDate>
+      <guid>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</guid>
+      <description>&lt;p&gt;I was recently installing some Cisco 2802 APs and came across an issue where one of the APs  would grab a DHCP address, be reachable for a minute, and then drop off the network.&lt;/p&gt;&#xA;&lt;p&gt;It turns out the AP having an issue actually had the Mobility Express image installed and needed to be converted to CAPWAP, even though we purchased the APs specifically with the CAPWAP SKU. Here are the troubleshooting steps I went through to convert the AP to CAPWAP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</title>

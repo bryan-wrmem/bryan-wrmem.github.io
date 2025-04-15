@@ -2,28 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/cisco/</loc>
-    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
-  </url><url>
-    <loc>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</loc>
-    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2025-04-15T10:03:24-04:00</lastmod>
-  </url><url>
     <loc>/posts/2025-04-14-hello-world-again/</loc>
     <lastmod>2025-04-14T22:33:11-04:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-04-14T22:33:11-04:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-04-14T22:33:11-04:00</lastmod>
+  </url><url>
+    <loc>/tags/cisco/</loc>
+    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
     <loc>/tags/firepower/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
     <loc>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</loc>
+    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
     <loc>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</loc>
@@ -64,6 +61,9 @@
   </url><url>
     <loc>/tags/ucs/</loc>
     <lastmod>2018-05-23T10:03:52-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</loc>
+    <lastmod>2018-04-03T10:03:24-04:00</lastmod>
   </url><url>
     <loc>/tags/ios-xe/</loc>
     <lastmod>2018-04-02T10:02:29-04:00</lastmod>

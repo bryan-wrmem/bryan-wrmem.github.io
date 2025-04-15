@@ -1,6 +1,6 @@
 +++
 title = "Converting a Mobility Express AP into a CAPWAP AP"
-date = 2025-04-15T10:03:24-04:00
+date = 2018-04-03T10:03:24-04:00
 author = "bryan"
 draft = false
 tags = ["cisco"]
