@@ -6,8 +6,36 @@
     <description>Recent content in Tags on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Mar 2016 08:57:20 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 13 Jul 2016 09:33:00 -0400</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco</title>
+      <link>/tags/cisco/</link>
+      <pubDate>Wed, 13 Jul 2016 09:33:00 -0400</pubDate>
+      <guid>/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asa</title>
+      <link>/tags/asa/</link>
+      <pubDate>Sat, 30 Apr 2016 09:27:02 -0400</pubDate>
+      <guid>/tags/asa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exchange</title>
+      <link>/tags/exchange/</link>
+      <pubDate>Tue, 12 Apr 2016 09:19:15 -0400</pubDate>
+      <guid>/tags/exchange/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab</title>
+      <link>/tags/lab/</link>
+      <pubDate>Tue, 22 Mar 2016 09:17:29 -0400</pubDate>
+      <guid>/tags/lab/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Citrix</title>
       <link>/tags/citrix/</link>

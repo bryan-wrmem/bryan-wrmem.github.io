@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exchange on WRMEM</title>
+    <link>/tags/exchange/</link>
+    <description>Recent content in Exchange on WRMEM</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Apr 2016 09:19:15 -0400</lastBuildDate>
+    <atom:link href="/tags/exchange/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Subject Line Disclaimer in Exchange 2010</title>
+      <link>/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/</link>
+      <pubDate>Tue, 12 Apr 2016 09:19:15 -0400</pubDate>
+      <guid>/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/</guid>
+      <description>&lt;p&gt;With ever increasing amounts of spam and spear phishing attacks, many companies today are going out of their way to warn users when an email is received from an external, and potentially unsafe, source. Thankfully the Exchange Management Console makes it fairly straight forward to create transport rules to add disclaimers, re-write subject lines, and even insert html into emails for all types of situations.&lt;/p&gt;&#xA;&lt;p&gt;Recently I was asked to add an [EXTERNAL] tag to the subject line of all incoming emails from outside the organization. Below are the steps to create a Hub Transport rule to accomplish such a task.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

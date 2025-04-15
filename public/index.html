@@ -141,10 +141,21 @@
   <ul class="navigation-menu__inner menu--desktop">
     
       
-        
-          <li><a href="/contact" >Contact</a></li>
-        
       
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
       
     
   </ul>
@@ -198,15 +209,15 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">Fix for The Change Password Operation Failed Error on XenApp 6.5</a>
+          <a href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">Creating a Bootable ISO from Cisco Non-Bootable Updates</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-03-09</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-07-13</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/citrix/">citrix</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
             
           </span>
         
@@ -216,31 +227,31 @@
 
         <div class="post-content">
           
-            <p>After running February 2016’s batch of Microsoft security updates, we started receiving calls from end users about errors when attempting to update their passwords through the Citrix web interface.</p>
-<p><img src="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/37d328a97455f2e74dc3fb7016ae8c32_MD5.png" alt="xenapppass01">
-While the error indicates the password change failed, it does in fact work, and users can log out and log back in with the new password.</p>
-<p>Thankfully it didn’t take long for some savvy Citrix support forums users to pinpoint the issue to a recent patch Microsoft released which changes the api behavior for NetUserChangePassword.</p>
+            <p>There’s plenty of great posts out there on how to make bootable CUCM/Collaboration media with paid GUI software such as <a href="http://htluo.blogspot.com/2010/04/how-to-make-non-bootable-iso-image.html">UltraISO</a> or free command line utilities like <a href="http://www.ipcommute.co.uk/technical-articles/17--creating-isolinux-boot-dvds-with-free-software-cucm-uccx-cups.html">cdrtools</a>. Inspired by those bloggers, I wanted to share a method to create bootable media that features the best of both worlds: open source utilities with easy to use interfaces, all for the low low price of free.</p>
+<p>Software you’ll need:</p>
+<p><a href="http://www.7-zip.org/">7-Zip</a> / <a href="http://cdrtfe.sourceforge.net/">cdrtfe</a></p>
+<p>First, find an existing bootable CUCM ISO (a Red Hat or CentOS live cd will do the trick as well) and open it in 7zip.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">Windows 10 WMI Filter for Group Policy</a>
+          <a href="/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/">Troubleshooting TFTP Issues with Cisco Unified Real Time Monitoring Tool - RTMT</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-03-08</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-06-28</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/windows/">windows</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
             
           </span>
         
@@ -250,30 +261,31 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.</p>
-<p>By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.</p>
-<p>First we use the command line utility ‘<a href="https://msdn.microsoft.com/en-us/library/bb742610.aspx">wmic</a>‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)</p>
+            <p>I’ve recently began studying for my CCNA Collaboration exam and to help with my studies I’ve built a small collaboration lab. Nothing too fancy, a 2811 with PVDMs and FXO/FXS cards, 2 3750 PoE switches, and 2 Cisco 7960 VOIP phones. My lab server has a dedicated NIC which connects to the lab network and hosts a domain controller, workstation, and CUCM 11.5 virtual machines.</p>
+<p>All this was working well until I configured the switches to have a separate dedicated voice VLAN. The phones started having issues contacting CUCM and downloading new configuration files or firmware. If I moved the phones back to the same VLAN as CUCM the phones would work properly. Sounded like a TFTP issue to me, and here are the steps I followed to resolve the issue.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</a>
+          <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/">Zero Downtime ASA Upgrade - CLI</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-03-07</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-04-30</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
             
           </span>
         
@@ -283,32 +295,30 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”</p>
-<p><img src="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png" alt="sf-usernames01"></p>
-<p>After opening a support case, TAC pointed me to the following bug: <a href="https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125">cscux39125</a> (cisco login required).</p>
-<p>To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.</p>
-<p>To change your realm configuration go to <strong>System</strong> -&gt; <strong>Integration</strong> -&gt; <strong>Realms</strong></p>
+            <p>So you have <a href="https://wrmem.net/index.php/2016/04/27/configuring-stateful-failover-on-a-cisco-asa-ha-pair/">stateful failover</a> configured on your pair of Cisco ASAs and need to upgrade ASDM or the os? Maybe a <a href="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160210-asa-ike">critical security vulnerability</a> was discovered with the software and you need to upgrade them ASAP. With stateful failover, we can perform a zero downtime upgrade on our ASAs to minimize end user disruption. Below are the steps I used to upgrade a pair of ASA 5525-X’s using the command line interface. You can find Cisco’s documentation for upgrading an Active/Standby Failover Configuration <a href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/admin_swconfig.html#wp1380398">here</a>.</p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">Upgrading IOS-XE on a Cisco ISR 4400</a>
+          <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/">Zero Downtime ASA Upgrade - ASDM</a>
         </h2>
 
-        <div class="post-meta"><time class="post-date">2016-03-03</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-04-29</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
             
           </span>
         
@@ -318,23 +328,28 @@ While the error indicates the password change failed, it does in fact work, and 
 
         <div class="post-content">
           
-            <p>Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.</p>
+            <p>Take a look <a href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa95/asdm75/general/asdm-75-general-config/admin-swconfig.html#ID-2152-0000019f">here</a> for Cisco’s official documentation, which will be the blueprint for our guide.</p>
 <ul>
-<li>Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.
+<li>First, back up your configuration by going to <strong>Tools</strong> -&gt; <strong>Backup Configurations</strong></li>
+</ul>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/dc5d536676baebfc84ad5c244dd19b7a_MD5.png" alt="asdm-update-01"></p>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/d75de8165a3ecff43a695446227e3ed9_MD5.png" alt="asdm-update-02"></p>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/68ff4955faa7fd4c5f83d30cf91ce8bd_MD5.png" alt="asdm-update-03"></p>
 <ul>
-<li>To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found <a href="http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp">here</a>.</li>
-<li>To help differentiate the different designations of code, i.e., MD, ED, GD, take a look <a href="https://www.cisco.com/public/library/iosplanner/reldesignation.html">here</a>.</li>
-<li>Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”</li>
+<li>Download your updated ASDM and ASA software from <a href="https://software.cisco.com/download/navigator.html?i=%21mmd">Cisco.com</a></li>
+<li>Click <strong>Tools</strong> -&gt; <strong>Upgrade Software from Local Computer</strong></li>
 </ul>
-</li>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/19335c3a94ec2b56f16e09ab62bcacbf_MD5.png" alt="asdm-update-04"></p>
+<ul>
+<li>We’ll update ASDM first, select <strong>ASDM</strong> from the drop down box and click <strong>Browse Local Files</strong>. Navigate to where you downloaded your images and select the new ASDM image then click <strong>Upload Image</strong>.</li>
 </ul>
-<p><img src="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png" alt="ios-xe01">the downloaded image to your USB drive and insert it into the ISR</p>
+<p><img src="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/46848f366fb696a545bbd3c0d5a880fb_MD5.png" alt="asdm-update-05"></p>
           
         </div>
 
         
           <div>
-            <a class="read-more button inline" href="/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/">[Read more]</a>
           </div>
         
       </article>

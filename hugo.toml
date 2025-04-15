@@ -15,7 +15,7 @@ pagination.pagerSize = 5
   contentTypeName = "posts"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 0
 
   # show selector to switch language
   showLanguageSelector = false
@@ -81,7 +81,7 @@ pagination.pagerSize = 5
       owner = ""
       keywords = ""
       copyright = ""
-      menuMore = "Show more"
+      menuMore = "Menu"
       readMore = "Read more"
       readOtherPosts = "Read other posts"
       newerPosts = "Newer posts"
@@ -96,14 +96,14 @@ pagination.pagerSize = 5
         logoHomeLink = "/"
 
       [languages.en.menu]
+        #[languages.en.menu.main]]
+        #  identifier = "showcase"
+        #  name = "Showcase"
+        #  url = "/showcase"
         [[languages.en.menu.main]]
           identifier = "about"
           name = "Contact"
           url = "/contact"
-        #[[languages.en.menu.main]]
-        #  identifier = "showcase"
-        #  name = "Showcase"
-        #  url = "/showcase"
 
 [module]
   # In case you would like to make changes to the theme and keep it locally in you repository,

@@ -140,10 +140,21 @@
   <ul class="navigation-menu__inner menu--desktop">
     
       
-        
-          <li><a href="/contact" >Contact</a></li>
-        
       
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
       
     
   </ul>
@@ -160,14 +171,16 @@
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</a>
+          <a href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">Configuring Stateful Failover on a Cisco ASA HA Pair</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-03-02</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-04-27</time><span class="post-author">bryan</span></div>
 
         
           <span class="post-tags">
             
-            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/asa/">asa</a>&nbsp;
             
           </span>
         
@@ -177,28 +190,108 @@
 
         <div class="post-content">
           
-            <p>I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.</p>
+            <p>The ASA, Cisco’s Adaptive Security Appliance, has been around for over 15 years and has since become an ubiquitous network security solution, securing networks the world over.</p>
+<p>Because it is such a critical device in our networks, it has become best practice to deploy these security appliances in a resilient and highly available configuration.</p>
+<p>Currently, Cisco supports <strong>Active/Active</strong> as well as <strong>Active/Standby</strong> failover. This article contains a simple example of how to configure <strong>Active/Standby</strong> stateful high availability on a pair of Cisco ASAs, where one unit acts as the primary ASA and a standby unit becomes active once a failover has occurred. When stateful failover is enabled, connection states are continuously passed between the active and standby units keeping session information available to the new active unit. <em>Please note that both ASAs must be running identical hardware and software versions.</em></p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">Creating a Subject Line Disclaimer in Exchange 2010</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-04-12</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/exchange/">exchange</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>With ever increasing amounts of spam and spear phishing attacks, many companies today are going out of their way to warn users when an email is received from an external, and potentially unsafe, source. Thankfully the Exchange Management Console makes it fairly straight forward to create transport rules to add disclaimers, re-write subject lines, and even insert html into emails for all types of situations.</p>
+<p>Recently I was asked to add an [EXTERNAL] tag to the subject line of all incoming emails from outside the organization. Below are the steps to create a Hub Transport rule to accomplish such a task.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">GNS3 VM and VMware Workstation 12 Player Could not find the default VM directory</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2016-03-22</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/lab/">lab</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>While setting up the new GNS3 1.4 Virtual Machine with VMware Workstation 12 Player, I ran into an interesting error that was preventing me from completing the installation.</p>
+<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/6f589d9b912a08598bfcae4022a694e7_MD5.png" alt="gns3-vm01">
+Thankfully the fix is fairly straight forward and requires that we edit the VMware Workstation preferences file.</p>
 <ul>
-<li>In Defense Center, go to System -&gt; Configuration -&gt; HTTPS Certificate</li>
-<li>Click “Generate New CSR”</li>
+<li>Open <strong>preferences.ini</strong> in your text editor of choice
+<ul>
+<li><code>%Appdata%\VMware\preferences.ini</code></li>
 </ul>
-<p><img src="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png" alt="sfcsr01"></p>
+</li>
+<li>Add or edit the following line, changing the path to where your virtual machines are stored
+<ul>
+<li><code>prefvmx.defaultVMPath = &quot;C:\Path\To\My\VMs&quot;</code></li>
+</ul>
+</li>
+<li>And that’s it. Save the ini and restart the GNS3 Setup Wizard.</li>
+</ul>
+<p><img src="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/ed8802476bd774ae98acca296034565e_MD5.png" alt="gns3-vm02"></p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/">Using the Built in TFTP Server on OS-X El Capitan</a>
+          <a href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">Installing a CA Signed Certificate in Cisco Prime Infrastructure 2.2</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-02-28</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-03-20</time><span class="post-author">bryan</span></div>
 
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
         
 
         
@@ -206,27 +299,46 @@
 
         <div class="post-content">
           
-            <p>On Windows I love the lightweight and open source <a href="http://tftpd32.jounin.net">TFTPD32</a>, but there may come a time when you find youself needing to transfer some files and all you have is your trusty mac.</p>
-<p>Luckily there’s a built in tftp daemon that you can use in a pinch.</p>
-<p>By default tftpd uses the following folder:</p>
-<pre tabindex="0"><code>/private/tftpboot
-</code></pre><p>which is hidden in finder, but can be accessed by using “go to folder” or hitting Command+Shift+G and entering /private/tftpboot</p>
+            <p>After following the Prime Infrastructure upgrade path to 2.2 you’ll need to re-issue CA signed certificates. Unfortunately, this can’t be accomplished from the Web GUI and will need to be done via the CLI.</p>
+<p>Here’s Cisco’s <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/config_server_settings.html#pgfId-1112683">documentation</a> for installing CA-Signed Certificates and the steps I used to import a new certificate from our Active Directory Certificate Services server.</p>
+<ul>
+<li>First you’ll want to SSH to your Prime Infrastructure server as well as create a FTP server on your workstation. See my <a href="https://wrmem.net/index.php/2016/03/16/upgrading-cisco-prime-infrastructure-2-1-to-2-2/">previous blog post</a> for instructions how to do so.</li>
+<li>Generate a new CSR file and answer the information prompts
+<ul>
+<li><code>PIServer/admin# ncs key genkey -newdn -csr CSRFile .csr repository defaultRepo</code></li>
+<li><code>The NCS server is running. Changes will take affect on the next server restart   Enter the domain name of the server: (the fqdn you'll use to access prime from e.g., prime.company.org)   Enter the name of your organizational unit:   Enter the name of your organization:   Enter the name of your city or locality:   Enter the name of your state or province:   Enter the two letter code for your country:   Generating RSA key</code></li>
+</ul>
+</li>
+<li>Copy the CSR to your FTP server
+<ul>
+<li><code>PIServer/admin# copy disk: /defaultRepo/ CSRFile.csr ftp://your.ftp.server</code></li>
+</ul>
+</li>
+<li>Open your CSR in a text editor, copying the text to your clipboard</li>
+</ul>
+<p><img src="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/4bf381a3407858626868f8cc7df7c657_MD5.png" alt="pi-cert01"></p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/">[Read more]</a>
           </div>
         
       </article>
     
       <article class="post on-list">
         <h2 class="post-title">
-          <a href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">USB Serial Console Cable on OS X</a>
+          <a href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">Upgrading Cisco Prime Infrastructure 2.1 to 2.2</a>
         </h2>
-        <div class="post-meta"><time class="post-date">2016-02-25</time><span class="post-author">bryan</span></div>
+        <div class="post-meta"><time class="post-date">2016-03-16</time><span class="post-author">bryan</span></div>
 
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+          </span>
         
 
         
@@ -234,16 +346,15 @@
 
         <div class="post-content">
           
-            <p>Recently picked up a new usb cable for connecting to my network devices and needed a refresher on connecting to the console.</p>
-<p>After installing device drivers (if necessary) and connecting the cable to your mac, open up a terminal and list the contents of your dev directory, filtering for devices with usb in their name.</p>
-<p><code>ls /dev/*usb*</code></p>
-<p>Find the proper tty device and use screen to open a connection on the port. You can specify the speed of 9600 but screen will use that value by default.</p>
+            <p>At the moment we’re running Cisco Prime Infrastructure 2.1 on a Gen1 physical appliance. We’re looking to take the upgrade path from 2.1 all the way up to 3.1 (currently only 3.0.2 is supported on the Gen1 appliance).</p>
+<p>First stop, 2.2.</p>
+<p>The Gen1 appliance upgrade path isn’t a fun one. It requires that we back up our current application database, wipe our appliance, do a bare-metal install of 2.2, and then restore our application database. Cisco’s documentation for application backup and restore can be found here: <a href="http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460">http://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/infrastructure/2-2/administrator/guide/PIAdminBook/backup_restore.html#72460</a></p>
           
         </div>
 
         
            <div>
-            <a class="read-more button inline" href="/posts/2016-02-25-usb-serial-console-cable-on-os-x/">[Read more]</a>
+            <a class="read-more button inline" href="/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/">[Read more]</a>
           </div>
         
       </article>
@@ -257,6 +368,12 @@
       </a>
     
     
+      ::
+    
+    
+      <a href="/posts/page/3/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
     
   </div>
 </div>

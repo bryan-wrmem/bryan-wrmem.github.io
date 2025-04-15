@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Zero Downtime ASA Upgrade - CLI :: WRMEM</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="So you have stateful failover configured on your pair of Cisco ASAs and need to upgrade ASDM or the os? Maybe a critical security vulnerability was discovered with the software and you need to upgrade them ASAP. With stateful failover, we can perform a zero downtime upgrade on our ASAs to minimize end user disruption. Below are the steps I used to upgrade a pair of ASA 5525-X’s using the command line interface. You can find Cisco’s documentation for upgrading an Active/Standby Failover Configuration here.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="bryan" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Zero Downtime ASA Upgrade - CLI">
+<meta property="og:description" content="So you have stateful failover configured on your pair of Cisco ASAs and need to upgrade ASDM or the os? Maybe a critical security vulnerability was discovered with the software and you need to upgrade them ASAP. With stateful failover, we can perform a zero downtime upgrade on our ASAs to minimize end user disruption. Below are the steps I used to upgrade a pair of ASA 5525-X’s using the command line interface. You can find Cisco’s documentation for upgrading an Active/Standby Failover Configuration here.
+" />
+<meta property="og:url" content="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/" />
+<meta property="og:site_name" content="WRMEM" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2016-04-30 09:27:02 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    WRMEM #Copy Run Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Menu&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/contact" >Contact</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-cli/">Zero Downtime ASA Upgrade - CLI</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2016-04-30</time><span class="post-author">bryan</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/cisco/">cisco</a>&nbsp;
+      
+      #<a href="/tags/asa/">asa</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>So you have <a href="https://wrmem.net/index.php/2016/04/27/configuring-stateful-failover-on-a-cisco-asa-ha-pair/">stateful failover</a> configured on your pair of Cisco ASAs and need to upgrade ASDM or the os? Maybe a <a href="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160210-asa-ike">critical security vulnerability</a> was discovered with the software and you need to upgrade them ASAP. With stateful failover, we can perform a zero downtime upgrade on our ASAs to minimize end user disruption. Below are the steps I used to upgrade a pair of ASA 5525-X’s using the command line interface. You can find Cisco’s documentation for upgrading an Active/Standby Failover Configuration <a href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/admin_swconfig.html#wp1380398">here</a>.</p>
+<ul>
+<li>First, back up your current configuration!</li>
+</ul>
+<pre tabindex="0"><code>ciscoasas# copy running-config tftp://10.1.1.10/ciscoasa-config.txt
+
+Source filename [running-config]?
+
+Address or name of remote host [10.1.1.10]?
+
+Destination filename [ciscoasa-config.txt]?
+Cryptochecksum: 495070f8 a3de0875 adfc16d6 18c04464
+!!
+4996 bytes copied in 0.660 secs
+</code></pre><ul>
+<li>Download your updated ASDM and ASA software from <a href="https://software.cisco.com/download/navigator.html?i=!mmd">Cisco.com</a></li>
+<li>Copy new ASA operating system to active and standby units.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# copy tftp://10.1.1.10/asa952-smp-k8.bin disk0:/asa952-smp-k8.bin
+
+Address or name of remote host [10.1.1.10]?
+
+Source filename [asa952-smp-k8.bin]?
+
+Destination filename [asa952-smp-k8.bin]?
+
+Accessing tftp://10.1.1.10/asa952-smp-k8.bin...
+!!!!!!!
+Writing file disk0:/asa952-smp-k8.bin...
+!!!!!!!
+82593792 bytes copied in 211.300 secs (391439 bytes/sec)
+</code></pre><pre tabindex="0"><code>ciscoasa# failover exec mate copy /noconfirm tftp://10.1.1.10/asa952-smp-k8.$
+
+Accessing tftp://10.1.1.10/asa952-smp-k8.bin...
+!!!!!!!
+Writing file disk0:/asa952-smp-k8.bin...
+!!!!!!!
+82593792 bytes copied in 192.570 secs (430176 bytes/sec)
+</code></pre><ul>
+<li>Copy new ASDM software to active and standby units.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# copy tftp://10.1.1.10/asdm-752.bin disk0:/asdm-752.bin
+
+Address or name of remote host [10.1.1.10]?
+
+Source filename [asdm-752.bin]?
+
+Destination filename [asdm-752.bin]?
+
+Accessing tftp://10.1.1.10/asdm-752.bin...
+!!!!!!!
+Writing file disk0:/asdm-752.bin...
+!!!!!!!
+25627616 bytes copied in 57.570 secs (449607 bytes/sec)
+</code></pre><pre tabindex="0"><code>ciscoasa# failover exec mate copy /noconfirm tftp://10.1.1.10/asdm-752.bin d$
+
+Accessing tftp://10.1.1.10/asdm-752.bin...
+!!!!!!!
+Writing file disk0:/asdm-752.bin...
+!!!!!!!
+25627616 bytes copied in 58.190 secs (441855 bytes/sec)
+</code></pre><ul>
+<li>Verify the current boot images, making note of the boot order. Remove the current image and set the config to boot from the newly uploaded image followed by the old image as a back up.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# sh running-config boot system
+boot system disk0:/asa922-4-smp-k8.bin
+ciscoasa# conf t
+ciscoasa(config)# no boot system disk0:/asa922-4-smp-k8.bin
+ciscoasa(config)# boot system disk0:/asa952-smp-k8.bin
+ciscoasa(config)# boot system disk0:/asa922-4-smp-k8.bin
+ciscoasa(config)# end
+ciscoasa# sh running-config boot system
+boot system disk0:/asa952-smp-k8.bin
+boot system disk0:/asa922-4-smp-k8.bin
+</code></pre><ul>
+<li>Configure the ASA to use the new ASDM image</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa(config)# asdm image disk0:/asdm-752.bin
+</code></pre><ul>
+<li>Save your configuration and reload the secondary standby unit.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# wr
+Building configuration...
+Cryptochecksum: c4c58b75 ea6ca884 235cc59e 05d6f114
+
+5030 bytes copied in 0.670 secs
+[OK]
+ciscoasa# failover reload-standby
+ciscoasa#
+************WARNING****WARNING****WARNING********************************
+   Mate version 9.5(2) is not identical with ours 9.2(2)4
+************WARNING****WARNING****WARNING********************************
+Beginning configuration replication: Sending to mate.
+End Configuration Replication to mate
+</code></pre><ul>
+<li>Verify the standby unit is back up and running the new software version.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# sh failover
+Failover On
+Failover unit Primary
+Failover LAN Interface: FO GigabitEthernet0/7 (up)
+Unit Poll frequency 1 seconds, holdtime 15 seconds
+Interface Poll frequency 5 seconds, holdtime 25 seconds
+Interface Policy 1
+Monitored Interfaces 2 of 216 maximum
+MAC Address Move Notification Interval not set
+failover replication http
+Version: Ours 9.2(2)4, Mate 9.5(2)
+Last Failover at: 03:14:15 EDT Apr 22 2016
+        This host: Primary - Active
+                Active time: 605706 (sec)
+                slot 0: ASA5525 hw/sw rev (1.0/9.2(2)4) status (Up Sys)
+                  Interface Inside (10.1.1.1): Normal (Monitored)
+                  Interface management (192.168.1.1): No Link (Waiting)
+                slot 1: SFR5525 hw/sw rev (N/A/5.3.1-152) status (Up/Up)
+                  ASA FirePOWER, 5.3.1-152, Up
+        Other host: Secondary - Standby Ready
+                Active time: 0 (sec)
+                slot 0: ASA5525 hw/sw rev (1.0/9.5(2)) status (Up Sys)
+                  Interface Inside (10.1.1.2): Normal (Monitored)
+                  Interface management (0.0.0.0): No Link (Waiting)
+                slot 1: SFR5525 hw/sw rev (N/A/) status (Init/Up)
+</code></pre><ul>
+<li>Make the active primary unit the new standy unit</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# no failover active
+</code></pre><ul>
+<li>You may need to re-establish your SSH connection. Log back into the ASA and verify that the secondary unit is now the active unit. Reload the primary/standby unit, wait a few minutes and verify that both units are now running identical code.</li>
+</ul>
+<pre tabindex="0"><code>ciscoasa# failover reload-standby
+ciscoasa# Beginning configuration replication: Sending to mate.
+End Configuration Replication to mate
+ciscoasa# sh failover
+Failover On
+Failover unit Secondary
+Failover LAN Interface: FO GigabitEthernet0/7 (up)
+Reconnect timeout 0:00:00
+Unit Poll frequency 1 seconds, holdtime 15 seconds
+Interface Poll frequency 5 seconds, holdtime 25 seconds
+Interface Policy 1
+Monitored Interfaces 2 of 216 maximum
+MAC Address Move Notification Interval not set
+failover replication http
+Version: Ours 9.5(2), Mate 9.5(2)
+Last Failover at: 10:34:53 EDT Apr 29 2016
+        This host: Secondary - Active
+                Active time: 429 (sec)
+                slot 0: ASA5525 hw/sw rev (1.0/9.5(2)) status (Up Sys)
+                  Interface Inside (10.1.1.1): Normal (Monitored)
+                  Interface management (192.168.1.1): No Link (Waiting)
+                slot 1: SFR5525 hw/sw rev (N/A/5.3.1-152) status (Up/Up)
+                  ASA FirePOWER, 5.3.1-152, Up, (Monitored)
+        Other host: Primary - Standby Ready
+                Active time: 0 (sec)
+                slot 0: ASA5525 hw/sw rev (1.0/9.5(2)) status (Up Sys)
+                  Interface Inside (10.1.1.2): Normal (Monitored)
+                  Interface management (0.0.0.0): No Link (Waiting)
+                slot 1: SFR5525 hw/sw rev (N/A/) status (Init/Up)
+
+Stateful Failover Logical Update Statistics
+        Link : FO GigabitEthernet0/7 (up)
+        Stateful Obj    xmit       xerr       rcv        rerr
+        General         101        0          97         0
+        sys cmd         93         0          92         0
+        up time         0          0          0          0
+        RPC services    0          0          0          0
+        TCP conn        1          0          0          0
+        UDP conn        0          0          0          0
+        ARP tbl         5          0          4          0
+        Xlate_Timeout   0          0          0          0
+        IPv6 ND tbl     0          0          0          0
+        VPN IKEv1 SA    0          0          0          0
+        VPN IKEv1 P2    0          0          0          0
+        VPN IKEv2 SA    0          0          0          0
+        VPN IKEv2 P2    0          0          0          0
+        VPN CTCP upd    0          0          0          0
+        VPN SDI upd     0          0          0          0
+        VPN DHCP upd    0          0          0          0
+        SIP Session     0          0          0          0
+        SIP Tx  0          0          0          0
+        SIP Pinhole     0          0          0          0
+        Route Session   1          0          0          0
+        Router ID       0          0          0          0
+        User-Identity   1          0          1          0
+        CTS SGTNAME     0          0          0          0
+        CTS PAC         0          0          0          0
+        TrustSec-SXP    0          0          0          0
+        IPv6 Route      0          0          0          0
+        STS Table       0          0          0          0
+
+        Logical Update Queue Information
+                        Cur     Max     Total
+        Recv Q:         0       12      336
+        Xmit Q:         0       29      300
+ciscoasa#
+</code></pre><p>And there you have it. If you’d like, after monitoring and verification, you can remove the old ASA and ASDM images from the boot order commands as well as the disk to keep things clean.</p>
+<pre tabindex="0"><code>ciscoasa# delete /replicate disk0:/asa922-4-smp-k8.bin
+
+Delete filename [asa922-4-smp-k8.bin]?
+
+Delete disk0:/asa922-4-smp-k8.bin? [confirm]
+
+ciscoasa# delete /replicate disk0:/asdm-7221.bin
+
+Delete filename [asdm-7221.bin]?
+
+Delete disk0:/asdm-7221.bin? [confirm]
+ciscoasa# sh run boot
+boot system disk0:/asa952-smp-k8.bin
+boot system disk0:/asa922-4-smp-k8.bin
+ciscoasa# conf t
+ciscoasa(config)# no boot system disk0:/asa922-4-smp-k8.bin
+ciscoasa(config)# end
+ciscoasa# sh run boot
+boot system disk0:/asa952-smp-k8.bin
+ciscoasa#
+</code></pre>
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/" class="button inline prev">
+        &lt; [<span class="button__text">Troubleshooting TFTP Issues with Cisco Unified Real Time Monitoring Tool - RTMT</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/" class="button inline next">
+         [<span class="button__text">Zero Downtime ASA Upgrade - ASDM</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
