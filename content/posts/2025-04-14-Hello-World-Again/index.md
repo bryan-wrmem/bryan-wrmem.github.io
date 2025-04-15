@@ -8,7 +8,7 @@ tags = []
 
 Hello World!
 
-Testing a new way to publish my blog through obsidian, hugo, and github pages.
+Testing a new way to publish my blog through obsidian, hugo, and github.
 
 More good things to come, sooner or later.
 
