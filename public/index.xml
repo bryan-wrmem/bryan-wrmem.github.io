@@ -17,6 +17,13 @@
     </item>
     <item>
       <title></title>
+      <link>/posts/2016-02-25-usb-serial-console-cable-on-os-x/</link>
+      <pubDate>Thu, 25 Feb 2016 23:48:28 -0400</pubDate>
+      <guid>/posts/2016-02-25-usb-serial-console-cable-on-os-x/</guid>
+      <description>&lt;p&gt;Recently picked up a new usb cable for connecting to my network devices and needed a refresher on connecting to the console.&lt;/p&gt;&#xA;&lt;p&gt;After installing device drivers (if necessary) and connecting the cable to your mac, open up a terminal and list the contents of your dev directory, filtering for devices with usb in their name.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;ls /dev/*usb*&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Find the proper tty device and use screen to open a connection on the port. You can specify the speed of 9600 but screen will use that value by default.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/contact/</guid>
