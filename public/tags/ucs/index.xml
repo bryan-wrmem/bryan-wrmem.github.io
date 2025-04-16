@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ucs on WRMEM</title>
-    <link>//localhost:1313/tags/ucs/</link>
+    <link>/tags/ucs/</link>
     <description>Recent content in Ucs on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 May 2018 10:03:52 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/ucs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/ucs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configuring CIMC on a Cisco UCS C Server</title>
-      <link>//localhost:1313/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</link>
+      <link>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</link>
       <pubDate>Wed, 23 May 2018 10:03:52 -0400</pubDate>
-      <guid>//localhost:1313/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</guid>
-      <description>&lt;p&gt;Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To configure CIMC, connect your keyboard/monitor and power up the server.&lt;/li&gt;&#xA;&lt;li&gt;Press F8 when the Cisco logo appears.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+      <guid>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</guid>
+      <description>&lt;p&gt;Just got in a new UCS C server and was going through the process of configuring Cisco’s flavor of out of band management called CIMC or Cisco Integrated Management Controller. Similar to HP’s iLO or Dell’s iDrac, CIMC allows one to remotely control and manage their server via the web or SSH with handy tools like integrated KVM and ISO mounting.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To configure CIMC, connect your keyboard/monitor and power up the server.&lt;/li&gt;&#xA;&lt;li&gt;Press F8 when the Cisco logo appears.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/6279b59131f3e6621ed4aee28b90b1b8_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

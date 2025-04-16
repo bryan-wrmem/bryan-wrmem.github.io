@@ -2,158 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/posts/2025-04-14-continuous-blogging-pipeline/</loc>
+    <loc>/posts/2025-04-16-continuous-blogging-pipeline/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/obsidian/</loc>
+    <loc>/tags/obsidian/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2025-04-14-hello-world-again/</loc>
+    <loc>/posts/2025-04-14-hello-world-again/</loc>
     <lastmod>2025-04-14T22:33:11-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/cisco/</loc>
+    <loc>/tags/cisco/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/firepower/</loc>
+    <loc>/tags/firepower/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</loc>
+    <loc>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</loc>
+    <loc>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</loc>
     <lastmod>2020-05-08T10:38:00-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</loc>
+    <loc>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</loc>
     <lastmod>2019-10-15T10:35:06-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/ise/</loc>
+    <loc>/tags/ise/</loc>
     <lastmod>2019-10-15T10:35:06-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</loc>
+    <loc>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</loc>
     <lastmod>2019-06-11T10:26:11-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2019-05-07-cisco-ise-admin-password-expired/</loc>
+    <loc>/posts/2019-05-07-cisco-ise-admin-password-expired/</loc>
     <lastmod>2019-05-07T10:24:55-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</loc>
+    <loc>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</loc>
     <lastmod>2019-04-04T10:24:01-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</loc>
+    <loc>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</loc>
     <lastmod>2019-02-13T10:22:51-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</loc>
+    <loc>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</loc>
     <lastmod>2018-09-10T10:07:26-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/aws/</loc>
+    <loc>/tags/aws/</loc>
     <lastmod>2018-08-10T10:05:49-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</loc>
+    <loc>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</loc>
     <lastmod>2018-08-10T10:05:49-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/</loc>
+    <loc>/posts/2018-07-23-installing-telnet-on-mac-os-high-sierra-with-homebrew/</loc>
     <lastmod>2018-07-23T10:05:01-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</loc>
+    <loc>/posts/2018-05-23-configuring-cimc-on-a-cisco-ucs-c-server/</loc>
     <lastmod>2018-05-23T10:03:52-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/ucs/</loc>
+    <loc>/tags/ucs/</loc>
     <lastmod>2018-05-23T10:03:52-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</loc>
+    <loc>/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/</loc>
     <lastmod>2018-04-03T10:03:24-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/ios-xe/</loc>
+    <loc>/tags/ios-xe/</loc>
     <lastmod>2018-04-02T10:02:29-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</loc>
+    <loc>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</loc>
     <lastmod>2018-04-02T10:02:29-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/</loc>
+    <loc>/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/</loc>
     <lastmod>2018-03-23T10:01:51-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/</loc>
+    <loc>/posts/2017-12-07-cobras-unable-to-import-voice-mail-into-cuc-11.5-su3/</loc>
     <lastmod>2017-12-07T10:00:38-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/</loc>
+    <loc>/posts/2017-05-09-configuring-sip-integration-between-cucm-and-unity-connection/</loc>
     <lastmod>2017-05-09T09:53:48-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/</loc>
+    <loc>/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/</loc>
     <lastmod>2017-04-28T09:46:32-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/</loc>
+    <loc>/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/</loc>
     <lastmod>2016-07-13T09:33:00-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/</loc>
+    <loc>/posts/2016-06-28-troubleshooting-tftp-issues-with-cisco-unified-real-time-monitoring-tool-rtmt/</loc>
     <lastmod>2016-06-28T09:27:41-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/asa/</loc>
+    <loc>/tags/asa/</loc>
     <lastmod>2016-04-30T09:27:02-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-04-29-zero-downtime-asa-upgrade-cli/</loc>
+    <loc>/posts/2016-04-29-zero-downtime-asa-upgrade-cli/</loc>
     <lastmod>2016-04-30T09:27:02-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/</loc>
+    <loc>/posts/2016-04-29-zero-downtime-asa-upgrade-asdm/</loc>
     <lastmod>2016-04-29T09:22:42-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/</loc>
+    <loc>/posts/2016-04-27-configuring-stateful-failover-on-a-cisco-asa-ha-pair/</loc>
     <lastmod>2016-04-27T09:21:52-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/</loc>
+    <loc>/posts/2016-04-12-creating-a-subject-line-disclaimer-in-exchange-2010/</loc>
     <lastmod>2016-04-12T09:19:15-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/exchange/</loc>
+    <loc>/tags/exchange/</loc>
     <lastmod>2016-04-12T09:19:15-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</loc>
+    <loc>/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</loc>
     <lastmod>2016-03-22T09:17:29-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/lab/</loc>
+    <loc>/tags/lab/</loc>
     <lastmod>2016-03-22T09:17:29-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/</loc>
+    <loc>/posts/2016-03-20-installing-a-ca-signed-certificate-in-cisco-prime-infrastructure-2.2/</loc>
     <lastmod>2016-03-20T09:12:39-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/</loc>
+    <loc>/posts/2016-03-16-upgrading-cisco-prime-infrastructure-2.1-to-2.2/</loc>
     <lastmod>2016-03-16T09:08:11-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/citrix/</loc>
+    <loc>/tags/citrix/</loc>
     <lastmod>2016-03-09T08:57:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</loc>
+    <loc>/posts/2016-03-09-fix-for-the-change-password-operation-failed-error-on-xenapp-6.5/</loc>
     <lastmod>2016-03-09T08:57:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/windows/</loc>
+    <loc>/tags/windows/</loc>
     <lastmod>2016-03-08T08:55:15-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</loc>
+    <loc>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</loc>
     <lastmod>2016-03-08T08:55:15-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</loc>
+    <loc>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</loc>
     <lastmod>2016-03-07T08:53:30-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</loc>
+    <loc>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</loc>
     <lastmod>2016-03-03T08:52:04-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</loc>
+    <loc>/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</loc>
     <lastmod>2016-03-02T08:44:37-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/</loc>
+    <loc>/posts/2016-02-28-using-the-built-in-tftp-server-on-os-x-el-capitan/</loc>
     <lastmod>2016-02-28T08:40:54-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2016-02-25-usb-serial-console-cable-on-os-x/</loc>
+    <loc>/posts/2016-02-25-usb-serial-console-cable-on-os-x/</loc>
     <lastmod>2016-02-25T23:48:28-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/contact/</loc>
+    <loc>/contact/</loc>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
   </url>
 </urlset>

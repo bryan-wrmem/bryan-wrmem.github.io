@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lab on WRMEM</title>
-    <link>//localhost:1313/tags/lab/</link>
+    <link>/tags/lab/</link>
     <description>Recent content in Lab on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 22 Mar 2016 09:17:29 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/lab/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GNS3 VM and VMware Workstation 12 Player Could not find the default VM directory</title>
-      <link>//localhost:1313/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</link>
+      <link>/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</link>
       <pubDate>Tue, 22 Mar 2016 09:17:29 -0400</pubDate>
-      <guid>//localhost:1313/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</guid>
-      <description>&lt;p&gt;While setting up the new GNS3 1.4 Virtual Machine with VMware Workstation 12 Player, I ran into an interesting error that was preventing me from completing the installation.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/6f589d9b912a08598bfcae4022a694e7_MD5.png&#34; alt=&#34;gns3-vm01&#34;&gt;&#xA;Thankfully the fix is fairly straight forward and requires that we edit the VMware Workstation preferences file.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open &lt;strong&gt;preferences.ini&lt;/strong&gt; in your text editor of choice&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;%Appdata%\VMware\preferences.ini&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Add or edit the following line, changing the path to where your virtual machines are stored&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;prefvmx.defaultVMPath = &amp;quot;C:\Path\To\My\VMs&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;And that’s it. Save the ini and restart the GNS3 Setup Wizard.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/ed8802476bd774ae98acca296034565e_MD5.png&#34; alt=&#34;gns3-vm02&#34;&gt;&lt;/p&gt;</description>
+      <guid>/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/</guid>
+      <description>&lt;p&gt;While setting up the new GNS3 1.4 Virtual Machine with VMware Workstation 12 Player, I ran into an interesting error that was preventing me from completing the installation.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/6f589d9b912a08598bfcae4022a694e7_MD5.png&#34; alt=&#34;gns3-vm01&#34;&gt;&#xA;Thankfully the fix is fairly straight forward and requires that we edit the VMware Workstation preferences file.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Open &lt;strong&gt;preferences.ini&lt;/strong&gt; in your text editor of choice&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;%Appdata%\VMware\preferences.ini&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Add or edit the following line, changing the path to where your virtual machines are stored&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;prefvmx.defaultVMPath = &amp;quot;C:\Path\To\My\VMs&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;And that’s it. Save the ini and restart the GNS3 Setup Wizard.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-22-gns3-vm-and-vmware-workstation-12-player-could-not-find-the-default-vm-directory/ed8802476bd774ae98acca296034565e_MD5.png&#34; alt=&#34;gns3-vm02&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

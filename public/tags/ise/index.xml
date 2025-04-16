@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ise on WRMEM</title>
-    <link>//localhost:1313/tags/ise/</link>
+    <link>/tags/ise/</link>
     <description>Recent content in Ise on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 15 Oct 2019 10:35:06 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/ise/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/ise/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cisco ISE Synchronization Failed when adding a Secondary Node</title>
-      <link>//localhost:1313/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</link>
+      <link>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</link>
       <pubDate>Tue, 15 Oct 2019 10:35:06 -0400</pubDate>
-      <guid>//localhost:1313/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</guid>
-      <description>&lt;p&gt;Ran into an interesting issue the other day setting up a two node ISE deployment. I figured I’d put it up on the blog in case anyone else is pulling out their hair.&lt;/p&gt;&#xA;&lt;p&gt;After adding a secondary node, the deployment nodes status page lists an error saying “synchronization failed.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/ee2658b809a8d03037d607fcc7c3a47f_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I consoled into the ISE node I saw multiple failed logins:&lt;/p&gt;&#xA;&lt;p&gt;Failed to log in 51 time(s)&lt;br&gt;&#xA;Last failed login on Tue Oct 15 11:38:37 2019 from 10.102.10.168&lt;br&gt;&#xA;ISE3615-1/admin#&lt;/p&gt;</description>
+      <guid>/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/</guid>
+      <description>&lt;p&gt;Ran into an interesting issue the other day setting up a two node ISE deployment. I figured I’d put it up on the blog in case anyone else is pulling out their hair.&lt;/p&gt;&#xA;&lt;p&gt;After adding a secondary node, the deployment nodes status page lists an error saying “synchronization failed.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/ee2658b809a8d03037d607fcc7c3a47f_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I consoled into the ISE node I saw multiple failed logins:&lt;/p&gt;&#xA;&lt;p&gt;Failed to log in 51 time(s)&lt;br&gt;&#xA;Last failed login on Tue Oct 15 11:38:37 2019 from 10.102.10.168&lt;br&gt;&#xA;ISE3615-1/admin#&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cisco ISE Configuring TACACS&#43; Device Management</title>
-      <link>//localhost:1313/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</link>
+      <link>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</link>
       <pubDate>Tue, 11 Jun 2019 10:26:11 -0400</pubDate>
-      <guid>//localhost:1313/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</guid>
+      <guid>/posts/2019-06-11-cisco-ise-configuring-tacacs-device-management/</guid>
       <description>&lt;p&gt;As of version 2.0, Cisco ISE now supports TACACS+ for user authentication, command authorization, and accounting (the three A’s in AAA) for network device management.&lt;/p&gt;&#xA;&lt;p&gt;I won’t get into the age old debate of TACAS+ vs RADIUS but for many industries, especially those that may be under stricter compliance, governance and regulation; TACACS+ presents certain advantages thanks to per-command authorization and detailed accounting/logging.&lt;/p&gt;&#xA;&lt;p&gt;This post will go over the steps to implement TACACS+ based AAA for Cisco devices based on active directory group membership.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cisco ISE Admin Password Expired</title>
-      <link>//localhost:1313/posts/2019-05-07-cisco-ise-admin-password-expired/</link>
+      <link>/posts/2019-05-07-cisco-ise-admin-password-expired/</link>
       <pubDate>Tue, 07 May 2019 10:24:55 -0400</pubDate>
-      <guid>//localhost:1313/posts/2019-05-07-cisco-ise-admin-password-expired/</guid>
-      <description>&lt;p&gt;So you’ve installed ISE, configured your policies, got everything up and running. Life is peachy…until you attempt to log in and receive the following error:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2019-05-07-cisco-ise-admin-password-expired/b101477cc9e64dd5d7828db1353f52c3_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;One little gotcha. Out of the box, the GUI admin account is set to expire after 45 days. So just when you thought everything was up and running smoothly you hit this little stumbling block.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully the fix is fairly straight forward, but if you’ve just received the error above you’ll need to do a little CLI intervention.&lt;/p&gt;</description>
+      <guid>/posts/2019-05-07-cisco-ise-admin-password-expired/</guid>
+      <description>&lt;p&gt;So you’ve installed ISE, configured your policies, got everything up and running. Life is peachy…until you attempt to log in and receive the following error:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-05-07-cisco-ise-admin-password-expired/b101477cc9e64dd5d7828db1353f52c3_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;One little gotcha. Out of the box, the GUI admin account is set to expire after 45 days. So just when you thought everything was up and running smoothly you hit this little stumbling block.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully the fix is fairly straight forward, but if you’ve just received the error above you’ll need to do a little CLI intervention.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cisco ISE Deployment OVF Parameter chunkSize Error</title>
-      <link>//localhost:1313/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</link>
+      <link>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</link>
       <pubDate>Thu, 04 Apr 2019 10:24:01 -0400</pubDate>
-      <guid>//localhost:1313/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</guid>
+      <guid>/posts/2019-04-04-cisco-ise-deployment-ovf-parameter-chunksize-error/</guid>
       <description>&lt;p&gt;Ran into a fun issue with vCenter 6.5 and a deployment of ISE. When deploying the ISE ova template we received a chunk size error: “OVF parameter chunkSize with value XXXXXXXXXX” is currently not supported for OVF package import.&lt;/p&gt;&#xA;&lt;p&gt;Thankfully a VMware kb article walks us through how to fix the issue.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://kb.vmware.com/s/article/2148588?lang=en_US&#34;&gt;https://kb.vmware.com/s/article/2148588?lang=en_US&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The first step is to unpack the ova file with a tool such as 7zip on Windows or tar on Linux/Mac.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cisco ISE - Fixing Certificate Generation Failed Error with Android Devices</title>
-      <link>//localhost:1313/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</link>
+      <link>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</link>
       <pubDate>Wed, 13 Feb 2019 10:22:51 -0400</pubDate>
-      <guid>//localhost:1313/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</guid>
-      <description>&lt;p&gt;Ran into some issues recently with Android devices and the Cisco Network Setup Assistant while attempting to provision certificates as part of the BYOD work flow.&lt;/p&gt;&#xA;&lt;p&gt;While on-boarding an Android device, the following error occurred:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/bcff2c7f9c386bfb9cc43244275e1562_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;TAC pointed me to this helpful YouTube video that contained the solution.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=z0sRiffVdpg&#34;&gt;https://www.youtube.com/watch?v=z0sRiffVdpg&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Starting with Android 6, EST is natively used by the device for Certificate Signing Requests. To fix the issue we need to allow the EST authentication request through ISE. This can be accomplished with a new Authorization Policy that matches the EST request and then permits access.&lt;/p&gt;</description>
+      <guid>/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/</guid>
+      <description>&lt;p&gt;Ran into some issues recently with Android devices and the Cisco Network Setup Assistant while attempting to provision certificates as part of the BYOD work flow.&lt;/p&gt;&#xA;&lt;p&gt;While on-boarding an Android device, the following error occurred:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2019-02-13-cisco-ise-fixing-certificate-generation-failed-error-with-android-devices/bcff2c7f9c386bfb9cc43244275e1562_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;TAC pointed me to this helpful YouTube video that contained the solution.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=z0sRiffVdpg&#34;&gt;https://www.youtube.com/watch?v=z0sRiffVdpg&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Starting with Android 6, EST is natively used by the device for Certificate Signing Requests. To fix the issue we need to allow the EST authentication request through ISE. This can be accomplished with a new Authorization Policy that matches the EST request and then permits access.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configuring Hotspot Guest Access with Cisco ISE</title>
-      <link>//localhost:1313/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</link>
+      <link>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</link>
       <pubDate>Mon, 10 Sep 2018 10:07:26 -0400</pubDate>
-      <guid>//localhost:1313/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</guid>
+      <guid>/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/</guid>
       <description>&lt;p&gt;Been toying with the Cisco &lt;a href=&#34;https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html&#34;&gt;vWLC&lt;/a&gt; and &lt;a href=&#34;https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html&#34;&gt;ISE&lt;/a&gt; in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: &lt;a href=&#34;https://cisco.app.box.com/v/ISE-Eval&#34;&gt;https://cisco.app.box.com/v/ISE-Eval&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.&lt;/p&gt;&#xA;&lt;p&gt;Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: &lt;a href=&#34;https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475&#34;&gt;https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

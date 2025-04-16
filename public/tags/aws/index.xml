@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on WRMEM</title>
-    <link>//localhost:1313/tags/aws/</link>
+    <link>/tags/aws/</link>
     <description>Recent content in Aws on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Aug 2018 10:05:49 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Set a Budget in AWS to Avoid Costly Overages</title>
-      <link>//localhost:1313/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</link>
+      <link>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</link>
       <pubDate>Fri, 10 Aug 2018 10:05:49 -0400</pubDate>
-      <guid>//localhost:1313/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</guid>
+      <guid>/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/</guid>
       <description>&lt;p&gt;If you’re like me and are experimenting with the AWS free tier it might be a good idea to configure a budget notification to avoid getting caught off guard by any overages.&lt;/p&gt;&#xA;&lt;p&gt;Amazon has a great document on how to enable alerts located &lt;a href=&#34;https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html&#34;&gt;here&lt;/a&gt;, but here’s a quick guide on how to enable alerts and budget reminders.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;First, log in to your AWS account.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Click the drop down menu next to your name on the top right hand of the console page and select “&lt;strong&gt;My Billing Dashboard&lt;/strong&gt;.”&lt;/p&gt;</description>
     </item>
   </channel>

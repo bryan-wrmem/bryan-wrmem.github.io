@@ -87,9 +87,11 @@ to locally preview things.
 
 If everything looks good the next step is to commit and push the site contents to github.
 
-`git add -A`
-`git commit -m "new blog post"`
-`git push
+```
+git add -A
+git commit -m "new blog post"
+git push
+```
 
 
 I know I'm glossing over the git part, but hugo has a wonderful document on how to setup hosting with hugo and github pages found here:
@@ -106,3 +108,5 @@ And that's really it, after pushing to github the workflow described in the link
 ![](f67be581a5893bcf59b7b19084c318be_MD5.jpeg)
 
 I'm sure this pipeline will evolve as I continue down my obsidian journey and if that does just keep an eye out on my [repository](https://github.com/bryan-wrmem/bryan-wrmem.github.io)!
+
+
