@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on WRMEM</title>
-    <link>/tags/windows/</link>
+    <link>//localhost:1313/tags/windows/</link>
     <description>Recent content in Windows on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 08 Mar 2016 08:55:15 -0400</lastBuildDate>
-    <atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 10 WMI Filter for Group Policy</title>
-      <link>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</link>
+      <link>//localhost:1313/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</link>
       <pubDate>Tue, 08 Mar 2016 08:55:15 -0400</pubDate>
-      <guid>/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</guid>
+      <guid>//localhost:1313/posts/2016-03-08-windows-10-wmi-filter-for-group-policy/</guid>
       <description>&lt;p&gt;Windows 10 devices have started to trickle into our production environment and I needed a quick way to apply Windows 10 specific policies to these computers.&lt;/p&gt;&#xA;&lt;p&gt;By creating a WMI filter that looks for the Windows 10 version number and then linking that query to our Windows 10 group policies, we can ensure that only Windows 10 PCs will get the policies we want.&lt;/p&gt;&#xA;&lt;p&gt;First we use the command line utility ‘&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/bb742610.aspx&#34;&gt;wmic&lt;/a&gt;‘ to find out what version of Windows wmi is reporting. (Make note of the version number, quite a jump from previous versions of windows; Windows 7 used 6.1, Windows 8 used 6.2, and Windows 8.1 used 6.3)&lt;/p&gt;</description>
     </item>
   </channel>
