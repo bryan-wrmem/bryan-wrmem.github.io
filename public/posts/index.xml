@@ -6,8 +6,15 @@
     <description>Recent content in Posts on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Apr 2025 18:55:28 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 28 Apr 2025 19:11:28 -0400</lastBuildDate>
     <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firepower Booting into ROMMON</title>
+      <link>/posts/2025-04-28-firepower-booting-into-rommon/</link>
+      <pubDate>Mon, 28 Apr 2025 19:11:28 -0400</pubDate>
+      <guid>/posts/2025-04-28-firepower-booting-into-rommon/</guid>
+      <description>&lt;p&gt;After recently deploying a new Firepower 3105 HA pair for a client, they decided to move the firewalls to a different rack. Upon powering up the devices, the secondary firewall wasn&amp;rsquo;t coming online and syncing with the primary.&lt;/p&gt;&#xA;&lt;p&gt;We plugged a console cable into the device and were greeted with a ROMMON prompt:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rommon 1&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This lines up pretty well with the following BugID:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772&#34;&gt;https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;While the workaround mentions doing a complete reimage of the device, there is a much simpler fix.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Continuous Blogging Pipeline</title>
       <link>/posts/2025-04-16-continuous-blogging-pipeline/</link>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.146.5">
+	<meta name="generator" content="Hugo 0.147.0">
   
     <title>WRMEM</title>
   
@@ -189,6 +189,41 @@
     
       <article class="post on-list">
         <h2 class="post-title">
+          <a href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">Configuring Hotspot Guest Access with Cisco ISE</a>
+        </h2>
+
+        <div class="post-meta"><time class="post-date">2018-09-10</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ise/">ise</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Been toying with the Cisco <a href="https://www.cisco.com/c/en/us/products/wireless/virtual-wireless-controller/index.html">vWLC</a> and <a href="https://www.cisco.com/c/en/us/products/security/identity-services-engine/index.html">ISE</a> in the home lab. Evaluation copies of ISE can be found on Cisco’s box share here: <a href="https://cisco.app.box.com/v/ISE-Eval">https://cisco.app.box.com/v/ISE-Eval</a></p>
+<p>Here are my notes on configuring a Guest Hotspot portal. Hotspots are a simple portal where users will need to accept an Acceptable Use Policy before being granted access to the internet.</p>
+<p>Please also see the ISE Guest Access Deployment Guide from Cisco for more details on setting up different Guest Access scenarios: <a href="https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475">https://community.cisco.com/t5/security-documents/ise-guest-access-deployment-guide/ta-p/3640475</a></p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2018-09-10-configuring-hotspot-guest-access-with-cisco-ise/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
           <a href="/posts/2018-08-10-set-a-budget-in-aws-to-avoid-costly-overages/">Set a Budget in AWS to Avoid Costly Overages</a>
         </h2>
 
@@ -317,41 +352,6 @@
         
           <div>
             <a class="read-more button inline" href="/posts/2018-04-03-converting-a-mobility-express-ap-into-a-capwap-ap/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</a>
-        </h2>
-
-        <div class="post-meta"><time class="post-date">2018-04-02</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/cisco/">cisco</a>&nbsp;
-            
-            #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.</p>
-<p>IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.</p>
-<p>Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a <strong>show version</strong> command and look under the <strong>Mode</strong> column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html">here</a>.</p>
-          
-        </div>
-
-        
-          <div>
-            <a class="read-more button inline" href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">[Read more]</a>
           </div>
         
       </article>

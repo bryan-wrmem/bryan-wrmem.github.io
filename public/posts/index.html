@@ -179,6 +179,43 @@
     
       <article class="post on-list">
         <h2 class="post-title">
+          <a href="/posts/2025-04-28-firepower-booting-into-rommon/">Firepower Booting into ROMMON</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-04-28</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>After recently deploying a new Firepower 3105 HA pair for a client, they decided to move the firewalls to a different rack. Upon powering up the devices, the secondary firewall wasn&rsquo;t coming online and syncing with the primary.</p>
+<p>We plugged a console cable into the device and were greeted with a ROMMON prompt:</p>
+<pre tabindex="0"><code>rommon 1&gt;
+</code></pre><p>This lines up pretty well with the following BugID:</p>
+<p><a href="https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772">https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772</a></p>
+<p>While the workaround mentions doing a complete reimage of the device, there is a much simpler fix.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/posts/2025-04-28-firepower-booting-into-rommon/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
           <a href="/posts/2025-04-16-continuous-blogging-pipeline/">Continuous Blogging Pipeline</a>
         </h2>
         <div class="post-meta"><time class="post-date">2025-04-16</time><span class="post-author">bryan</span></div>
@@ -303,44 +340,6 @@
         
            <div>
             <a class="read-more button inline" href="/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/">Cisco ISE Synchronization Failed when adding a Secondary Node</a>
-        </h2>
-        <div class="post-meta"><time class="post-date">2019-10-15</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/cisco/">cisco</a>&nbsp;
-            
-            #<a href="/tags/ise/">ise</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>Ran into an interesting issue the other day setting up a two node ISE deployment. I figured I’d put it up on the blog in case anyone else is pulling out their hair.</p>
-<p>After adding a secondary node, the deployment nodes status page lists an error saying “synchronization failed.”</p>
-<p><img src="/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/ee2658b809a8d03037d607fcc7c3a47f_MD5.png" alt=""></p>
-<p>When I consoled into the ISE node I saw multiple failed logins:</p>
-<p>Failed to log in 51 time(s)<br>
-Last failed login on Tue Oct 15 11:38:37 2019 from 10.102.10.168<br>
-ISE3615-1/admin#</p>
-          
-        </div>
-
-        
-           <div>
-            <a class="read-more button inline" href="/posts/2019-10-15-cisco-ise-synchronization-failed-when-adding-a-secondary-node/">[Read more]</a>
           </div>
         
       </article>

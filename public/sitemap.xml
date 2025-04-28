@@ -2,29 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/cisco/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
+    <loc>/tags/firepower/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
+    <loc>/posts/2025-04-28-firepower-booting-into-rommon/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-04-28T19:11:28-04:00</lastmod>
+  </url><url>
     <loc>/posts/2025-04-16-continuous-blogging-pipeline/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
     <loc>/tags/obsidian/</loc>
     <lastmod>2025-04-16T18:55:28-04:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2025-04-16T18:55:28-04:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-04-16T18:55:28-04:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2025-04-16T18:55:28-04:00</lastmod>
-  </url><url>
     <loc>/posts/2025-04-14-hello-world-again/</loc>
     <lastmod>2025-04-14T22:33:11-04:00</lastmod>
-  </url><url>
-    <loc>/tags/cisco/</loc>
-    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
-  </url><url>
-    <loc>/tags/firepower/</loc>
-    <lastmod>2023-03-16T10:40:51-04:00</lastmod>
   </url><url>
     <loc>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</loc>
     <lastmod>2023-03-16T10:40:51-04:00</lastmod>

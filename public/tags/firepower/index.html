@@ -180,6 +180,43 @@
     
       <article class="post on-list">
         <h1 class="post-title">
+          <a href="/posts/2025-04-28-firepower-booting-into-rommon/">Firepower Booting into ROMMON</a>
+        </h1>
+        <div class="post-meta"><time class="post-date">2025-04-28</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/firepower/">firepower</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>After recently deploying a new Firepower 3105 HA pair for a client, they decided to move the firewalls to a different rack. Upon powering up the devices, the secondary firewall wasn&rsquo;t coming online and syncing with the primary.</p>
+<p>We plugged a console cable into the device and were greeted with a ROMMON prompt:</p>
+<pre tabindex="0"><code>rommon 1&gt;
+</code></pre><p>This lines up pretty well with the following BugID:</p>
+<p><a href="https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772">https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772</a></p>
+<p>While the workaround mentions doing a complete reimage of the device, there is a much simpler fix.</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2025-04-28-firepower-booting-into-rommon/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
           <a href="/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/">Monitoring a Firepower Upgrade with Tail</a>
         </h1>
         <div class="post-meta"><time class="post-date">2023-03-16</time><span class="post-author">bryan</span></div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.146.5">
+	<meta name="generator" content="Hugo 0.147.0">
   
     <title>WRMEM</title>
   
@@ -189,6 +189,41 @@
     
       <article class="post on-list">
         <h2 class="post-title">
+          <a href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</a>
+        </h2>
+
+        <div class="post-meta"><time class="post-date">2018-04-02</time><span class="post-author">bryan</span></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="/tags/cisco/">cisco</a>&nbsp;
+            
+            #<a href="/tags/ios-xe/">IOS-XE</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.</p>
+<p>IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.</p>
+<p>Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a <strong>show version</strong> command and look under the <strong>Mode</strong> column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html">here</a>.</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
           <a href="/posts/2018-03-23-upgrading-a-cisco-wireless-lan-controller/">Upgrading a Cisco Wireless LAN Controller</a>
         </h2>
 
@@ -337,40 +372,6 @@ Create a SIP Profile</p>
         
           <div>
             <a class="read-more button inline" href="/posts/2017-04-28-upgrading-cisco-emergency-responder-8.6-to-10.5-physical-to-virtual/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">Creating a Bootable ISO from Cisco Non-Bootable Updates</a>
-        </h2>
-
-        <div class="post-meta"><time class="post-date">2016-07-13</time><span class="post-author">bryan</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/cisco/">cisco</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>There’s plenty of great posts out there on how to make bootable CUCM/Collaboration media with paid GUI software such as <a href="http://htluo.blogspot.com/2010/04/how-to-make-non-bootable-iso-image.html">UltraISO</a> or free command line utilities like <a href="http://www.ipcommute.co.uk/technical-articles/17--creating-isolinux-boot-dvds-with-free-software-cucm-uccx-cups.html">cdrtools</a>. Inspired by those bloggers, I wanted to share a method to create bootable media that features the best of both worlds: open source utilities with easy to use interfaces, all for the low low price of free.</p>
-<p>Software you’ll need:</p>
-<p><a href="http://www.7-zip.org/">7-Zip</a> / <a href="http://cdrtfe.sourceforge.net/">cdrtfe</a></p>
-<p>First, find an existing bootable CUCM ISO (a Red Hat or CentOS live cd will do the trick as well) and open it in 7zip.</p>
-          
-        </div>
-
-        
-          <div>
-            <a class="read-more button inline" href="/posts/2016-07-13-creating-a-bootable-iso-from-cisco-non-bootable-updates/">[Read more]</a>
           </div>
         
       </article>
