@@ -2,46 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firepower on WRMEM</title>
-    <link>/tags/firepower/</link>
+    <link>//localhost:1313/tags/firepower/</link>
     <description>Recent content in Firepower on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Apr 2025 19:11:28 -0400</lastBuildDate>
-    <atom:link href="/tags/firepower/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 19:16:26 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/firepower/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Cisco Secure Firewall Snort IPS</title>
+      <link>//localhost:1313/posts/2025-05-16-testing-cisco-secure-firewall-snort-ips/</link>
+      <pubDate>Fri, 16 May 2025 19:16:26 -0400</pubDate>
+      <guid>//localhost:1313/posts/2025-05-16-testing-cisco-secure-firewall-snort-ips/</guid>
+      <description>&lt;p&gt;Often when deploying Firepower/Secure Firewall devices I get asked to show that everything is working as expected or to prove that things like the Snort IPS engine are working as advertised.&lt;/p&gt;&#xA;&lt;p&gt;I can&amp;rsquo;t, in good conscience, attempt to download some malware or ransomware on their network but how about a simple ping?&lt;/p&gt;&#xA;&lt;p&gt;Thankfully there&amp;rsquo;s a built in Snort rule (sid) that can be enabled to trigger a security alert on ICMP Echo Replies, so all we need to do to highlight Snort efficacy and alerting is to enable that particular sid and send some Echo Requests and wait for the Reply.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Firepower Booting into ROMMON</title>
-      <link>/posts/2025-04-28-firepower-booting-into-rommon/</link>
+      <link>//localhost:1313/posts/2025-04-28-firepower-booting-into-rommon/</link>
       <pubDate>Mon, 28 Apr 2025 19:11:28 -0400</pubDate>
-      <guid>/posts/2025-04-28-firepower-booting-into-rommon/</guid>
+      <guid>//localhost:1313/posts/2025-04-28-firepower-booting-into-rommon/</guid>
       <description>&lt;p&gt;After recently deploying a new Firepower 3105 HA pair for a client, they decided to move the firewalls to a different rack. Upon powering up the devices, the secondary firewall wasn&amp;rsquo;t coming online and syncing with the primary.&lt;/p&gt;&#xA;&lt;p&gt;We plugged a console cable into the device and were greeted with a ROMMON prompt:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rommon 1&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This lines up pretty well with the following BugID:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772&#34;&gt;https://quickview.cloudapps.cisco.com/quickview/bug/CSCvp57772&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;While the workaround mentions doing a complete reimage of the device, there is a much simpler fix.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Monitoring a Firepower Upgrade with Tail</title>
-      <link>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</link>
+      <link>//localhost:1313/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</link>
       <pubDate>Thu, 16 Mar 2023 10:40:51 -0400</pubDate>
-      <guid>/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</guid>
-      <description>&lt;p&gt;While Cisco’s Secure Firewall Management Center is a great tool there’s still some missing functionality here and there. Upgrades, for one, is a great example. How do you know when an upgrade has failed? Why did it fail? Where did it fail?&lt;/p&gt;&#xA;&lt;p&gt;Sure the Task pane shows us the progress but truthfully that’s about it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/2e406abae15a03d8d4f2ff096c9cee86_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;So for today, a quick update on how I monitor the progress of a Firepower Threat Defense upgrade through the command line.&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/</guid>
+      <description>&lt;p&gt;While Cisco’s Secure Firewall Management Center is a great tool there’s still some missing functionality here and there. Upgrades, for one, is a great example. How do you know when an upgrade has failed? Why did it fail? Where did it fail?&lt;/p&gt;&#xA;&lt;p&gt;Sure the Task pane shows us the progress but truthfully that’s about it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2023-03-16-monitoring-a-firepower-upgrade-with-tail/2e406abae15a03d8d4f2ff096c9cee86_MD5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;So for today, a quick update on how I monitor the progress of a Firepower Threat Defense upgrade through the command line.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Disable SIP Inspection on Firepower through FlexConfig</title>
-      <link>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</link>
+      <link>//localhost:1313/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</link>
       <pubDate>Fri, 08 May 2020 10:38:00 -0400</pubDate>
-      <guid>/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</guid>
+      <guid>//localhost:1313/posts/2020-05-08-disable-sip-inspection-on-firepower-through-flexconfig/</guid>
       <description>&lt;p&gt;Occasionally you may come across issues with SIP inspection on an ASA or Firepower, leading to problems with SIP/RTP voip audio. As a troubleshooting step, it’s often helpful to disable SIP inspection for testing.&lt;/p&gt;&#xA;&lt;p&gt;Please read this note from Cisco on disabling SIP inspection to verify you everything in order before doing so:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;You would typically disable SIP only if the inspection is causing problems in the network. However, if you disable SIP, you must ensure that your access control policies allow the SIP traffic (UDP/TCP 5060) and any dynamically allocated ports, and that you do not need NAT support for SIP connections. Adjust the access control and NAT policies accordingly through the standard pages, not through FlexConfig.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Usernames No Longer Appear in Firepower Management Center After Upgrading to 6.0</title>
-      <link>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</link>
+      <link>//localhost:1313/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</link>
       <pubDate>Mon, 07 Mar 2016 08:53:30 -0400</pubDate>
-      <guid>/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</guid>
-      <description>&lt;p&gt;After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png&#34; alt=&#34;sf-usernames01&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;After opening a support case, TAC pointed me to the following bug: &lt;a href=&#34;https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125&#34;&gt;cscux39125&lt;/a&gt; (cisco login required).&lt;/p&gt;&#xA;&lt;p&gt;To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.&lt;/p&gt;&#xA;&lt;p&gt;To change your realm configuration go to &lt;strong&gt;System&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Integration&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Realms&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/</guid>
+      <description>&lt;p&gt;After upgrading our Firepower Management Center to 6.0, we noticed that usernames were no longer populating in our dashboards. Instead of showing users, all we could see was “No Authentication Required.”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2016-03-07-usernames-no-longer-appear-in-firepower-management-center-after-upgrading-to-6.0/0f3236c26cfe20f1aad5b3ade3e0144b_MD5.png&#34; alt=&#34;sf-usernames01&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;After opening a support case, TAC pointed me to the following bug: &lt;a href=&#34;https://bst.cloudapps.cisco.com/bugsearch/bug/cscux39125&#34;&gt;cscux39125&lt;/a&gt; (cisco login required).&lt;/p&gt;&#xA;&lt;p&gt;To resolve the issue we need to set the active directory domain to our domain’s NetBIOS short name in Firepower’s realm configuration.&lt;/p&gt;&#xA;&lt;p&gt;To change your realm configuration go to &lt;strong&gt;System&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Integration&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Realms&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Installing a CA Signed SSL Certificate in SourceFire Defense Center 6.0</title>
-      <link>/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</link>
+      <link>//localhost:1313/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</link>
       <pubDate>Wed, 02 Mar 2016 08:44:37 -0400</pubDate>
-      <guid>/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</guid>
-      <description>&lt;p&gt;I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In Defense Center, go to System -&amp;gt; Configuration -&amp;gt; HTTPS Certificate&lt;/li&gt;&#xA;&lt;li&gt;Click “Generate New CSR”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png&#34; alt=&#34;sfcsr01&#34;&gt;&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/</guid>
+      <description>&lt;p&gt;I don’t know about you, but self-signed certificates seem to trigger my IT OCD. When possible, I like to replace self-signed certs with one signed by our Active Directory CA. Here are the steps involved to replace the self-signed certificate on Cisco’s FirePOWER Management Center/SourceFire Defense Center with one signed by your internal Active Directory Certificate Authority.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In Defense Center, go to System -&amp;gt; Configuration -&amp;gt; HTTPS Certificate&lt;/li&gt;&#xA;&lt;li&gt;Click “Generate New CSR”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2016-03-02-installing-a-ca-signed-ssl-certificate-in-sourcefire-defense-center-6.0/69093ca6bd83c0001a88e81824b01c5a_MD5.png&#34; alt=&#34;sfcsr01&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

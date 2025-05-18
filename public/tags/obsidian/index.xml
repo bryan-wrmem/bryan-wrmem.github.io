@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Obsidian on WRMEM</title>
-    <link>/tags/obsidian/</link>
+    <link>//localhost:1313/tags/obsidian/</link>
     <description>Recent content in Obsidian on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 16 Apr 2025 18:55:28 -0400</lastBuildDate>
-    <atom:link href="/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Continuous Blogging Pipeline</title>
-      <link>/posts/2025-04-16-continuous-blogging-pipeline/</link>
+      <link>//localhost:1313/posts/2025-04-16-continuous-blogging-pipeline/</link>
       <pubDate>Wed, 16 Apr 2025 18:55:28 -0400</pubDate>
-      <guid>/posts/2025-04-16-continuous-blogging-pipeline/</guid>
+      <guid>//localhost:1313/posts/2025-04-16-continuous-blogging-pipeline/</guid>
       <description>&lt;h1 id=&#34;continuous-blogging-pipeline&#34;&gt;Continuous Blogging Pipeline&lt;/h1&gt;&#xA;&lt;p&gt;In a fit of spring cleaning I decided to overhaul this blog after nearly a decade, streamlining creation and publishing in a modern, programmatic, way.&lt;/p&gt;&#xA;&lt;p&gt;What started as a new way to take notes for my home lab and career studies quickly escalated into yet another personal tinker project that, if you&amp;rsquo;re currently reading this, has actually progressed into production.&lt;/p&gt;&#xA;&lt;h2 id=&#34;obsidian-for-notes-obsidian-for-blogs&#34;&gt;Obsidian for notes! Obsidian for blogs?&lt;/h2&gt;&#xA;&lt;p&gt;I recently started studying for the CCIE Security, and wanted a way to centrally store and share my notes. This led me down the &lt;a href=&#34;https://obsidian.md/&#34;&gt;obsidian&lt;/a&gt; path, a wonderful productivity tool that stores notes in markdown. As these notes are in plain old markdown it&amp;rsquo;s also very easy to sync your vault via git (expect a future post that goes through that whole process). This sparked a follow on idea, what if I could also use obsidian to draft and publish posts to my blog? As I only publish once in a blue moon and my content consists primarily of notes and how-to&amp;rsquo;s, even word press was overkill as a platform. Why not simply type my notes in obsidian, pretty them up with a nice Hugo theme (&lt;a href=&#34;https://github.com/panr/hugo-theme-terminal&#34;&gt;Terminal&lt;/a&gt;), and push them to GitHub Pages? This would simplify publishing, cut down on my cloud resource consumption, and keep my posts backed up in a repository.&lt;/p&gt;</description>
     </item>
   </channel>

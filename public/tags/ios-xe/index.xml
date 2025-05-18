@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IOS-XE on WRMEM</title>
-    <link>/tags/ios-xe/</link>
+    <link>//localhost:1313/tags/ios-xe/</link>
     <description>Recent content in IOS-XE on WRMEM</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 02 Apr 2018 10:02:29 -0400</lastBuildDate>
-    <atom:link href="/tags/ios-xe/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/ios-xe/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upgrading IOS-XE 3.X to IOS-XE Denali 16.X</title>
-      <link>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</link>
+      <link>//localhost:1313/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</link>
       <pubDate>Mon, 02 Apr 2018 10:02:29 -0400</pubDate>
-      <guid>/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</guid>
+      <guid>//localhost:1313/posts/2018-04-02-upgrading-ios-xe-3.x-to-ios-xe-denali-16.x/</guid>
       <description>&lt;p&gt;IOS-XE Denali represents Cisco’s effort to bring a single code base across their enterprise line of networking equipment, meaning the same operating system will run Catalyst, ISR, and ASR platforms.&lt;/p&gt;&#xA;&lt;p&gt;IOS-XE 3.7 will be the “end of the track” for the 3.X train of code on Catalyst 3650/3850… so to speak.&lt;/p&gt;&#xA;&lt;p&gt;Below are the steps I used to upgrade a 3850 from IOS-XE 03.06.03E to IOS-XE 16.3.5b Denali. The switches were in “install mode” and these steps are specific for that method. To check your mode you can issue a &lt;strong&gt;show version&lt;/strong&gt; command and look under the &lt;strong&gt;Mode&lt;/strong&gt; column. 3850s should come from the factory in install mode; bundle mode is similar to the older upgrade method where you boot from a monolithic bin file. More info on install mode and bundle mode can be found &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/3se/system_management/configuration_guide/b_sm_3se_3850_cg/b_sm_3se_3850_cg_chapter_010100.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Upgrading IOS-XE on a Cisco ISR 4400</title>
-      <link>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</link>
+      <link>//localhost:1313/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</link>
       <pubDate>Thu, 03 Mar 2016 08:52:04 -0400</pubDate>
-      <guid>/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</guid>
-      <description>&lt;p&gt;Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found &lt;a href=&#34;http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;To help differentiate the different designations of code, i.e., MD, ED, GD, take a look &lt;a href=&#34;https://www.cisco.com/public/library/iosplanner/reldesignation.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png&#34; alt=&#34;ios-xe01&#34;&gt;the downloaded image to your USB drive and insert it into the ISR&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/</guid>
+      <description>&lt;p&gt;Just got in a new Cisco ISR 4431 and needed to upgrade IOS-XE out of the box. Cisco has been nice enough to include a 1Gb USB flash drive with their new ISRs, making the software upgrade process a cinch. Here are the steps involved to install a new version of IOS-XE via USB drive.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download your chosen version of IOS-XE from cisco.com. Keep in mind there are often may different trains and revisions of code available.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;To help you decide which version of code is right for you, there’s the cisco IOS feature navigator found &lt;a href=&#34;http://tools.cisco.com/ITDIT/CFN/jsp/compareImages.jsp&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;To help differentiate the different designations of code, i.e., MD, ED, GD, take a look &lt;a href=&#34;https://www.cisco.com/public/library/iosplanner/reldesignation.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Typically I opt for a gold star release, which are cisco recommended releases “based on software quality, stability and longevity.”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/posts/2016-03-03-upgrading-ios-xe-on-a-cisco-isr-4400/ca72539b05ca740945062799c446f80f_MD5.png&#34; alt=&#34;ios-xe01&#34;&gt;the downloaded image to your USB drive and insert it into the ISR&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
